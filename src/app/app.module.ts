@@ -11,9 +11,10 @@ import { AppComponent } from './app.component';
 import { CommaGameComponent } from './comma-game/comma-game.component';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionPageComponent } from './question-page/question-page.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
-  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent],
+  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent, MainPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
