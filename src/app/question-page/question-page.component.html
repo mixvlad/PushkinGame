@@ -1,14 +1,13 @@
 <div *ngIf="question">
-  <div><span>id: </span>{{ question.id }}</div>
-  <h2 *ngIf="answered == false">{{ question.questionText }}</h2>
-  <h2 *ngIf="answered == true">{{ question.correctText }}</h2>
+  <h1 *ngIf="answered == false">{{ question.questionText }}</h1>
+  <h1 *ngIf="answered == true">{{ question.correctText }}</h1>
   <div *ngIf="answered == true">{{ question.ruleInfo }}</div>
 </div>
-<div *ngIf="answered == false && needHelp == true">{{ question.helpMessage }}</div>
+<div *ngIf="answered == false && needHelp == true"><span>Подсказка: </span>{{ question.helpMessage }}</div>
 <div id="buttons" *ngIf="answered == false">
   <button (click)="answer(true)">Нужна запятая</button>
   <button (click)="answer(false)">Не нужна запятая</button>
-  <button (click)="help()">Взять подсказку</button>
+  <button class="button-secondary" (click)="help()">Взять подсказку</button>
 </div>
 
 <button *ngIf="answered == true" (click)="next()">Следующий вопрос</button>
