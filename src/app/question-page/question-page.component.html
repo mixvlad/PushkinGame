@@ -1,6 +1,7 @@
 <h2>Запятая перед как</h2>
 <a href="main"><div>В главное меню</div></a>
 <span>Тест. Вопрос {{ question.id }}/10</span>
+<p *ngIf="isTimer == true">{{ timeLeft }} секунд осталось...</p>
 <div *ngIf="question">
   <h1 *ngIf="answered == false">{{ question.questionText }}</h1>
   <h1 *ngIf="answered == true">{{ question.correctText }}</h1>

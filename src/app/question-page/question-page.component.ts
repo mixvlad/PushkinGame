@@ -1,9 +1,13 @@
 import { Question } from './../question';
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { Observable } from 'rxjs';
+
 import { CommaGameService } from '../comma-game.service';
+
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-question-page',
@@ -12,31 +16,68 @@ import { CommaGameService } from '../comma-game.service';
 })
 export class QuestionPageComponent implements OnInit {
   @Input() question: Question;
+  public state$: Observable<{ [key: string]: string }>;
   currentId: number;
   answered: boolean;
   needHelp: boolean;
 
-  constructor(private route: ActivatedRoute, private questionService: CommaGameService, private location: Location) {}
+  isTimer = true;
+  timertime = 10;
+  timeLeft = 10;
+  interval;
 
-  ngOnInit(): void {
-    this.getQuestion();
+  startTimer() {
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.answered = true;
+      }
+    }, 1000);
   }
 
-  getQuestion(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.currentId = id;
+  pauseTimer() {
+    clearInterval(this.interval);
+    this.timeLeft = this.timertime;
+  }
+
+  constructor(
+    private route: ActivatedRoute,
+    // private router: Router,
+    private messageService: MessageService,
+    private questionService: CommaGameService,
+    private location: Location
+  ) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.isTimer = params.timer === 'true' || false;
+
+      this.messageService.add(`questionService: ${params.timer}`);
+    });
+    this.currentId = +this.route.snapshot.paramMap.get('id');
 
     this.updateQuestion(this.currentId);
   }
 
   answer(isTrue: boolean): void {
     this.answered = true;
+    this.pauseTimer();
   }
 
   next(): void {
     this.currentId++;
-    this.location.go('detail/' + String(this.currentId));
+    let nextPageLink = 'detail/' + String(this.currentId);
+    if (this.isTimer === true) {
+      nextPageLink += '?timer=true';
+    }
+
+    this.location.go(nextPageLink);
     this.updateQuestion(this.currentId);
+    if (this.isTimer === true) {
+      this.pauseTimer();
+      this.startTimer();
+    }
   }
 
   help(): void {
@@ -47,5 +88,9 @@ export class QuestionPageComponent implements OnInit {
     this.questionService.getQuestion(id).subscribe(question => (this.question = question));
     this.answered = false;
     this.needHelp = false;
+    if (this.isTimer === true) {
+      this.pauseTimer();
+      this.startTimer();
+    }
   }
 }
