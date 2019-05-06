@@ -12,9 +12,10 @@ import { CommaGameComponent } from './comma-game/comma-game.component';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionPageComponent } from './question-page/question-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { DashPageComponent } from './dash-page/dash-page.component';
 
 @NgModule({
-  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent, MainPageComponent],
+  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent, MainPageComponent, DashPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

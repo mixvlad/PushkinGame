@@ -1,0 +1,23 @@
+<h2>Куда нужно вставить тире?</h2>
+<a href="main"><div>В главное меню</div></a>
+<span>Тест. Вопрос 1/10</span>
+<div>
+  <h1>
+    Петя всегда любил работать один.
+    <span class="dash" [ngClass]="status ? 'selected' : 'deselected'" (click)="clickDash()"> </span> А потом понял:
+    команда это когда есть на кого свалить косяки. Теперь он командный игрок!
+  </h1>
+
+  <div *ngIf="answered == true">
+    Тире ставится между подлежащим и сказуемым, если между ними есть слова «это», «вот». Но не ставится, если подлежащее
+    — местоимение.
+  </div>
+</div>
+<div *ngIf="answered == false">
+  <span>Подсказка: </span>Поставьте тире, там где они нужны. Бывает что тире не нужно ставить нигде.
+</div>
+<div id="buttons" *ngIf="answered == false">
+  <button (click)="check()">Проверить</button>
+</div>
+
+<button *ngIf="answered == true" (click)="next()">Следующий вопрос</button>
