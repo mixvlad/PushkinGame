@@ -1,3 +1,5 @@
+import { TimerGameComponent } from './timer-game/timer-game.component';
+import { TimerQuestionPageComponent } from './timer-question-page/timer-question-page.component';
 import { DashPageComponent } from './dash-page/dash-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'main', component: MainPageComponent },
   { path: 'comma-game', component: CommaGameComponent },
-  { path: 'detail/:id', component: QuestionPageComponent },
+  { path: 'timer-game', component: TimerGameComponent },
   { path: 'dash-game', component: DashPageComponent }
 ];
 

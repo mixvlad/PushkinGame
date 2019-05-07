@@ -4,4 +4,5 @@ export class Question {
   correctText: string;
   helpMessage: string;
   ruleInfo: string;
+  isCorrect: boolean;
 }

@@ -1,3 +1,4 @@
+<p *ngIf="timeLeft && !answered">{{ timeLeft }} секунд осталось...</p>
 <div *ngIf="question">
   <h1 *ngIf="!answered">{{ question.questionText }}</h1>
   <h1 *ngIf="answered">{{ question.correctText }}</h1>

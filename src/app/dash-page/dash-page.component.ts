@@ -16,7 +16,6 @@ import { MessageService } from '../message.service';
 })
 export class DashPageComponent implements OnInit {
   @Input() question: Question;
-  currentId: number;
   answered = false;
 
   constructor(
@@ -33,6 +32,9 @@ export class DashPageComponent implements OnInit {
   }
 
   onDashSelected(rightAnswered: boolean) {}
-
   next(): void {}
+  updateQuestion(id: number): void {
+    this.questionService.getQuestion(id).subscribe(question => (this.question = question));
+    this.answered = false;
+  }
 }

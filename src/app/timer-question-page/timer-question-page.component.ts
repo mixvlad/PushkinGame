@@ -1,5 +1,5 @@
 import { Question } from './../question';
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -10,13 +10,17 @@ import { CommaGameService } from '../comma-game.service';
 import { MessageService } from '../message.service';
 
 @Component({
-  selector: 'app-question-page',
-  templateUrl: './question-page.component.html',
-  styleUrls: ['./question-page.component.styl']
+  selector: 'app-timer-question-page',
+  templateUrl: './timer-question-page.component.html',
+  styleUrls: ['./timer-question-page.component.styl']
 })
-export class QuestionPageComponent implements OnInit {
+export class TimerQuestionPageComponent implements OnInit {
   @Input() question: Question;
   @Output() rightAnswered = new EventEmitter<boolean>();
+  isTimer = true;
+  timertime = 5;
+  timeLeft: number;
+  interval;
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;
@@ -30,10 +34,12 @@ export class QuestionPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.answered = false;
+    this.resetTimer();
   }
 
   answer(isCorrect: boolean): void {
     this.answered = true;
+    this.resetTimer();
     this.rightAnswer = this.question.isCorrect === isCorrect;
   }
 
@@ -43,7 +49,27 @@ export class QuestionPageComponent implements OnInit {
     this.needHelp = false;
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnChanges(changes: SimpleChanges) {
+    this.startTimer();
+  }
+
   help(): void {
     this.needHelp = true;
+  }
+
+  startTimer() {
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.answer(false);
+      }
+    }, 1000);
+  }
+
+  resetTimer() {
+    clearInterval(this.interval);
+    this.timeLeft = this.timertime;
   }
 }

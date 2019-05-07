@@ -5,11 +5,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CommaGameService } from '../comma-game.service';
 
 @Component({
-  selector: 'app-comma-game',
-  templateUrl: './comma-game.component.html',
-  styleUrls: ['./comma-game.component.styl']
+  selector: 'app-timer-game',
+  templateUrl: './timer-game.component.html',
+  styleUrls: ['./timer-game.component.styl']
 })
-export class CommaGameComponent implements OnInit {
+export class TimerGameComponent implements OnInit {
   questions: Question[];
   currentQuestion: Question;
   currentId: number;

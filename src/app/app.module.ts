@@ -14,9 +14,12 @@ import { QuestionPageComponent } from './question-page/question-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DashPageComponent } from './dash-page/dash-page.component';
 import { DashComponent } from './dash/dash.component';
+import { ResultPageComponent } from './result-page/result-page.component';
+import { TimerGameComponent } from './timer-game/timer-game.component';
+import { TimerQuestionPageComponent } from './timer-question-page/timer-question-page.component';
 
 @NgModule({
-  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent, MainPageComponent, DashPageComponent, DashComponent],
+  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent, MainPageComponent, DashPageComponent, DashComponent, ResultPageComponent, TimerGameComponent, TimerQuestionPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
