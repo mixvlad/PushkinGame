@@ -9,8 +9,8 @@ import { CommaGameComponent } from './comma-game/comma-game.component';
 import { QuestionPageComponent } from './question-page/question-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
-  { path: 'main', component: MainPageComponent },
+  // { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: '', component: MainPageComponent, pathMatch: 'full' },
   { path: 'comma-game', component: CommaGameComponent },
   { path: 'timer-game', component: TimerGameComponent },
   { path: 'dash-game', component: DashPageComponent }
