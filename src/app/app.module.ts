@@ -13,9 +13,10 @@ import { MessagesComponent } from './messages/messages.component';
 import { QuestionPageComponent } from './question-page/question-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DashPageComponent } from './dash-page/dash-page.component';
+import { DashComponent } from './dash/dash.component';
 
 @NgModule({
-  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent, MainPageComponent, DashPageComponent],
+  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent, MainPageComponent, DashPageComponent, DashComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

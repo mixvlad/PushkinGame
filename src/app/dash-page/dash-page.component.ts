@@ -18,10 +18,6 @@ export class DashPageComponent implements OnInit {
   @Input() question: Question;
   currentId: number;
   answered = false;
-  status = false;
-  clickDash() {
-    this.status = !this.status;
-  }
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +31,8 @@ export class DashPageComponent implements OnInit {
   check(): void {
     this.answered = true;
   }
+
+  onDashSelected(rightAnswered: boolean) {}
 
   next(): void {}
 }

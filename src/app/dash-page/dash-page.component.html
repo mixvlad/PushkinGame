@@ -1,11 +1,11 @@
 <h2>Куда нужно вставить тире?</h2>
 <a href="main"><div>В главное меню</div></a>
 <span>Тест. Вопрос 1/10</span>
-<div>
+<div [ngClass]="answered ? 'answered' : ''">
   <h1>
-    Петя всегда любил работать один.
-    <span class="dash" [ngClass]="status ? 'selected' : 'deselected'" (click)="clickDash()"> </span> А потом понял:
-    команда это когда есть на кого свалить косяки. Теперь он командный игрок!
+    Петя всегда любил работать один. А потом понял: команда
+    <app-dash [needed]="true" (rightAnswered)="onDashSelected($event)"></app-dash> это когда есть на кого свалить
+    косяки. Теперь он <app-dash [needed]="false" (rightAnswered)="onDashSelected($event)"></app-dash> командный игрок!
   </h1>
 
   <div *ngIf="answered == true">
