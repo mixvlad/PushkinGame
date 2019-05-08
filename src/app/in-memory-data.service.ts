@@ -11,7 +11,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 1,
         questionText: 'Наш график — пять рабочих дней в неделю и ещё два как бонус.',
-        correctText: 'Наш график — пять рабочих дней в неделю и ещё два как бонус.',
+        correctText: 'Наш график — пять рабочих дней в неделю и ещё два <span class="resultText">как бонус</span>.',
         helpMessage: 'Будучи взрослым человеком, я пошёл и уволился, а не бросился в слёзы!',
         ruleInfo: 'Запятая не нужна, потому что оборот можно заменить фразой «в качестве бонуса».',
         isCorrect: true
@@ -19,7 +19,8 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 2,
         questionText: 'Зацепил на парковке машину шефа. И как взрослый человек пошёл написал заявление на увольнение.',
-        correctText: 'Зацепил на парковке машину шефа. И, как взрослый человек, пошёл написал заявление на увольнение.',
+        correctText:
+          'Зацепил на парковке машину шефа. И<span class="resultText">, как взрослый человек,</span> пошёл написал заявление на увольнение.',
         helpMessage: 'Нет подсказки',
         ruleInfo: 'Запятые нужны, потому что оборот имеет значение причины. Можно заменить на «будучи взрослым».',
         isCorrect: false
@@ -27,7 +28,8 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 3,
         questionText: 'Вера умела варить раф и как следствие считалась ценным сотрудником.',
-        correctText: 'Вера умела варить раф и, как следствие, считалась ценным сотрудником.',
+        correctText:
+          'Вера умела варить раф и<span class="resultText">, как следствие,</span> считалась ценным сотрудником.',
         helpMessage: 'Нет подсказки',
         ruleInfo: 'Запятая нужна, если оборот близок по смыслу к вводной конструкции: «как обычно», «как нарочно».',
         isCorrect: false
