@@ -17,9 +17,21 @@ import { DashComponent } from './dash/dash.component';
 import { ResultPageComponent } from './result-page/result-page.component';
 import { TimerGameComponent } from './timer-game/timer-game.component';
 import { TimerQuestionPageComponent } from './timer-question-page/timer-question-page.component';
+import { ShareButtonsModule } from '@ngx-share/buttons';
 
 @NgModule({
-  declarations: [AppComponent, CommaGameComponent, MessagesComponent, QuestionPageComponent, MainPageComponent, DashPageComponent, DashComponent, ResultPageComponent, TimerGameComponent, TimerQuestionPageComponent],
+  declarations: [
+    AppComponent,
+    CommaGameComponent,
+    MessagesComponent,
+    QuestionPageComponent,
+    MainPageComponent,
+    DashPageComponent,
+    DashComponent,
+    ResultPageComponent,
+    TimerGameComponent,
+    TimerQuestionPageComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,7 +41,8 @@ import { TimerQuestionPageComponent } from './timer-question-page/timer-question
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
+    ShareButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
