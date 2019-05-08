@@ -18,6 +18,7 @@ import { ResultPageComponent } from './result-page/result-page.component';
 import { TimerGameComponent } from './timer-game/timer-game.component';
 import { TimerQuestionPageComponent } from './timer-question-page/timer-question-page.component';
 import { ShareButtonsModule } from '@ngx-share/buttons';
+import { DashGameComponent } from './dash-game/dash-game.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
     DashComponent,
     ResultPageComponent,
     TimerGameComponent,
-    TimerQuestionPageComponent
+    TimerQuestionPageComponent,
+    DashGameComponent
   ],
   imports: [
     BrowserModule,

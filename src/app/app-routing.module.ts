@@ -1,3 +1,4 @@
+import { DashGameComponent } from './dash-game/dash-game.component';
 import { TimerGameComponent } from './timer-game/timer-game.component';
 import { TimerQuestionPageComponent } from './timer-question-page/timer-question-page.component';
 import { DashPageComponent } from './dash-page/dash-page.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: '', component: MainPageComponent, pathMatch: 'full' },
   { path: 'comma-game', component: CommaGameComponent },
   { path: 'timer-game', component: TimerGameComponent },
-  { path: 'dash-game', component: DashPageComponent }
+  { path: 'dash-game', component: DashGameComponent }
 ];
 
 @NgModule({

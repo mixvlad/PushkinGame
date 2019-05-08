@@ -1,5 +1,5 @@
 import { Question } from './../question';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -16,7 +16,10 @@ import { MessageService } from '../message.service';
 })
 export class DashPageComponent implements OnInit {
   @Input() question: Question;
-  answered = false;
+  @Output() rightAnswered = new EventEmitter<boolean>();
+  answered: boolean;
+  needHelp: boolean;
+  rightAnswer: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,14 +28,22 @@ export class DashPageComponent implements OnInit {
     private location: Location
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.answered = false;
+  }
 
   check(): void {
     this.answered = true;
+    this.rightAnswer = true;
+  }
+
+  next(): void {
+    this.rightAnswered.emit(this.rightAnswer);
+    this.answered = false;
+    this.needHelp = false;
   }
 
   onDashSelected(rightAnswered: boolean) {}
-  next(): void {}
   updateQuestion(id: number): void {
     this.questionService.getQuestion(id).subscribe(question => (this.question = question));
     this.answered = false;
