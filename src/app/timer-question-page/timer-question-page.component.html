@@ -1,9 +1,9 @@
 <p *ngIf="timeLeft && !answered">{{ timeLeft }} секунд осталось...</p>
-<div *ngIf="question">
-  <h1 *ngIf="!answered">{{ question.questionText }}</h1>
-  <h1 *ngIf="answered">{{ question.correctText }}</h1>
+<div *ngIf="question" [ngClass]="rightAnswer ? 'right' : 'wrong'">
+  <h1 *ngIf="!answered" [innerHTML]="question.questionText"></h1>
+  <h1 *ngIf="answered" [innerHTML]="question.correctText"></h1>
 
-  <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
+  <div *ngIf="answered" class="resultText">
     {{ rightAnswer ? 'Верно' : 'Неверно' }}
   </div>
   <div *ngIf="answered">{{ question.ruleInfo }}</div>

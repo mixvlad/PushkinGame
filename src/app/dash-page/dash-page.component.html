@@ -1,13 +1,19 @@
 <div [ngClass]="answered ? 'answered' : ''">
-  <h1>
-    Петя всегда любил работать один. А потом понял: команда
-    <app-dash [needed]="true" (rightAnswered)="onDashSelected($event)"></app-dash> это когда есть на кого свалить
-    косяки. Теперь он <app-dash [needed]="false" (rightAnswered)="onDashSelected($event)"></app-dash> командный игрок!
+  <h1 *ngIf="textParts">
+    <ng-template ngFor let-item [ngForOf]="textParts" let-i="index">
+      <span *ngIf="item != 'dash+' && item != 'dash-'">{{ item }}</span>
+      <app-dash
+        *ngIf="item === 'dash+' || item === 'dash-'"
+        [needed]="item === 'dash+'"
+        [answered]="answered"
+        [selected]="false"
+        (rightAnswered)="onDashSelected($event)"
+      ></app-dash>
+    </ng-template>
   </h1>
 
   <div *ngIf="answered == true">
-    Тире ставится между подлежащим и сказуемым, если между ними есть слова «это», «вот». Но не ставится, если подлежащее
-    — местоимение.
+    {{ question.ruleInfo }}
   </div>
 </div>
 <div *ngIf="answered == false">

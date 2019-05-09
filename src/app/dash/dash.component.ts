@@ -7,8 +7,10 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class DashComponent implements OnInit {
   @Input() needed: boolean;
+  @Input() answered: boolean;
+  @Input() selected: boolean;
   @Output() rightAnswered = new EventEmitter<boolean>();
-  selected = false;
+
   rightAnswer: boolean;
 
   currentClasses: {};

@@ -1,12 +1,9 @@
 import { Question } from './../question';
-import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Observable } from 'rxjs';
-
-import { CommaGameService } from '../comma-game.service';
-
 import { MessageService } from '../message.service';
 
 @Component({
@@ -17,16 +14,12 @@ import { MessageService } from '../message.service';
 export class DashPageComponent implements OnInit {
   @Input() question: Question;
   @Output() rightAnswered = new EventEmitter<boolean>();
+  textParts: string[];
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;
 
-  constructor(
-    private route: ActivatedRoute,
-    private messageService: MessageService,
-    private questionService: CommaGameService,
-    private location: Location
-  ) {}
+  constructor(private route: ActivatedRoute, private messageService: MessageService, private location: Location) {}
 
   ngOnInit() {
     this.answered = false;
@@ -34,7 +27,15 @@ export class DashPageComponent implements OnInit {
 
   check(): void {
     this.answered = true;
-    this.rightAnswer = true;
+    this.messageService.add(`questionService: ${document.getElementsByClassName('wrong').length}`);
+    this.rightAnswer = document.getElementsByClassName('wrong').length === 0;
+  }
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.question != null) {
+      this.textParts = this.question.questionText.split('!_');
+    }
   }
 
   next(): void {
@@ -44,8 +45,4 @@ export class DashPageComponent implements OnInit {
   }
 
   onDashSelected(rightAnswered: boolean) {}
-  updateQuestion(id: number): void {
-    this.questionService.getQuestion(id).subscribe(question => (this.question = question));
-    this.answered = false;
-  }
 }

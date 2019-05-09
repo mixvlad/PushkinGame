@@ -2,7 +2,7 @@ import { MessageService } from './../message.service';
 import { Question } from './../question';
 import { Component, OnInit, Input } from '@angular/core';
 
-import { CommaGameService } from '../comma-game.service';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-comma-game',
@@ -17,7 +17,7 @@ export class CommaGameComponent implements OnInit {
   score: number;
   showResult: boolean;
 
-  constructor(private questionService: CommaGameService, private messageService: MessageService) {}
+  constructor(private questionService: GameService, private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.startNewGame();
@@ -32,7 +32,7 @@ export class CommaGameComponent implements OnInit {
   }
 
   getQuestions(): void {
-    this.questionService.getQuestions().subscribe(questions => {
+    this.questionService.getQuestions('commaQuestions').subscribe(questions => {
       this.questions = questions;
       this.currentQuestion = this.questions[this.currentId];
       this.totalQuestions = this.questions.length;

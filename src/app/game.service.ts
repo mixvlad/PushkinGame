@@ -12,14 +12,14 @@ const httpOptions = {
 };
 
 @Injectable({ providedIn: 'root' })
-export class CommaGameService {
+export class GameService {
   private questionsUrl = 'api/questions'; // URL to web api
 
   constructor(private http: HttpClient, private messageService: MessageService) {}
 
   /** GET questions from the server */
-  getQuestions(): Observable<Question[]> {
-    return this.http.get<Question[]>(this.questionsUrl).pipe(
+  getQuestions(questionsUrl: string): Observable<Question[]> {
+    return this.http.get<Question[]>('api/' + questionsUrl).pipe(
       tap(_ => this.log('fetched questions')),
       catchError(this.handleError<Question[]>('getQuestions', []))
     );
@@ -44,47 +44,6 @@ export class CommaGameService {
     return this.http.get<Question>(url).pipe(
       tap(_ => this.log(`fetched question id=${id}`)),
       catchError(this.handleError<Question>(`getquestion id=${id}`))
-    );
-  }
-
-  /* GET questions whose name contains search term */
-  searchquestions(term: string): Observable<Question[]> {
-    if (!term.trim()) {
-      // if not search term, return empty question array.
-      return of([]);
-    }
-    return this.http.get<Question[]>(`${this.questionsUrl}/?name=${term}`).pipe(
-      tap(_ => this.log(`found questions matching "${term}"`)),
-      catchError(this.handleError<Question[]>('searchquestions', []))
-    );
-  }
-
-  //////// Save methods //////////
-
-  /** POST: add a new question to the server */
-  addQuestion(question: Question): Observable<Question> {
-    return this.http.post<Question>(this.questionsUrl, question, httpOptions).pipe(
-      tap((newquestion: Question) => this.log(`added question w/ id=${newquestion.id}`)),
-      catchError(this.handleError<Question>('addquestion'))
-    );
-  }
-
-  /** DELETE: delete the question from the server */
-  deleteQuestion(question: Question | number): Observable<Question> {
-    const id = typeof question === 'number' ? question : question.id;
-    const url = `${this.questionsUrl}/${id}`;
-
-    return this.http.delete<Question>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted question id=${id}`)),
-      catchError(this.handleError<Question>('deletequestion'))
-    );
-  }
-
-  /** PUT: update the question on the server */
-  updateQuestion(question: Question): Observable<any> {
-    return this.http.put(this.questionsUrl, question, httpOptions).pipe(
-      tap(_ => this.log(`updated question id=${question.id}`)),
-      catchError(this.handleError<any>('updatequestion'))
     );
   }
 

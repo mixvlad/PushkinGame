@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CommaGameService } from './comma-game.service';
+import { GameService } from './game.service';
 
-describe('CommaGameService', () => {
+describe('GameService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CommaGameService = TestBed.get(CommaGameService);
+    const service: GameService = TestBed.get(GameService);
     expect(service).toBeTruthy();
   });
 });

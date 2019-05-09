@@ -5,8 +5,6 @@ import { Location } from '@angular/common';
 
 import { Observable } from 'rxjs';
 
-import { CommaGameService } from '../comma-game.service';
-
 import { MessageService } from '../message.service';
 
 @Component({
@@ -25,12 +23,7 @@ export class TimerQuestionPageComponent implements OnInit {
   needHelp: boolean;
   rightAnswer: boolean;
 
-  constructor(
-    private route: ActivatedRoute,
-    private messageService: MessageService,
-    private questionService: CommaGameService,
-    private location: Location
-  ) {}
+  constructor(private route: ActivatedRoute, private messageService: MessageService, private location: Location) {}
 
   ngOnInit(): void {
     this.answered = false;
