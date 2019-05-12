@@ -33,7 +33,7 @@ export class CommaGameComponent implements OnInit {
 
   getQuestions(): void {
     this.questionService.getQuestions('commaQuestions').subscribe(questions => {
-      this.questions = questions;
+      this.questions = this.questionService.getRandom(questions, 5);
       this.currentQuestion = this.questions[this.currentId];
       this.totalQuestions = this.questions.length;
       this.messageService.add(`questionService: ${this.currentQuestion.correctText}`);

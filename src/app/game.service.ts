@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap, take } from 'rxjs/operators';
 
 import { Question } from './question';
 import { MessageService } from './message.service';
@@ -16,6 +16,21 @@ export class GameService {
   private questionsUrl = 'api/questions'; // URL to web api
 
   constructor(private http: HttpClient, private messageService: MessageService) {}
+
+  getRandom(arr, n) {
+    const result = new Array(n);
+    let len = arr.length;
+    const taken = new Array(len);
+    if (n > len) {
+      throw new RangeError('getRandom: more elements taken than available');
+    }
+    while (n--) {
+      const x = Math.floor(Math.random() * len);
+      result[n] = arr[x in taken ? taken[x] : x];
+      taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
+  }
 
   /** GET questions from the server */
   getQuestions(questionsUrl: string): Observable<Question[]> {
