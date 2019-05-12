@@ -25,9 +25,9 @@ export class QuestionPageComponent implements OnInit {
     this.answered = false;
   }
 
-  answer(isCorrect: boolean): void {
+  answer(needCommas: boolean): void {
     this.answered = true;
-    this.rightAnswer = this.question.isCorrect === isCorrect;
+    this.rightAnswer = this.question.needCommas === needCommas;
   }
 
   next(): void {

@@ -2,7 +2,11 @@ export class Question {
   id: number;
   questionText: string;
   correctText: string;
+  trueBtnText: string;
+  falseBtnText: string;
+  needCommas: boolean;
+  trueRuleInfo: string;
+  falseRuleInfo: string;
   helpMessage: string;
-  ruleInfo: string;
-  isCorrect: boolean;
+  author: string;
 }

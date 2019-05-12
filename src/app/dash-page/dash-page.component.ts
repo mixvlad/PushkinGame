@@ -34,7 +34,7 @@ export class DashPageComponent implements OnInit {
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnChanges(changes: SimpleChanges) {
     if (this.question != null) {
-      this.textParts = this.question.questionText.split('!_');
+      this.textParts = this.question.questionText.split('|');
     }
   }
 

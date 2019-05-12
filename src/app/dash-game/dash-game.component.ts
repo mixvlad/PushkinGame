@@ -36,7 +36,6 @@ export class DashGameComponent implements OnInit {
       this.showResult = true;
     } else {
       this.currentQuestion = this.questions[this.currentId];
-      this.messageService.add(`questionService: ${this.currentQuestion.correctText}`);
     }
   }
 

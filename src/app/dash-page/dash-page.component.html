@@ -1,10 +1,10 @@
 <div [ngClass]="answered ? 'answered' : ''">
   <h1 *ngIf="textParts">
     <ng-template ngFor let-item [ngForOf]="textParts" let-i="index">
-      <span *ngIf="item != 'dash+' && item != 'dash-'">{{ item }}</span>
+      <span *ngIf="item != '+' && item != '-'">{{ item }}</span>
       <app-dash
-        *ngIf="item === 'dash+' || item === 'dash-'"
-        [needed]="item === 'dash+'"
+        *ngIf="item === '+' || item === '-'"
+        [needed]="item === '+'"
         [answered]="answered"
         [selected]="false"
         (rightAnswered)="onDashSelected($event)"
@@ -13,7 +13,7 @@
   </h1>
 
   <div *ngIf="answered == true">
-    {{ question.ruleInfo }}
+    {{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}
   </div>
 </div>
 <div *ngIf="answered == false">

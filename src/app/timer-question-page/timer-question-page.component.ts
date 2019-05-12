@@ -30,10 +30,10 @@ export class TimerQuestionPageComponent implements OnInit {
     this.resetTimer();
   }
 
-  answer(isCorrect: boolean): void {
+  answer(needCommas: boolean): void {
     this.answered = true;
     this.resetTimer();
-    this.rightAnswer = this.question.isCorrect === isCorrect;
+    this.rightAnswer = this.question.needCommas === needCommas;
   }
 
   next(): void {
