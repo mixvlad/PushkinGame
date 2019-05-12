@@ -12,15 +12,19 @@
     </ng-template>
   </h1>
 
-  <div *ngIf="answered == true">
-    {{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}
+  <div *ngIf="!answered">
+    <span>Подсказка: </span>Поставьте тире, там где они нужны. Бывает что тире не нужно ставить нигде.
+  </div>
+  <div id="buttons" *ngIf="!answered">
+    <button (click)="check()">Проверить</button>
+  </div>
+
+  <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
+    <div *ngIf="answered" class="highlightText">
+      {{ rightAnswer ? 'Верно' : 'Неверно' }}
+    </div>
+    <div *ngIf="answered">{{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}</div>
+
+    <button *ngIf="answered" (click)="next()">Следующий вопрос</button>
   </div>
 </div>
-<div *ngIf="answered == false">
-  <span>Подсказка: </span>Поставьте тире, там где они нужны. Бывает что тире не нужно ставить нигде.
-</div>
-<div id="buttons" *ngIf="answered == false">
-  <button (click)="check()">Проверить</button>
-</div>
-
-<button *ngIf="answered == true" (click)="next()">Следующий вопрос</button>
