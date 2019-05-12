@@ -56,7 +56,7 @@ export class TimerQuestionPageComponent implements OnInit {
       if (this.timeLeft > 0) {
         this.timeLeft--;
       } else {
-        this.answer(false);
+        this.answer(!this.question.needCommas);
       }
     }, 1000);
   }
