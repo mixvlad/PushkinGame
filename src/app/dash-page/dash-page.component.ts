@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 
 import { Observable } from 'rxjs';
 import { MessageService } from '../message.service';
+import { TextPart } from '../textPart';
 
 @Component({
   selector: 'app-dash-page',
@@ -14,7 +15,7 @@ import { MessageService } from '../message.service';
 export class DashPageComponent implements OnInit {
   @Input() question: Question;
   @Output() rightAnswered = new EventEmitter<boolean>();
-  textParts: string[];
+  textParts: TextPart[];
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;
@@ -31,10 +32,19 @@ export class DashPageComponent implements OnInit {
     this.rightAnswer = document.getElementsByClassName('wrong').length === 0;
   }
 
+  // Сплитим и генерим уникальный хэш для уникальности в ngfor
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnChanges(changes: SimpleChanges) {
     if (this.question != null) {
-      this.textParts = this.question.questionText.split('|');
+      this.textParts = this.question.questionText.split('|').map(item => {
+        return new TextPart(
+          item,
+          Math.random()
+            .toString(36)
+            .replace(/[^a-z]+/g, '')
+            .substr(0, 5)
+        );
+      });
     }
   }
 
@@ -45,4 +55,11 @@ export class DashPageComponent implements OnInit {
   }
 
   onDashSelected(rightAnswered: boolean) {}
+
+  trackByFn(index, item) {
+    if (!item) {
+      return null;
+    }
+    return item.hash;
+  }
 }
