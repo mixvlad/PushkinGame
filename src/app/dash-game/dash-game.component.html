@@ -1,7 +1,7 @@
 <h2>Куда нужно вставить тире?</h2>
 <a href="/"><div>В главное меню</div></a>
 <div *ngIf="!showResult">
-  <span>Тест. Вопрос {{ currentId + 1 }}/{{ totalQuestions }}</span>
+  <span>Тест. Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span>
   <app-dash-page [question]="currentQuestion" (rightAnswered)="onAnswered($event)"></app-dash-page>
 </div>
 <app-result-page *ngIf="showResult" [score]="score + '/' + totalQuestions" (newGame)="startNewGame()"></app-result-page>

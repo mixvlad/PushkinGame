@@ -11,7 +11,7 @@ import { MessageService } from '../message.service';
 export class DashGameComponent implements OnInit {
   questions: Question[];
   currentQuestion: Question;
-  currentId: number;
+  currentIndex: number;
   totalQuestions: number;
   score: number;
   showResult: boolean;
@@ -29,19 +29,19 @@ export class DashGameComponent implements OnInit {
   }
 
   next(): void {
-    this.currentId++;
+    this.currentIndex++;
 
     // if no more questions, show result
-    if (this.currentId >= this.totalQuestions) {
+    if (this.currentIndex >= this.totalQuestions) {
       this.showResult = true;
     } else {
-      this.currentQuestion = this.questions[this.currentId];
+      this.currentQuestion = this.questions[this.currentIndex];
     }
   }
 
   startNewGame(): void {
     this.score = 0;
-    this.currentId = 0;
+    this.currentIndex = 0;
     this.currentQuestion = null;
     this.showResult = false;
     this.getQuestions();
@@ -50,7 +50,7 @@ export class DashGameComponent implements OnInit {
   getQuestions(): void {
     this.questionService.getQuestions('dashQuestions').subscribe(questions => {
       this.questions = this.questionService.getRandom(questions, 5);
-      this.currentQuestion = this.questions[this.currentId];
+      this.currentQuestion = this.questions[this.currentIndex];
       this.totalQuestions = this.questions.length;
       this.messageService.add(`questionService: ${this.currentQuestion.correctText}`);
     });
