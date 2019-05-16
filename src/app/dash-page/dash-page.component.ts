@@ -1,20 +1,34 @@
 import { Question } from './../question';
-import { Component, EventEmitter, OnInit, Input, Output, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Input,
+  Output,
+  OnChanges,
+  SimpleChanges,
+  SimpleChange,
+  ViewChildren,
+  QueryList
+} from '@angular/core';
 import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Observable } from 'rxjs';
 import { MessageService } from '../message.service';
 import { TextPart } from '../textPart';
+import { DashComponent } from '../dash/dash.component';
 
 @Component({
   selector: 'app-dash-page',
   templateUrl: './dash-page.component.html',
   styleUrls: ['./dash-page.component.styl']
 })
-export class DashPageComponent implements OnInit {
+export class DashPageComponent implements OnInit, OnChanges {
   @Input() question: Question;
   @Output() rightAnswered = new EventEmitter<boolean>();
+  @ViewChildren('dash') components: QueryList<DashComponent>;
+
   textParts: TextPart[];
   answered: boolean;
   needHelp: boolean;
@@ -29,20 +43,20 @@ export class DashPageComponent implements OnInit {
   check(): void {
     this.answered = true;
     this.messageService.add(`questionService: ${document.getElementsByClassName('wrong').length}`);
-    this.rightAnswer = document.getElementsByClassName('wrong').length === 0;
+    this.rightAnswer = !this.components.some(x => x.rightAnswer === false);
   }
 
   // Сплитим и генерим уникальный хэш для уникальности в ngfor
-  // tslint:disable-next-line:use-life-cycle-interface
   ngOnChanges(changes: SimpleChanges) {
     if (this.question != null) {
       this.textParts = this.question.questionText.split('|').map(item => {
         return new TextPart(
           item,
-          Math.random()
-            .toString(36)
-            .replace(/[^a-z]+/g, '')
-            .substr(0, 5)
+          ''
+          // Math.random()
+          //   .toString(36)
+          //   .replace(/[^a-z]+/g, '')
+          //   .substr(0, 7)
         );
       });
     }
@@ -56,10 +70,10 @@ export class DashPageComponent implements OnInit {
 
   onDashSelected(rightAnswered: boolean) {}
 
-  trackByFn(index, item) {
-    if (!item) {
-      return null;
-    }
-    return item.hash;
-  }
+  // trackByFn(index, item) {
+  //   if (!item) {
+  //     return null;
+  //   }
+  //   return item.hash;
+  // }
 }

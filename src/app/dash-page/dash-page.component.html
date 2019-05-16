@@ -1,8 +1,10 @@
 <div [ngClass]="answered ? 'answered' : ''">
   <h1 *ngIf="textParts">
-    <ng-template ngFor let-item [ngForOf]="textParts" let-i="index" [ngForTrackBy]="trackByFn">
+    <!-- <ng-template ngFor let-item [ngForOf]="textParts" let-i="index" [ngForTrackBy]="trackByFn"> -->
+    <ng-template ngFor let-item [ngForOf]="textParts" let-i="index">
       <span *ngIf="item.value != '+' && item.value != '-'">{{ item.value }}</span>
       <app-dash
+        #dash
         *ngIf="item.value === '+' || item.value === '-'"
         [needed]="item.value === '+'"
         [answered]="answered"

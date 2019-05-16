@@ -14,7 +14,7 @@ import { MessageService } from '../message.service';
 })
 export class QuestionPageComponent implements OnInit {
   @Input() question: Question;
-  @Output() rightAnswered = new EventEmitter<boolean>();
+  @Output() OnAnswered = new EventEmitter<boolean>();
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;
@@ -31,7 +31,7 @@ export class QuestionPageComponent implements OnInit {
   }
 
   next(): void {
-    this.rightAnswered.emit(this.rightAnswer);
+    this.OnAnswered.emit(this.rightAnswer);
     this.answered = false;
     this.needHelp = false;
   }

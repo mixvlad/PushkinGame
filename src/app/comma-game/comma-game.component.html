@@ -2,6 +2,6 @@
 <a href="/"><div>В главное меню</div></a>
 <div *ngIf="!showResult">
   <span *ngIf="currentQuestion">Тест. Вопрос {{ currentId + 1 }}/{{ totalQuestions }}</span>
-  <app-question-page [question]="currentQuestion" (rightAnswered)="onAnswered($event)"></app-question-page>
+  <app-question-page [question]="currentQuestion" (OnAnswered)="onAnswered($event)"></app-question-page>
 </div>
 <app-result-page *ngIf="showResult" [score]="score + '/' + totalQuestions" (newGame)="startNewGame()"></app-result-page>
