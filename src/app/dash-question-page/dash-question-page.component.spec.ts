@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashPageComponent } from './dash-page.component';
+import { DashQuestionPageComponent } from './dash-question-page.component';
 
 describe('DashPageComponent', () => {
-  let component: DashPageComponent;
-  let fixture: ComponentFixture<DashPageComponent>;
+  let component: DashQuestionPageComponent;
+  let fixture: ComponentFixture<DashQuestionPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashPageComponent ]
-    })
-    .compileComponents();
+      declarations: [DashQuestionPageComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashPageComponent);
+    fixture = TestBed.createComponent(DashQuestionPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

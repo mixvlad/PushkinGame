@@ -1,7 +1,0 @@
-<h2>Запятая перед как</h2>
-<a href="/"><div>В главное меню</div></a>
-<div *ngIf="!showResult">
-  <span *ngIf="currentQuestion">Тест. Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span>
-  <app-question-page [question]="currentQuestion" (OnAnswered)="onAnswered($event)"></app-question-page>
-</div>
-<app-result-page *ngIf="showResult" [score]="score + '/' + totalQuestions" (newGame)="startNewGame()"></app-result-page>

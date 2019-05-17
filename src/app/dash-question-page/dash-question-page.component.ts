@@ -1,4 +1,4 @@
-import { Question } from './../question';
+import { Question } from '../question';
 import {
   Component,
   EventEmitter,
@@ -20,13 +20,13 @@ import { TextPart } from '../textPart';
 import { DashComponent } from '../dash/dash.component';
 
 @Component({
-  selector: 'app-dash-page',
-  templateUrl: './dash-page.component.html',
-  styleUrls: ['./dash-page.component.styl']
+  selector: 'app-dash-question-page',
+  templateUrl: './dash-question-page.component.html',
+  styleUrls: ['./dash-question-page.component.styl']
 })
-export class DashPageComponent implements OnInit, OnChanges {
+export class DashQuestionPageComponent implements OnInit, OnChanges {
   @Input() question: Question;
-  @Output() rightAnswered = new EventEmitter<boolean>();
+  @Output() OnAnswered = new EventEmitter<boolean>();
   @ViewChildren('dash') components: QueryList<DashComponent>;
 
   textParts: TextPart[];
@@ -63,7 +63,7 @@ export class DashPageComponent implements OnInit, OnChanges {
   }
 
   next(): void {
-    this.rightAnswered.emit(this.rightAnswer);
+    this.OnAnswered.emit(this.rightAnswer);
     this.answered = false;
     this.needHelp = false;
   }

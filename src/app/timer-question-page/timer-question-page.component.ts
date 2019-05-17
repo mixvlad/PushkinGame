@@ -14,7 +14,7 @@ import { MessageService } from '../message.service';
 })
 export class TimerQuestionPageComponent implements OnInit {
   @Input() question: Question;
-  @Output() rightAnswered = new EventEmitter<boolean>();
+  @Output() OnAnswered = new EventEmitter<boolean>();
   isTimer = true;
   timertime = 5;
   timeLeft: number;
@@ -37,7 +37,7 @@ export class TimerQuestionPageComponent implements OnInit {
   }
 
   next(): void {
-    this.rightAnswered.emit(this.rightAnswer);
+    this.OnAnswered.emit(this.rightAnswer);
     this.answered = false;
     this.needHelp = false;
   }

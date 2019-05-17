@@ -1,15 +1,17 @@
-import { MessageService } from './../message.service';
-import { Question } from './../question';
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GameService } from '../game.service';
+import { MessageService } from '../message.service';
+import { Question } from '../question';
 
 @Component({
-  selector: 'app-comma-game',
-  templateUrl: './comma-game.component.html',
-  styleUrls: ['./comma-game.component.styl']
+  selector: 'app-game',
+  templateUrl: './game.component.html',
+  styleUrls: ['./game.component.styl']
 })
-export class CommaGameComponent implements OnInit {
+export class GameComponent implements OnInit {
+  currentGame: string;
+  gameTitle: string;
   questions: Question[];
   currentQuestion: Question;
   currentIndex: number;
@@ -17,7 +19,10 @@ export class CommaGameComponent implements OnInit {
   score: number;
   showResult: boolean;
 
-  constructor(private questionService: GameService, private messageService: MessageService) {}
+  constructor(private questionService: GameService, private messageService: MessageService, private router: Router) {
+    this.currentGame = this.router.url.substring(1);
+    this.gameTitle = questionService.getGameTitle(this.currentGame);
+  }
 
   ngOnInit(): void {
     this.startNewGame();
@@ -32,7 +37,7 @@ export class CommaGameComponent implements OnInit {
   }
 
   getQuestions(): void {
-    this.questionService.getQuestions('commaQuestions').subscribe(questions => {
+    this.questionService.getQuestions(this.currentGame + 'Questions').subscribe(questions => {
       this.questions = this.questionService.getRandom(questions, 5);
       this.currentQuestion = this.questions[this.currentIndex];
       this.totalQuestions = this.questions.length;

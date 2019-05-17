@@ -8,31 +8,27 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommaGameComponent } from './comma-game/comma-game.component';
 import { MessagesComponent } from './messages/messages.component';
-import { QuestionPageComponent } from './question-page/question-page.component';
+import { CommaQuestionPageComponent } from './comma-question-page/comma-question-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { DashPageComponent } from './dash-page/dash-page.component';
+import { DashQuestionPageComponent } from './dash-question-page/dash-question-page.component';
 import { DashComponent } from './dash/dash.component';
 import { ResultPageComponent } from './result-page/result-page.component';
-import { TimerGameComponent } from './timer-game/timer-game.component';
 import { TimerQuestionPageComponent } from './timer-question-page/timer-question-page.component';
 import { ShareButtonsModule } from '@ngx-share/buttons';
-import { DashGameComponent } from './dash-game/dash-game.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommaGameComponent,
     MessagesComponent,
-    QuestionPageComponent,
+    CommaQuestionPageComponent,
     MainPageComponent,
-    DashPageComponent,
+    DashQuestionPageComponent,
     DashComponent,
     ResultPageComponent,
-    TimerGameComponent,
     TimerQuestionPageComponent,
-    DashGameComponent
+    GameComponent
   ],
   imports: [
     BrowserModule,

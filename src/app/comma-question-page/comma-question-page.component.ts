@@ -1,4 +1,4 @@
-import { Question } from './../question';
+import { Question } from '../question';
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 import { MessageService } from '../message.service';
 
 @Component({
-  selector: 'app-question-page',
-  templateUrl: './question-page.component.html',
-  styleUrls: ['./question-page.component.styl']
+  selector: 'app-comma-question-page',
+  templateUrl: './comma-question-page.component.html',
+  styleUrls: ['./comma-question-page.component.styl']
 })
-export class QuestionPageComponent implements OnInit {
+export class CommaQuestionPageComponent implements OnInit {
   @Input() question: Question;
   @Output() OnAnswered = new EventEmitter<boolean>();
   answered: boolean;
