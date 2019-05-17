@@ -14,30 +14,15 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class GameService {
   private questionsUrl = 'api/questions'; // URL to web api
-  games = []; // create an empty array
+  games = { comma: 'Запятая перед как', timer: 'Вводные', dash: 'Куда нужно вставить тире?' }; // create an empty array
 
-  constructor(private http: HttpClient, private messageService: MessageService) {
-    this.games.push(
-      {
-        key: 'comma',
-        value: 'Запятая перед как'
-      },
-      {
-        key: 'timer',
-        value: 'Вводные'
-      },
-      {
-        key: 'dash',
-        value: 'Куда нужно вставить тире?'
-      }
-    );
-  }
+  constructor(private http: HttpClient, private messageService: MessageService) {}
 
   getGameTitle(name: string): string {
     if (name === null || name === '') {
       return null;
     }
-    return this.games.find(x => x.key === name).value;
+    return this.games[name];
   }
 
   getRandom(arr, n) {
