@@ -18,6 +18,7 @@ export class GameComponent implements OnInit {
   totalQuestions: number;
   score: number;
   showResult: boolean;
+  answered = false;
 
   constructor(private questionService: GameService, private messageService: MessageService, private router: Router) {
     this.currentGame = this.router.url.substring(1);

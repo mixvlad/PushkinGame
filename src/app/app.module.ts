@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MessagesComponent } from './messages/messages.component';
 import { CommaQuestionPageComponent } from './comma-question-page/comma-question-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DashQuestionPageComponent } from './dash-question-page/dash-question-page.component';
@@ -21,7 +20,6 @@ import { GameComponent } from './game/game.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MessagesComponent,
     CommaQuestionPageComponent,
     MainPageComponent,
     DashQuestionPageComponent,

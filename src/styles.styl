@@ -1,36 +1,17 @@
 @import '~@ngx-share/button/themes/default/default-theme.css';
-
-$main-color = #333
-$main-color-hover = #000
-$color-secondary = #0D49B0
-$color-secondary-hover = #0D49F0
-$color-right = #5cb85c
-$color-wrong = #d9534f
-$color-on-dark = #ffffff;
-
-$font-size = 1.1rem
-$font-size--h1 = 3rem
-$font-size--h2 = 1.75rem
-$font-size--h3 = 1.25rem
-$font-size--small = 0.75rem
-$line-height = 1.375em
-$font-family = 'Roboto', Helvetica, sans-serif;
-
-$screen-xs = 0
-$screen-sm = 480px
-$screen-md = 768px
-$screen-lg = 992px
-$screen-xl = 1200px
+@import './style-params.styl';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
 
 /* Application-wide Styles */
 h1 {
   font-size: $font-size--h1;
   font-weight: 900;
-  line-height: $line-height;
+  line-height: 1.2em;
   margin: 0.875rem 0;
 }
-h2
-{
+
+h2 {
   color: #444;
   font-weight: lighter;
   font-size: $font-size--h2;
@@ -38,12 +19,26 @@ h2
   margin-block-end: 0.6rem;
 }
 
-body {
-  margin: 2em;
-  max-width: 600px;
+html, body {
+  min-height: 100%;
 }
-body, input[type="text"]{
-  color: $main-color;
+
+body {
+  margin: 0;
+  background-color: $color-background;
+  line-height: $line-height;
+}
+
+body, input[type='text'] {
+  color: $color-primary;
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .lid, h3 {
@@ -53,17 +48,12 @@ body, input[type="text"]{
 }
 
 p {
-    margin: 0.6rem 0;
-    line-height: 1.4rem;
-}
-
-/* everywhere else */
-* {
-  font-family: 'Roboto', Helvetica, sans-serif;
+  margin: 0.6rem 0;
+  line-height: $line-height;
 }
 
 button {
-  background-color: $main-color;
+  background-color: $color-primary;
   color: $color-on-dark;
   border: none;
   padding: 0.4rem 1rem;
@@ -77,14 +67,36 @@ button {
 }
 
 button:hover {
-  background-color: $main-color-hover;
+  background-color: $color-primary-hover;
 }
 
 .button-secondary {
   background-color: $color-secondary;
 }
+
 .button-secondary:hover {
   background-color: $color-secondary-hover;
 }
 
+.root {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
 
+.container {
+  max-width: 700px;
+  background-color: white;
+  min-height: 80%;
+  position: relative;
+}
+
+@media only screen and (min-width: 32em) {
+  .container {
+    align-items: center;
+    flex-grow: 0;
+    width: 100%;
+    padding: 10px 45px 5px;
+  }
+}

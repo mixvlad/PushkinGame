@@ -1,11 +1,12 @@
 import { Question } from '../question';
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output, ViewChildren, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Observable } from 'rxjs';
 
 import { MessageService } from '../message.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-comma-question-page',
@@ -15,6 +16,8 @@ import { MessageService } from '../message.service';
 export class CommaQuestionPageComponent implements OnInit {
   @Input() question: Question;
   @Output() OnAnswered = new EventEmitter<boolean>();
+  @ViewChild('btnTrue') btnTrue;
+  @ViewChild('btnFalse') btnFalse;
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;
@@ -25,15 +28,27 @@ export class CommaQuestionPageComponent implements OnInit {
     this.answered = false;
   }
 
-  answer(needCommas: boolean): void {
+  answer(btn, needCommas: boolean): void {
+    btn.setAttribute('data-picked', 'true');
     this.answered = true;
     this.rightAnswer = this.question.needCommas === needCommas;
   }
 
-  next(): void {
+  getAnswerClasses(btn, btnAnswer: boolean) {
+    const dataPicked = JSON.parse(btn.getAttribute('data-picked'));
+    return {
+      Answer__correct: this.answered && this.question.needCommas === btnAnswer && dataPicked,
+      Answer__incorrect: this.answered && !this.question.needCommas === btnAnswer && dataPicked,
+      Answer__disabled: this.answered && !dataPicked
+    };
+  }
+
+  next(btnTrue, btnFalse): void {
     this.OnAnswered.emit(this.rightAnswer);
     this.answered = false;
     this.needHelp = false;
+    btnTrue.setAttribute('data-picked', 'false');
+    btnFalse.setAttribute('data-picked', 'false');
   }
 
   help(): void {

@@ -1,15 +1,110 @@
-
+@import '../../style-params.styl';
 
 ::ng-deep .highlightText {
   color: #0D49B0;
 }
 
-
 .right ::ng-deep .highlightText {
   color: #4EB454;
 }
 
-
 .wrong ::ng-deep .highlightText {
   color: #FF5261;
+}
+
+.questionText {
+  font-family: $serif-font-family;
+  font-size: 3rem;
+  font-weight: 900;
+  overflow-y: auto;
+  height: auto;
+}
+
+.Question__body {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgb(229, 229, 229) 0px 0px 0px 1px;
+  margin: 0px 1px 15px;
+  border-radius: 4px;
+}
+
+.Answer__root {
+  padding: 12px 10px 13px 15px;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(229, 229, 229) 0px -1px inset;
+  -webkit-appearance: none;
+  margin: 0px;
+  padding: 13px 12px 12px;
+  border-width: 0px;
+  border-radius: 0px;
+  outline: none;
+}
+
+[data-picked='true'] {
+  z-index: 1;
+  cursor: default;
+  background: rgb(245, 245, 245);
+}
+
+.Answer__root:first-child {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.Answer__root:first-child::after {
+  border-radius: 4px 0px 0px;
+}
+
+.Answer__root:last-child::after {
+  border-radius: 0px 0px 0px 4px;
+}
+
+.Answer__root::after {
+  position: absolute;
+  top: -1px;
+  bottom: 0px;
+  left: -1px;
+  width: 4px;
+}
+
+.Answer__disabled {
+  pointer-events: none;
+}
+
+.Answer__incorrect .Answer__title {
+  color: rgb(179, 45, 45);
+}
+
+.Answer__incorrect::after {
+  content: '';
+  background-color: rgb(179, 45, 45);
+}
+
+.Answer__correct .Answer__title {
+  color: rgb(78, 180, 84);
+}
+
+.Answer__disabled .Answer__title {
+  opacity: 0.5;
+  color: rgb(0, 0, 0);
+}
+
+.Answer__correct::after {
+  content: '';
+  background-color: rgb(78, 180, 84);
+}
+
+.Answer__headline {
+  flex-flow: row nowrap;
+  display: flex;
+}
+
+.Answer__text {
+}
+
+.Answer__disabled {
+}
+
+.Answer__correct {
 }

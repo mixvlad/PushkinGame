@@ -1,21 +1,77 @@
 <div *ngIf="question">
-  <div *ngIf="!answered">
-    <h1 [innerHTML]="question.questionText"></h1>
-    <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
-    <div *ngIf="question" id="buttons">
-      <button (click)="answer(true)">{{ question.trueBtnText }}</button>
-      <button (click)="answer(false)">{{ question.falseBtnText }}</button>
-      <button class="button-secondary" (click)="help()">Взять подсказку</button>
-    </div>
-  </div>
-  <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
-    <h1 *ngIf="answered" [innerHTML]="question.correctText"></h1>
+  <div class="">
+    <div>
+      <p *ngIf="!answered" [innerHTML]="question.questionText" class="questionText"></p>
+      <p
+        *ngIf="answered"
+        [ngClass]="rightAnswer ? 'right' : 'wrong'"
+        [innerHTML]="question.correctText"
+        class="questionText"
+      ></p>
 
-    <div *ngIf="answered" class="highlightText">
-      {{ rightAnswer ? 'Верно' : 'Неверно' }}
-    </div>
-    <div *ngIf="answered">{{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}</div>
+      <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
+      <div class="Question__body">
+        <div
+          #btnTrue
+          class="Answer__root"
+          data-picked="false"
+          [ngClass]="getAnswerClasses(btnTrue, true)"
+          role="button"
+          tabindex="-1"
+          (click)="answer(btnTrue, true)"
+        >
+          <div class="Answer__headline">
+            <div class="Answer__text">
+              <div class="Answer__title">{{ question.trueBtnText }}</div>
+            </div>
+          </div>
+          <div class="Answer__text" *ngIf="btnTrue.getAttribute('data-picked') === 'true'">
+            <div class="Answer__comment">
+              <p class="RawHTMLBlock-SimpleBlock-SimpleBlock__p RawHTMLBlock-SimpleBlock-SimpleBlock__isInAnswer">
+                {{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          #btnFalse
+          class="Answer__root"
+          [ngClass]="getAnswerClasses(btnFalse, false)"
+          data-picked="false"
+          role="button"
+          tabindex="-1"
+          (click)="answer(btnFalse, false)"
+        >
+          <div class="Answer__headline">
+            <div class="Answer__text">
+              <div class="Answer__title">{{ question.falseBtnText }}</div>
+            </div>
+          </div>
+          <div class="Answer__text" *ngIf="btnFalse.picked">
+            <div class="Answer__comment">
+              <p class="RawHTMLBlock-SimpleBlock-SimpleBlock__p RawHTMLBlock-SimpleBlock-SimpleBlock__isInAnswer">
+                {{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <button *ngIf="answered" (click)="next()">Следующий вопрос</button>
+        <!-- <div class="Answer__root Answer__disabled" data-picked="false" role="button" tabindex="-1">
+          <div class="Answer__headline">
+            <div class="Answer__text">
+              <div class="Answer__title">Гласеон</div>
+            </div>
+          </div>
+          <div class="Answer__text"></div>
+        </div> -->
+      </div>
+
+      <button *ngIf="answered" (click)="next(btnTrue, btnFalse)">Следующий вопрос</button>
+      <!-- <div *ngIf="question" id="buttons">
+        <button (click)="answer(true)">{{ question.trueBtnText }}</button>
+        <button (click)="answer(false)">{{ question.falseBtnText }}</button>
+        <button class="button-secondary" (click)="help()">Взять подсказку</button>
+      </div> -->
+    </div>
   </div>
 </div>

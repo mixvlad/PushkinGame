@@ -1,0 +1,44 @@
+
+@import '../../style-params.styl';
+
+@media only screen and (min-width: 32em) {
+  .container {
+    border-radius: 8px;
+  }
+}
+
+.secondary {
+  color: #858585;
+}
+
+.root {
+  height: 100vh;
+}
+
+.game__close {
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  cursor: pointer;
+  top: 0.5em;
+  right: 0.5em;
+}
+
+.game__close:focus, .game__close:active:focus {
+  outline: none;
+}
+
+.close_icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.footer-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

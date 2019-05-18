@@ -1,21 +1,42 @@
-<h2>{{ gameTitle }}</h2>
-<a href="/"><div>В главное меню</div></a>
-<div *ngIf="!showResult">
-  <span *ngIf="currentQuestion">Тест. Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span>
-  <app-comma-question-page
-    *ngIf="currentGame == 'comma'"
-    [question]="currentQuestion"
-    (OnAnswered)="onAnswered($event)"
-  ></app-comma-question-page>
-  <app-timer-question-page
-    *ngIf="currentGame == 'timer'"
-    [question]="currentQuestion"
-    (OnAnswered)="onAnswered($event)"
-  ></app-timer-question-page>
-  <app-dash-question-page
-    *ngIf="currentGame == 'dash'"
-    [question]="currentQuestion"
-    (OnAnswered)="onAnswered($event)"
-  ></app-dash-question-page>
+<div class="root">
+  <div class="container">
+    <div class="game__close" routerLink="/">
+      <svg class="close__icon" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd" stroke="#212121">
+          <rect height="38.5" rx="19.25" stroke-width="1.5" width="38.5" x=".75" y=".75"></rect>
+          <path d="M13.75 12.5l13.14 14.15M26.89 12.5L13.75 26.65" stroke-linecap="square" stroke-width="1.4"></path>
+        </g>
+      </svg>
+    </div>
+
+    <div *ngIf="!showResult">
+      <span *ngIf="currentQuestion" class="secondary">Тест. Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span
+      ><br />
+      <span>{{ gameTitle }}</span>
+      <app-comma-question-page
+        *ngIf="currentGame == 'comma'"
+        [question]="currentQuestion"
+        (OnAnswered)="onAnswered($event)"
+      ></app-comma-question-page>
+      <app-timer-question-page
+        *ngIf="currentGame == 'timer'"
+        [question]="currentQuestion"
+        (OnAnswered)="onAnswered($event)"
+      ></app-timer-question-page>
+      <app-dash-question-page
+        *ngIf="currentGame == 'dash'"
+        [question]="currentQuestion"
+        (OnAnswered)="onAnswered($event)"
+      ></app-dash-question-page>
+    </div>
+    <app-result-page
+      *ngIf="showResult"
+      [score]="score + '/' + totalQuestions"
+      (newGame)="startNewGame()"
+    ></app-result-page>
+    <div class="footer-wrap">
+      <!-- <button class="button-secondary">Взять подсказку</button> -->
+      <button *ngIf="answered" (click)="next()">Следующий вопрос</button>
+    </div>
+  </div>
 </div>
-<app-result-page *ngIf="showResult" [score]="score + '/' + totalQuestions" (newGame)="startNewGame()"></app-result-page>
