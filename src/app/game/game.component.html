@@ -39,7 +39,7 @@
       (newGame)="startNewGame()"
     ></app-result-page>
     <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ currentQuestion.helpMessage }}</div>
-    <div class="footer-wrap" *ngIf="currentGame != 'dash'">
+    <div class="footer-wrap">
       <button *ngIf="currentGame == 'dash' && !answered && !showResult" (click)="check()">
         Проверить
       </button>
