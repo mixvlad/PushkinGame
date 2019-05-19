@@ -8,36 +8,33 @@
         </g>
       </svg>
     </div>
-
-    <div *ngIf="!showResult">
-      <div class="topPanel">
-        <span *ngIf="currentQuestion" class="secondary">Тест. Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span
-        ><br />
-        <span>{{ gameTitle }}</span>
-      </div>
-
-      <app-comma-question-page
-        *ngIf="currentGame == 'comma'"
-        [question]="currentQuestion"
-        (OnAnswered)="onAnswered($event)"
-      ></app-comma-question-page>
-      <app-timer-question-page
-        *ngIf="currentGame == 'timer'"
-        [question]="currentQuestion"
-        (OnAnswered)="onAnswered($event)"
-      ></app-timer-question-page>
-      <app-dash-question-page
-        #dashPage
-        *ngIf="currentGame == 'dash'"
-        [question]="currentQuestion"
-        (OnAnswered)="onAnswered($event)"
-      ></app-dash-question-page>
+    <div class="topPanel">
+      <span *ngIf="currentQuestion" class="secondary"
+        >Тест. <span *ngIf="!showResult">Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span></span
+      ><br />
+      <span>{{ gameTitle }}</span>
     </div>
-    <app-result-page
-      *ngIf="showResult"
-      [score]="score + '/' + totalQuestions"
-      (newGame)="startNewGame()"
-    ></app-result-page>
+    <div *ngIf="!showResult">
+      <div [ngSwitch]="currentGame">
+        <app-comma-question-page
+          *ngSwitchCase="'comma'"
+          [question]="currentQuestion"
+          (OnAnswered)="onAnswered($event)"
+        ></app-comma-question-page>
+        <app-timer-question-page
+          *ngSwitchCase="'timer'"
+          [question]="currentQuestion"
+          (OnAnswered)="onAnswered($event)"
+        ></app-timer-question-page>
+        <app-dash-question-page
+          #dashPage
+          *ngSwitchCase="'dash'"
+          [question]="currentQuestion"
+          (OnAnswered)="onAnswered($event)"
+        ></app-dash-question-page>
+      </div>
+    </div>
+    <app-result-page *ngIf="showResult" [score]="score" [total]="totalQuestions"></app-result-page>
     <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ currentQuestion.helpMessage }}</div>
     <div class="footer-wrap">
       <button *ngIf="currentGame == 'dash' && !answered && !showResult" (click)="check()">
