@@ -6,9 +6,20 @@
 /* Application-wide Styles */
 h1 {
   font-size: $font-size--h1;
-  font-weight: 900;
+  font-weight: normal;
   line-height: 1.2em;
   margin: 0.875rem 0;
+  font-family: $serif-font-family;
+  position: relative;
+  display: block;
+}
+
+.title::before {
+  content: '«Чтение — вот лучшее учение»';
+  font-size: 16px;
+  position: absolute;
+  top: -1.6rem;
+  left: 7.7rem;
 }
 
 h2 {
@@ -31,7 +42,7 @@ body {
 
 body, input[type='text'] {
   color: $color-primary;
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: $font-family;
 }
 
 * {
