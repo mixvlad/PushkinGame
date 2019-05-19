@@ -10,9 +10,12 @@
     </div>
 
     <div *ngIf="!showResult">
-      <span *ngIf="currentQuestion" class="secondary">Тест. Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span
-      ><br />
-      <span>{{ gameTitle }}</span>
+      <div class="topPanel">
+        <span *ngIf="currentQuestion" class="secondary">Тест. Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span
+        ><br />
+        <span>{{ gameTitle }}</span>
+      </div>
+
       <app-comma-question-page
         *ngIf="currentGame == 'comma'"
         [question]="currentQuestion"
@@ -24,6 +27,7 @@
         (OnAnswered)="onAnswered($event)"
       ></app-timer-question-page>
       <app-dash-question-page
+        #dashPage
         *ngIf="currentGame == 'dash'"
         [question]="currentQuestion"
         (OnAnswered)="onAnswered($event)"
@@ -34,9 +38,23 @@
       [score]="score + '/' + totalQuestions"
       (newGame)="startNewGame()"
     ></app-result-page>
-    <div class="footer-wrap">
-      <!-- <button class="button-secondary">Взять подсказку</button> -->
-      <button *ngIf="answered" (click)="next()">Следующий вопрос</button>
+    <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ currentQuestion.helpMessage }}</div>
+    <div class="footer-wrap" *ngIf="currentGame != 'dash'">
+      <button *ngIf="currentGame == 'dash' && !answered && !showResult" (click)="check()">
+        Проверить
+      </button>
+      <button
+        *ngIf="currentGame != 'dash' && !answered && !needHelp && !showResult"
+        class="button-secondary"
+        (click)="help()"
+      >
+        Взять подсказку
+      </button>
+      <button *ngIf="answered" (click)="next()">
+        {{ currentIndex + 1 === totalQuestions ? 'Показать результаты' : 'Cледующий вопрос' }}
+      </button>
+
+      <button *ngIf="showResult" (click)="startNewGame()">Играть еще</button>
     </div>
   </div>
 </div>

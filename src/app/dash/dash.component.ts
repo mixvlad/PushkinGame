@@ -9,7 +9,7 @@ export class DashComponent implements OnInit {
   @Input() needed: boolean;
   @Input() answered: boolean;
   @Input() selected: boolean;
-  @Output() rightAnswered = new EventEmitter<boolean>();
+  @Output() OnAnswered = new EventEmitter<boolean>();
 
   rightAnswer: boolean;
 
@@ -33,7 +33,7 @@ export class DashComponent implements OnInit {
   clickDash() {
     this.selected = !this.selected;
     this.rightAnswer = this.selected === this.needed;
-    this.rightAnswered.emit(this.selected === this.needed);
+    this.OnAnswered.emit(this.selected === this.needed);
     this.setCurrentClasses();
   }
 }

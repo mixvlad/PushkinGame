@@ -1,4 +1,4 @@
-<div [ngClass]="answered ? 'answered' : ''">
+<div [ngClass]="answered ? 'answered' : ''" class="wrapper">
   <h1 *ngIf="textParts">
     <!-- <ng-template ngFor let-item [ngForOf]="textParts" let-i="index" [ngForTrackBy]="trackByFn"> -->
     <ng-template ngFor let-item [ngForOf]="textParts" let-i="index">
@@ -9,7 +9,6 @@
         [needed]="item.value === '+'"
         [answered]="answered"
         [selected]="false"
-        (rightAnswered)="onDashSelected($event)"
       ></app-dash>
     </ng-template>
   </h1>
@@ -17,16 +16,11 @@
   <div *ngIf="!answered">
     <span>Подсказка: </span>Поставьте тире, там где они нужны. Бывает что тире не нужно ставить нигде.
   </div>
-  <div id="buttons" *ngIf="!answered">
-    <button (click)="check()">Проверить</button>
-  </div>
 
   <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
     <div *ngIf="answered" class="highlightText">
       {{ rightAnswer ? 'Верно' : 'Неверно' }}
     </div>
     <div *ngIf="answered">{{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}</div>
-
-    <button *ngIf="answered" (click)="next()">Следующий вопрос</button>
   </div>
 </div>

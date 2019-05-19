@@ -40,40 +40,22 @@ export class DashQuestionPageComponent implements OnInit, OnChanges {
     this.answered = false;
   }
 
-  check(): void {
+  check() {
     this.answered = true;
     this.messageService.add(`questionService: ${document.getElementsByClassName('wrong').length}`);
     this.rightAnswer = !this.components.some(x => x.rightAnswer === false);
+
+    this.OnAnswered.emit(this.rightAnswer);
   }
 
   // Сплитим и генерим уникальный хэш для уникальности в ngfor
   ngOnChanges(changes: SimpleChanges) {
     if (this.question != null) {
+      this.answered = false;
+      this.needHelp = false;
       this.textParts = this.question.questionText.split('|').map(item => {
-        return new TextPart(
-          item,
-          ''
-          // Math.random()
-          //   .toString(36)
-          //   .replace(/[^a-z]+/g, '')
-          //   .substr(0, 7)
-        );
+        return new TextPart(item);
       });
     }
   }
-
-  next(): void {
-    this.OnAnswered.emit(this.rightAnswer);
-    this.answered = false;
-    this.needHelp = false;
-  }
-
-  onDashSelected(rightAnswered: boolean) {}
-
-  // trackByFn(index, item) {
-  //   if (!item) {
-  //     return null;
-  //   }
-  //   return item.hash;
-  // }
 }

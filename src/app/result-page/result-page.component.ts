@@ -7,12 +7,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ResultPageComponent implements OnInit {
   @Input() score: string;
-  @Output() newGame = new EventEmitter<string>();
   constructor() {}
 
   ngOnInit() {}
-
-  playAgain(): void {
-    this.newGame.emit();
-  }
 }

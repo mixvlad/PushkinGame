@@ -1,22 +1,19 @@
 <div *ngIf="question">
-  <div *ngIf="!answered">
-    <p *ngIf="timeLeft >= 0">{{ timeLeft }} секунд осталось...</p>
-    <h1 [innerHTML]="question.questionText"></h1>
+  <div>
+    <p *ngIf="!answered && timeLeft >= 0" class="timer">{{ timeLeft }} секунд осталось...</p>
+    <p *ngIf="!answered" [innerHTML]="question.questionText" class="questionText"></p>
+    <p
+      *ngIf="answered"
+      [ngClass]="rightAnswer ? 'right' : 'wrong'"
+      [innerHTML]="question.correctText"
+      class="questionText"
+    ></p>
+
     <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
-    <div *ngIf="question" id="buttons">
-      <button (click)="answer(true)">Запятая нужна</button>
-      <button (click)="answer(false)">Без запятой</button>
-      <button class="button-secondary" (click)="help()">Взять подсказку</button>
+    <div class="Question__body">
+      <div *ngFor="let button of question.buttons">
+        <app-game-button [button]="button" [answered]="answered" (OnAnswered)="answer($event)"></app-game-button>
+      </div>
     </div>
-  </div>
-  <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
-    <h1 *ngIf="answered" [innerHTML]="question.correctText"></h1>
-
-    <div *ngIf="answered" class="highlightText">
-      {{ rightAnswer ? 'Верно' : 'Неверно' }}
-    </div>
-    <div *ngIf="answered">{{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}</div>
-
-    <button *ngIf="answered" (click)="next()">Следующий вопрос</button>
   </div>
 </div>

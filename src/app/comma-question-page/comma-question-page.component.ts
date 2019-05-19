@@ -1,19 +1,12 @@
 import { Question } from '../question';
-import { Component, OnInit, EventEmitter, Input, Output, ViewChildren, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
-import { Location } from '@angular/common';
-
-import { Observable } from 'rxjs';
-
-import { MessageService } from '../message.service';
-import { element } from 'protractor';
+import { Component, OnInit, EventEmitter, Input, Output, OnChanges, ViewChild, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-comma-question-page',
   templateUrl: './comma-question-page.component.html',
   styleUrls: ['./comma-question-page.component.styl']
 })
-export class CommaQuestionPageComponent implements OnInit {
+export class CommaQuestionPageComponent implements OnInit, OnChanges {
   @Input() question: Question;
   @Output() OnAnswered = new EventEmitter<boolean>();
   @ViewChild('btnTrue') btnTrue;
@@ -22,36 +15,22 @@ export class CommaQuestionPageComponent implements OnInit {
   needHelp: boolean;
   rightAnswer: boolean;
 
-  constructor(private route: ActivatedRoute, private messageService: MessageService, private location: Location) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.answered = false;
   }
 
-  answer(btn, needCommas: boolean): void {
-    btn.setAttribute('data-picked', 'true');
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.question != null) {
+      this.answered = false;
+      this.needHelp = false;
+    }
+  }
+
+  answer(isRightAnswer: boolean): void {
     this.answered = true;
-    this.rightAnswer = this.question.needCommas === needCommas;
-  }
-
-  getAnswerClasses(btn, btnAnswer: boolean) {
-    const dataPicked = JSON.parse(btn.getAttribute('data-picked'));
-    return {
-      Answer__correct: this.answered && this.question.needCommas === btnAnswer && dataPicked,
-      Answer__incorrect: this.answered && !this.question.needCommas === btnAnswer && dataPicked,
-      Answer__disabled: this.answered && !dataPicked
-    };
-  }
-
-  next(btnTrue, btnFalse): void {
+    this.rightAnswer = isRightAnswer;
     this.OnAnswered.emit(this.rightAnswer);
-    this.answered = false;
-    this.needHelp = false;
-    btnTrue.setAttribute('data-picked', 'false');
-    btnFalse.setAttribute('data-picked', 'false');
-  }
-
-  help(): void {
-    this.needHelp = true;
   }
 }

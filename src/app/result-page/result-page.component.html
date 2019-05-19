@@ -1,22 +1,23 @@
-<h1>{{ score }}</h1>
-<p>Вы справились как менеджер среднего звена. Немного потренироваться — и станете шефом!</p>
-<button (click)="playAgain()">Играть еще</button>
-<p>Рассказать коллегам:</p>
-<share-buttons
-  [theme]="'default'"
-  [include]="[
-    'facebook',
-    'twitter',
-    'linkedin',
-    'google',
-    'pinterest',
-    'vk',
-    'telegram',
-    'messenger',
-    'whatsapp',
-    'email',
-    'copy'
-  ]"
-  [show]="7"
-  [showCount]="true"
-></share-buttons>
+<div class="wrapper">
+  <h1>{{ score }}</h1>
+  <p>Вы справились как менеджер среднего звена. Немного потренироваться — и станете шефом!</p>
+  <p>Рассказать коллегам:</p>
+  <share-buttons
+    [theme]="'default'"
+    [include]="[
+      'facebook',
+      'twitter',
+      'linkedin',
+      'google',
+      'pinterest',
+      'vk',
+      'telegram',
+      'messenger',
+      'whatsapp',
+      'email',
+      'copy'
+    ]"
+    [show]="7"
+    [showCount]="true"
+  ></share-buttons>
+</div>

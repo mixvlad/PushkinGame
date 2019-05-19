@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameService } from '../game.service';
 import { MessageService } from '../message.service';
@@ -10,6 +10,7 @@ import { Question } from '../question';
   styleUrls: ['./game.component.styl']
 })
 export class GameComponent implements OnInit {
+  @ViewChild('dashPage') dashPage;
   currentGame: string;
   gameTitle: string;
   questions: Question[];
@@ -19,6 +20,7 @@ export class GameComponent implements OnInit {
   score: number;
   showResult: boolean;
   answered = false;
+  needHelp: boolean;
 
   constructor(private questionService: GameService, private messageService: MessageService, private router: Router) {
     this.currentGame = this.router.url.substring(1);
@@ -42,7 +44,6 @@ export class GameComponent implements OnInit {
       this.questions = this.questionService.getRandom(questions, 5);
       this.currentQuestion = this.questions[this.currentIndex];
       this.totalQuestions = this.questions.length;
-      this.messageService.add(`questionService: ${this.currentQuestion.correctText}`);
     });
   }
 
@@ -50,11 +51,17 @@ export class GameComponent implements OnInit {
     if (rightAnswered === true) {
       this.score++;
     }
-    this.next();
+    this.answered = true;
+  }
+
+  help(): void {
+    this.needHelp = true;
   }
 
   next(): void {
     this.currentIndex++;
+    this.needHelp = false;
+    this.answered = false;
 
     // if no more questions, show result
     if (this.currentIndex >= this.totalQuestions) {
@@ -63,5 +70,9 @@ export class GameComponent implements OnInit {
       this.currentQuestion = this.questions[this.currentIndex];
       this.messageService.add(`questionService: ${this.currentQuestion.correctText}`);
     }
+  }
+
+  check() {
+    this.dashPage.check();
   }
 }

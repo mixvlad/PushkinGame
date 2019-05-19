@@ -16,6 +16,7 @@ import { ResultPageComponent } from './result-page/result-page.component';
 import { TimerQuestionPageComponent } from './timer-question-page/timer-question-page.component';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { GameComponent } from './game/game.component';
+import { GameButtonComponent } from './game-button/game-button.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GameComponent } from './game/game.component';
     DashComponent,
     ResultPageComponent,
     TimerQuestionPageComponent,
-    GameComponent
+    GameComponent,
+    GameButtonComponent
   ],
   imports: [
     BrowserModule,
