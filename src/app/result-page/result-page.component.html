@@ -3,21 +3,10 @@
   <h2 [innerHTML]="GetResultText()"></h2>
   <div class="share-block">
     <p>Расскажите всем про тренажер грамотности «Пушкин»</p>
+    <!-- <p>Поделитесь своим результатом</p> -->
     <share-buttons
       [theme]="'default'"
-      [include]="[
-        'facebook',
-        'twitter',
-        'linkedin',
-        'google',
-        'pinterest',
-        'vk',
-        'telegram',
-        'messenger',
-        'whatsapp',
-        'email',
-        'copy'
-      ]"
+      [include]="['facebook', 'twitter', 'vk', 'telegram', 'messenger', 'whatsapp', 'copy']"
       [show]="7"
       [showCount]="true"
     ></share-buttons>
