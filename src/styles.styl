@@ -39,6 +39,7 @@ body {
   margin: 0;
   background-color: $color-background;
   line-height: $line-height;
+  background-color: white;
   // overscroll-behavior: none;
 }
 
@@ -51,19 +52,22 @@ body, input[type='text'] {
 .bg-image {
   position: fixed;
   top: -500px;
-  left: 0;
+  left: -150px;
   right: 0;
   z-index: -1;
   display: block;
-  background-image: url('https://images.megapixl.com/940/9400084.jpg');
-  width: 100%;
+  // background-image: url('https://images.megapixl.com/940/9400084.jpg');
+  // background-image: url('https://contenthub-static.grammarly.com/blog/wp-content/uploads/2018/02/commas.jpg');
+  background-image: url('http://cdn2.hubspot.net/hubfs/174241/punctuation.0.0.jpg');
+  width: 200%;
   height: 200%;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-filter: blur($blur);
+  -moz-filter: blur($blur);
+  -o-filter: blur($blur);
+  -ms-filter: blur($blur);
+  filter: blur($blur);
   background-repeat: repeat;
+  opacity: 0;
 }
 
 .content {
