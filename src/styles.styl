@@ -39,6 +39,7 @@ body {
   margin: 0;
   background-color: $color-background;
   line-height: $line-height;
+  // overscroll-behavior: none;
 }
 
 body, input[type='text'] {
@@ -49,13 +50,14 @@ body, input[type='text'] {
 
 .bg-image {
   position: fixed;
+  top: -500px;
   left: 0;
   right: 0;
   z-index: -1;
   display: block;
   background-image: url('https://images.megapixl.com/940/9400084.jpg');
   width: 100%;
-  height: 100%;
+  height: 200%;
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
