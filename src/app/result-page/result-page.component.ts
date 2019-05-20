@@ -12,7 +12,7 @@ export class ResultPageComponent implements OnInit {
 
   GetResultText(): string {
     switch (this.score) {
-      case 1 || 2:
+      case 0 || 1 || 2:
         return '«Мы все учились понемногу,<br />Чему-нибудь и как-нибудь».<br />Попробуйте еще.';
       case 3:
         return '«Ах, обмануть меня нетрудно,<br />Я сам обманываться рад!»<br />Будьте внимательнее.';

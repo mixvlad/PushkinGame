@@ -1,6 +1,5 @@
 <div *ngIf="question">
   <div>
-    <p *ngIf="!answered && timeLeft >= 0" class="timer">{{ timeLeft }} секунд осталось...</p>
     <p *ngIf="!answered" [innerHTML]="question.questionText" class="questionText"></p>
     <p
       *ngIf="answered"
@@ -8,6 +7,8 @@
       [innerHTML]="question.correctText"
       class="questionText"
     ></p>
+
+    <p *ngIf="!answered && timeLeft >= 0" class="timer">{{ timeLeft }} секунд осталось...</p>
 
     <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
     <div class="Question__body">
