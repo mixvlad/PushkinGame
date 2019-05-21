@@ -14,7 +14,7 @@
       ><br />
       <span>{{ gameTitle }}</span>
     </div>
-    <div *ngIf="!showResult">
+    <div *ngIf="!showResult" class="questionPart">
       <div [ngSwitch]="currentGame">
         <app-comma-question-page
           *ngSwitchCase="'comma'"

@@ -1,11 +1,12 @@
 @import '~@ngx-share/button/themes/default/default-theme.css';
 @import './style-params.styl';
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,900&display=swap&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text&subset=cyrillic&display=swap');
 
 /* Application-wide Styles */
 h1 {
   font-size: $font-size--h1;
+  font-style: normal;
   font-weight: normal;
   line-height: 1.2em;
   margin: 0.875rem 0;
@@ -15,12 +16,12 @@ h1 {
 }
 
 .title::before {
-  content: 'тренажер правописания';
-  font-size: 14px;
+  content: 'тренажёр правописания';
+  font-size: $font-size;
   font-family: $font-family;
   position: absolute;
   top: -1.6rem;
-  left: 10.5rem;
+  left: 9.4rem;
 }
 
 h2 {
@@ -29,6 +30,30 @@ h2 {
   font-size: $font-size--h2;
   line-height: $line-height;
   margin-block-end: 0.6rem;
+}
+
+h3 {
+  color: $color-secondary;
+}
+
+.lid, h3 {
+  font-size: $font-size--h3;
+  line-height: $line-height;
+  margin-block-end: 0.3rem;
+  max-width: 35em;
+}
+
+p {
+  margin: 0.6rem 0;
+  line-height: $line-height;
+}
+
+.small {
+  font-size: $font-size--small;
+}
+
+.secondary {
+  color: $color-gray;
 }
 
 html, body {
@@ -46,7 +71,6 @@ body {
 body, input[type='text'] {
   color: $color-primary;
   font-family: $font-family;
-  background-repeat: repeat;
 }
 
 .bg-image {
@@ -94,12 +118,22 @@ body, input[type='text'] {
   padding: 10px 10px 30px;
   border-radius: 5px;
   text-align: center;
-  display: table-cell;
-  vertical-align: middle;
+  box-shadow: $main-shadow;
+  border: $border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questionText p {
+  display: block;
+  margin: auto;
+  padding: 0 10px;
 }
 
 .Question__body {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgb(229, 229, 229) 0px 0px 0px 1px;
+  box-shadow: $main-shadow;
+  border: $border;
   margin: 1.5rem 1px 1rem;
   border-radius: 4px;
 }
@@ -114,18 +148,6 @@ body, input[type='text'] {
 
 .wrong .highlightText {
   color: #FF5261;
-}
-
-.lid, h3 {
-  font-size: $font-size--h3;
-  line-height: $line-height;
-  margin-block-end: 0.3rem;
-  max-width: 35em;
-}
-
-p {
-  margin: 0.6rem 0;
-  line-height: $line-height;
 }
 
 button {
@@ -162,10 +184,15 @@ button:hover {
 }
 
 .container {
-  background-color: $color-background;
+  background-color: white;
   height: 100vh;
   position: relative;
   padding: 12px;
+  border: $border;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .flexbox {
@@ -175,11 +202,17 @@ button:hover {
   justify-content: flex-start;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-content-space-betwen {
+  justify-content: space-between;
+}
+
 @media only screen and (min-width: 32em) {
   .container {
-    align-items: center;
-    flex-grow: 0;
-    width: 100%;
     padding: 10px 45px 5px;
+    min-width: 32em;
   }
 }

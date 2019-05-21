@@ -1,20 +1,46 @@
+
+@import '../../style-params.styl';
+
 $main-margin = 1.5rem;
 
 .game-nav {
   padding: $main-margin;
   margin: $main-margin $main-margin 0 0;
   border-radius: 8px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25), 0px -0.5px 1px rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  flex: 1 1 350px;
+  flex: 1 1 270px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
+  box-shadow: $main-shadow;
+  border: $border;
+}
+
+@media only screen and (min-width: 32em) {
+  .decor {
+    margin: 3rem;
+  }
+}
+
+.decor {
+  align-self: center;
+  outline: none;
+  margin: 2rem;
+}
+
+.game-nav:hover {
+  border: $border-hover;
+}
+
+.game-nav:focus, .game-nav:active:focus {
+  outline: none;
 }
 
 .container {
   height: 100%;
   min-height: 100vh;
+  justify-content: space-between;
 }
 
 button {
