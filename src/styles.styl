@@ -5,7 +5,7 @@
 
 /* Application-wide Styles */
 h1 {
-  font-size: $font-size--h1;
+  font-size: $font-size--h1-small-device;
   font-style: normal;
   font-weight: normal;
   line-height: 1.2em;
@@ -21,7 +21,17 @@ h1 {
   font-family: $font-family;
   position: absolute;
   top: -1.6rem;
-  left: 9.4rem;
+  left: 5.9rem;
+}
+
+@media only screen and (min-width: 375px) {
+  h1 {
+    font-size: $font-size--h1;
+  }
+
+  .title::before {
+    left: 9.4rem;
+  }
 }
 
 h2 {
@@ -62,7 +72,6 @@ html, body {
 
 body {
   margin: 0;
-  background-color: $color-background;
   line-height: $line-height;
   background-color: white;
   // overscroll-behavior: none;
@@ -71,31 +80,6 @@ body {
 body, input[type='text'] {
   color: $color-primary;
   font-family: $font-family;
-}
-
-.bg-image {
-  position: fixed;
-  top: -500px;
-  left: -150px;
-  right: 0;
-  z-index: -1;
-  display: block;
-  // background-image: url('https://images.megapixl.com/940/9400084.jpg');
-  // background-image: url('https://contenthub-static.grammarly.com/blog/wp-content/uploads/2018/02/commas.jpg');
-  // background-image: url('http://cdn2.hubspot.net/hubfs/174241/punctuation.0.0.jpg');
-  width: 200%;
-  height: 200%;
-  -webkit-filter: blur($blur);
-  -moz-filter: blur($blur);
-  -o-filter: blur($blur);
-  -ms-filter: blur($blur);
-  filter: blur($blur);
-  background-repeat: repeat;
-  opacity: 0.1;
-}
-
-.content {
-  z-index: 9999;
 }
 
 * {
@@ -185,7 +169,8 @@ button:hover {
 
 .container {
   background-color: white;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   position: relative;
   padding: 12px;
   border: $border;
@@ -210,9 +195,9 @@ button:hover {
   justify-content: space-between;
 }
 
-@media only screen and (min-width: 32em) {
+@media only screen and (min-width: 700px) {
   .container {
     padding: 10px 45px 5px;
-    min-width: 32em;
+    min-width: 700px;
   }
 }
