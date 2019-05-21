@@ -1,10 +1,8 @@
 <div *ngIf="question">
   <div>
-    <p *ngIf="!answered" [innerHTML]="question.questionText" class="questionText"></p>
     <p
-      *ngIf="answered"
-      [ngClass]="rightAnswer ? 'right' : 'wrong'"
-      [innerHTML]="question.correctText"
+      [innerHTML]="answered ? question.correctText : question.questionText"
+      [ngClass]="getAnswerClasses()"
       class="questionText"
     ></p>
 

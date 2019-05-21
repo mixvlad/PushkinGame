@@ -33,4 +33,11 @@ export class CommaQuestionPageComponent implements OnInit, OnChanges {
     this.rightAnswer = isRightAnswer;
     this.OnAnswered.emit(this.rightAnswer);
   }
+
+  getAnswerClasses() {
+    return {
+      right: this.answered && this.rightAnswer,
+      wrong: this.answered && !this.rightAnswer
+    };
+  }
 }

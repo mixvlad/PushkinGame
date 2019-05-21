@@ -13,14 +13,16 @@
     </ng-template>
   </h1>
 
-  <div *ngIf="!answered">
-    <span>Подсказка: </span>Поставьте тире, там где они нужны. Бывает что тире не нужно ставить нигде.
-  </div>
-
-  <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
-    <div *ngIf="answered" class="highlightText">
-      {{ rightAnswer ? 'Верно' : 'Неверно' }}
+  <div class="actionsBox">
+    <div *ngIf="!answered">
+      <span>Подсказка: </span>Поставьте тире, там где они нужны. Бывает что тире не нужно ставить нигде.
     </div>
-    <div *ngIf="answered">{{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}</div>
+
+    <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
+      <div *ngIf="answered" class="highlightText">
+        {{ rightAnswer ? 'Верно' : 'Неверно' }}
+      </div>
+      <div *ngIf="answered">{{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}</div>
+    </div>
   </div>
 </div>

@@ -58,7 +58,7 @@ body, input[type='text'] {
   display: block;
   // background-image: url('https://images.megapixl.com/940/9400084.jpg');
   // background-image: url('https://contenthub-static.grammarly.com/blog/wp-content/uploads/2018/02/commas.jpg');
-  background-image: url('http://cdn2.hubspot.net/hubfs/174241/punctuation.0.0.jpg');
+  // background-image: url('http://cdn2.hubspot.net/hubfs/174241/punctuation.0.0.jpg');
   width: 200%;
   height: 200%;
   -webkit-filter: blur($blur);
@@ -67,7 +67,7 @@ body, input[type='text'] {
   -ms-filter: blur($blur);
   filter: blur($blur);
   background-repeat: repeat;
-  opacity: 0;
+  opacity: 0.1;
 }
 
 .content {
@@ -91,14 +91,36 @@ body, input[type='text'] {
   height: 55vh;
   line-height: 1.275em;
   background-color: white;
-  padding: 10px;
+  padding: 10px 10px 30px;
   border-radius: 5px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.Question__body {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgb(229, 229, 229) 0px 0px 0px 1px;
+  margin: 1.5rem 1px 1rem;
+  border-radius: 4px;
+}
+
+.highlightText {
+  color: #0D49B0;
+}
+
+.right .highlightText {
+  color: #4EB454;
+}
+
+.wrong .highlightText {
+  color: #FF5261;
 }
 
 .lid, h3 {
   font-size: $font-size--h3;
   line-height: $line-height;
   margin-block-end: 0.3rem;
+  max-width: 35em;
 }
 
 p {
@@ -140,11 +162,17 @@ button:hover {
 }
 
 .container {
-  max-width: 700px;
   background-color: $color-background;
   height: 100vh;
   position: relative;
   padding: 12px;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 @media only screen and (min-width: 32em) {

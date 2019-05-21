@@ -32,6 +32,13 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
     }
   }
 
+  getAnswerClasses() {
+    return {
+      right: this.answered && this.rightAnswer,
+      wrong: this.answered && !this.rightAnswer
+    };
+  }
+
   answer(isRightAnswer: boolean): void {
     this.answered = true;
     this.rightAnswer = isRightAnswer;
