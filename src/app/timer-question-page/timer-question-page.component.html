@@ -1,16 +1,14 @@
-<div *ngIf="question">
-  <div>
-    <div class="questionText">
-      <p [innerHTML]="answered ? question.correctText : question.questionText" [ngClass]="getAnswerClasses()"></p>
-    </div>
+<div *ngIf="question" class="main-content">
+  <div class="questionText">
+    <p [innerHTML]="answered ? question.correctText : question.questionText" [ngClass]="getAnswerClasses()"></p>
+  </div>
 
-    <p *ngIf="!answered && timeLeft >= 0" class="timer">{{ timeLeft }} секунд осталось...</p>
+  <p *ngIf="!answered && timeLeft >= 0" class="timer">{{ timeLeft }} секунд осталось...</p>
 
-    <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
-    <div class="Question__body">
-      <div *ngFor="let button of question.buttons">
-        <app-game-button [button]="button" [answered]="answered" (OnAnswered)="answer($event)"></app-game-button>
-      </div>
+  <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
+  <div class="Question__body">
+    <div *ngFor="let button of question.buttons">
+      <app-game-button [button]="button" [answered]="answered" (OnAnswered)="answer($event)"></app-game-button>
     </div>
   </div>
 </div>

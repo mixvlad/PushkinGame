@@ -1,6 +1,6 @@
-<div [ngClass]="answered ? 'answered' : ''" class="wrapper">
-  <div>
-    <h1 *ngIf="textParts" class="questionText">
+<div [ngClass]="answered ? 'answered' : ''" class="main-content">
+  <div class="questionText">
+    <p *ngIf="textParts">
       <!-- <ng-template ngFor let-item [ngForOf]="textParts" let-i="index" [ngForTrackBy]="trackByFn"> -->
       <ng-template ngFor let-item [ngForOf]="textParts" let-i="index">
         <span *ngIf="item.value != '+' && item.value != '-'">{{ item.value }}</span>
@@ -12,7 +12,7 @@
           [selected]="false"
         ></app-dash>
       </ng-template>
-    </h1>
+    </p>
   </div>
 
   <div class="actionsBox">
