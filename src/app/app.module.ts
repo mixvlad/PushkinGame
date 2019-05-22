@@ -17,6 +17,8 @@ import { TimerQuestionPageComponent } from './timer-question-page/timer-question
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { GameComponent } from './game/game.component';
 import { GameButtonComponent } from './game-button/game-button.component';
+import { SvgComponent } from './svg/svg.component';
+import { SvgDefinitionsComponent } from './svg-definitions/svg-definitions.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { GameButtonComponent } from './game-button/game-button.component';
     ResultPageComponent,
     TimerQuestionPageComponent,
     GameComponent,
-    GameButtonComponent
+    GameButtonComponent,
+    SvgComponent,
+    SvgDefinitionsComponent
   ],
   imports: [
     BrowserModule,

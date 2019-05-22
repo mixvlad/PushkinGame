@@ -1,6 +1,12 @@
 <div *ngIf="question" class="main-content">
   <div class="questionText">
-    <p [innerHTML]="answered ? question.correctText : question.questionText" [ngClass]="getAnswerClasses()"></p>
+    <div style="margin: auto;">
+      <p [innerHTML]="answered ? question.correctText : question.questionText" [ngClass]="getAnswerClasses()"></p>
+      <div class="svgBlock">
+        <app-svg-icon [name]="iconName"></app-svg-icon>
+      </div>
+      <p class="small" [innerHTML]="question.author"></p>
+    </div>
   </div>
 
   <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
