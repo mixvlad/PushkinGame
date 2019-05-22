@@ -92,7 +92,7 @@ body, input[type='text'] {
 .questionText {
   font-family: $serif-font-family;
   margin: 1.5rem 0 0;
-  font-size: 2.7rem;
+  font-size: $font-size--h2;
   font-weight: 900;
   overflow-y: auto;
   overflow-x: hidden;
@@ -114,6 +114,7 @@ body, input[type='text'] {
   display: block;
   margin: auto;
   padding: 0 10px;
+  line-height: 1.275em;
 }
 
 .Question__body {
@@ -211,5 +212,9 @@ button:hover {
     padding: 10px 45px 5px;
     min-width: 700px;
     border: 1px solid #c9ccd3;
+  }
+
+  .questionText {
+    font-size: 2.25rem;
   }
 }
