@@ -1,7 +1,22 @@
 @import '~@ngx-share/button/themes/default/default-theme.css';
 @import './style-params.styl';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,900&display=swap&subset=cyrillic');
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text&subset=cyrillic&display=swap');
+
+@font-face {
+  font-family: Crimson;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/Crimson/Crimson-Roman.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Crimson;
+  font-style: bold;
+  font-weight: 900;
+  font-display: swap;
+  src: url('assets/fonts/Crimson/Crimson-Bold.otf') format('opentype');
+}
 
 /* Application-wide Styles */
 h1 {
@@ -9,10 +24,10 @@ h1 {
   font-style: normal;
   font-weight: normal;
   line-height: 1.2em;
-  margin: 0.875rem 0;
-  font-family: $serif-font-family;
+  margin: 0.875rem 0 0;
+  font-family: 'Crimson', serif;
   position: relative;
-  display: block;
+  display: inline-block;
 }
 
 .title::before {
@@ -20,8 +35,9 @@ h1 {
   font-size: $font-size;
   font-family: $font-family;
   position: absolute;
-  top: -1.6rem;
-  left: 5.9rem;
+  top: -2rem;
+  right: 0rem;
+  letter-spacing: 0;
 }
 
 @media only screen and (min-width: 375px) {
@@ -30,7 +46,7 @@ h1 {
   }
 
   .title::before {
-    left: 9.4rem;
+    left: 8.4rem;
   }
 }
 
