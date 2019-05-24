@@ -13,7 +13,10 @@
 }
 
 .topPanel {
-  padding: 0.5rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
 }
 
 .questionPart {
@@ -21,12 +24,8 @@
 }
 
 .game__close {
-  position: absolute;
-  width: 2.5em;
-  height: 2.5em;
+  padding-top: 3px;
   cursor: pointer;
-  top: 0.5em;
-  right: 0.5em;
 }
 
 .game__close:focus, .game__close:active:focus {

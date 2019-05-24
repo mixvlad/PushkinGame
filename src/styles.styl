@@ -85,8 +85,7 @@ html, body {
 body {
   margin: 0;
   line-height: $line-height;
-  background-color: white;
-  // overscroll-behavior: none;
+  background-color: $color-background;
 }
 
 body, input[type='text'] {
@@ -112,9 +111,8 @@ body, input[type='text'] {
   line-height: 1.275em;
   background-color: white;
   padding: 10px 10px 30px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   text-align: center;
-  box-shadow: $main-shadow;
   border: $border;
   display: flex;
   align-items: center;
@@ -130,10 +128,10 @@ body, input[type='text'] {
 }
 
 .Question__body {
-  box-shadow: $main-shadow;
-  border: $border;
+  // box-shadow: $main-shadow;
+  // border: $border;
   margin: 1.5rem 1px 1rem;
-  border-radius: 4px;
+  border-radius: $border-radius;
 }
 
 .highlightText {
@@ -152,8 +150,8 @@ button {
   background-color: $color-primary;
   color: $color-on-dark;
   border: none;
-  padding: 0.4rem 1rem;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: $border-radius;
   cursor: pointer;
   cursor: hand;
   margin: $font-size--h3 0;
@@ -211,19 +209,15 @@ button:hover {
   flex-direction: column;
 }
 
-.flex-column {
-  flex-direction: column;
-}
-
 .flex-content-space-betwen {
   justify-content: space-between;
 }
 
 @media only screen and (min-width: 700px) {
   .container {
-    padding: 10px 45px 5px;
+    padding: 15px 45px 5px;
     min-width: 700px;
-    border: 1px solid #c9ccd3;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
   }
 
   .questionText {
@@ -239,4 +233,30 @@ button:hover {
 .svgBlock svg {
   width: 100px;
   height: 32px;
+}
+
+.Question__body div:first-child .Answer__root {
+  border-radius: $border-radius $border-radius 0px 0px;
+}
+
+.Question__body div:first-child .Answer__root:after {
+  border-radius: $border-radius 0px 0px;
+}
+
+.Question__body div:last-child .Answer__root:after {
+  border-radius: 0px 0px 0px $border-radius;
+}
+
+.Question__body div:last-child .Answer__root {
+  border-radius: 0px 0px $border-radius $border-radius;
+}
+
+.Question__body div .Answer__root {
+  border-right: $border;
+  border-bottom: $border;
+  border-left: $border;
+}
+
+.Question__body div:first-child .Answer__root {
+  border-top: $border;
 }

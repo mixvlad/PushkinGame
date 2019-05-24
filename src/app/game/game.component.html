@@ -1,18 +1,27 @@
 <div class="root">
   <div class="container">
-    <div class="game__close" routerLink="/">
-      <svg class="close__icon" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" fill-rule="evenodd" stroke="#212121">
-          <rect height="38.5" rx="19.25" stroke-width="1.5" width="38.5" x=".75" y=".75"></rect>
-          <path d="M13.75 12.5l13.14 14.15M26.89 12.5L13.75 26.65" stroke-linecap="square" stroke-width="1.4"></path>
-        </g>
-      </svg>
-    </div>
     <div class="topPanel">
-      <span *ngIf="currentQuestion" class="secondary"
-        >Тест. <span *ngIf="!showResult">Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span></span
-      ><br />
-      <span>{{ gameTitle }}</span>
+      <div class="info">
+        <span *ngIf="currentQuestion" class="secondary"
+          >Тест. <span *ngIf="!showResult">Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span></span
+        ><br />
+        <span>{{ gameTitle }}</span>
+      </div>
+
+      <div class="game__close" routerLink="/">
+        <!-- <svg class="close__icon" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" fill-rule="evenodd" stroke="#212121">
+            <rect height="38.5" rx="19.25" stroke-width="1.5" width="38.5" x=".75" y=".75"></rect>
+            <path d="M13.75 12.5l13.14 14.15M26.89 12.5L13.75 26.65" stroke-linecap="square" stroke-width="1.4"></path>
+          </g>
+        </svg> -->
+        <svg width="25" height="25" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M18 1.8L16.2 0L9 7.2L1.8 0L0 1.8L7.2 9L0 16.2L1.8 18L9 10.8L16.2 18L18 16.2L10.8 9L18 1.8Z"
+            fill="#212121"
+          />
+        </svg>
+      </div>
     </div>
     <div *ngIf="!showResult" class="questionPart">
       <div [ngSwitch]="currentGame">
