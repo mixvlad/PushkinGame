@@ -19,6 +19,7 @@ import { GameComponent } from './game/game.component';
 import { GameButtonComponent } from './game-button/game-button.component';
 import { SvgComponent } from './svg/svg.component';
 import { SvgDefinitionsComponent } from './svg-definitions/svg-definitions.component';
+import { MetrikaModule } from 'ng-yandex-metrika';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SvgDefinitionsComponent } from './svg-definitions/svg-definitions.compo
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
-    ShareButtonsModule
+    ShareButtonsModule,
+    MetrikaModule.forRoot({ id: 53793379, webvisor: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
