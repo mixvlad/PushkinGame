@@ -26,16 +26,15 @@ h1 {
   display: inline-block;
 }
 
-.title::before {
-  content: 'тренажёр правописания';
-  font-size: $font-size;
-  font-family: $font-family;
-  position: absolute;
-  top: -2rem;
-  right: 0rem;
-  letter-spacing: 0;
-}
-
+// .title::before {
+// content: 'тренажёр правописания';
+// font-size: $font-size;
+// font-family: $font-family;
+// position: absolute;
+// top: -2rem;
+// right: 0rem;
+// letter-spacing: 0;
+// }
 @media only screen and (min-width: 375px) {
   h1 {
     font-size: $font-size--h1;
@@ -135,15 +134,16 @@ body, input[type='text'] {
 }
 
 .highlightText {
-  color: #0D49B0;
+  color: white;
+  background-color: #6A85B3;
 }
 
 .right .highlightText {
-  color: #4EB454;
+  background-color: #4EB454;
 }
 
 .wrong .highlightText {
-  color: #FF5261;
+  background-color: #FF5261;
 }
 
 button {

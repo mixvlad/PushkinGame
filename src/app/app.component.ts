@@ -1,6 +1,7 @@
 import { Component, isDevMode } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router'; // import Router and NavigationEnd
 import { Metrika } from 'ng-yandex-metrika';
+// tslint:disable-next-line:ban-types
 declare let ga: Function;
 
 @Component({
