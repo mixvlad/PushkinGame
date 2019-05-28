@@ -30,12 +30,14 @@
           [question]="currentQuestion"
           [iconName]="iconName"
           (OnAnswered)="onAnswered($event)"
+          (OnNext)="next()"
         ></app-comma-question-page>
         <app-timer-question-page
           *ngSwitchCase="'timer'"
           [question]="currentQuestion"
           [iconName]="iconName"
           (OnAnswered)="onAnswered($event)"
+          (OnNext)="next()"
         ></app-timer-question-page>
         <app-dash-question-page
           #dashPage

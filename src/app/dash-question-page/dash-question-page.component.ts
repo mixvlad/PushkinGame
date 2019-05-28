@@ -43,7 +43,6 @@ export class DashQuestionPageComponent implements OnInit, OnChanges {
 
   check() {
     this.answered = true;
-    this.messageService.add(`questionService: ${document.getElementsByClassName('wrong').length}`);
     this.rightAnswer = !this.components.some(x => x.rightAnswer === false);
 
     this.OnAnswered.emit(this.rightAnswer);

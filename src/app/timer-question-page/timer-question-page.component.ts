@@ -10,6 +10,7 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
   @Input() question: Question;
   @Input() iconName: string;
   @Output() OnAnswered = new EventEmitter<boolean>();
+  @Output() OnNext = new EventEmitter<void>();
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;
@@ -60,5 +61,8 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
   resetTimer() {
     clearInterval(this.interval);
     this.timeLeft = this.timertime;
+  }
+  next() {
+    this.OnNext.emit();
   }
 }

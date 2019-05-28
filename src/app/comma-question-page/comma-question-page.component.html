@@ -11,7 +11,12 @@
 
   <div class="Question__body" *ngIf="question.buttons.length > 0">
     <div *ngFor="let button of question.buttons">
-      <app-game-button [button]="button" [answered]="answered" (OnAnswered)="answer($event)"></app-game-button>
+      <app-game-button
+        [button]="button"
+        [answered]="answered"
+        (OnAnswered)="answer($event)"
+        (OnNext)="next()"
+      ></app-game-button>
     </div>
   </div>
 </div>

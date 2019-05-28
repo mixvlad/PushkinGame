@@ -10,6 +10,7 @@ export class CommaQuestionPageComponent implements OnInit, OnChanges {
   @Input() question: Question;
   @Input() iconName: string;
   @Output() OnAnswered = new EventEmitter<boolean>();
+  @Output() OnNext = new EventEmitter<void>();
   @ViewChild('btnTrue') btnTrue;
   @ViewChild('btnFalse') btnFalse;
   answered: boolean;
@@ -38,5 +39,9 @@ export class CommaQuestionPageComponent implements OnInit, OnChanges {
       right: this.answered && this.rightAnswer,
       wrong: this.answered && !this.rightAnswer
     };
+  }
+
+  next() {
+    this.OnNext.emit();
   }
 }

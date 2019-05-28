@@ -12,6 +12,7 @@ export class GameButtonComponent implements OnInit {
   @Input() button: Button;
   @Input() answered: boolean;
   @Output() OnAnswered = new EventEmitter<boolean>();
+  @Output() OnNext = new EventEmitter<void>();
 
   selected: boolean;
   rightAnswer: boolean;
@@ -30,8 +31,12 @@ export class GameButtonComponent implements OnInit {
   ngOnInit() {}
 
   clickButton() {
-    this.selected = !this.selected;
-    this.rightAnswer = this.selected === this.button.needed;
-    this.OnAnswered.emit(this.selected === this.button.needed);
+    if (!this.answered) {
+      this.selected = !this.selected;
+      this.rightAnswer = this.selected === this.button.needed;
+      this.OnAnswered.emit(this.selected === this.button.needed);
+    } else {
+      this.OnNext.emit();
+    }
   }
 }
