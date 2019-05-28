@@ -1,5 +1,16 @@
+import { GameButtonComponent } from './../game-button/game-button.component';
 import { Question } from '../question';
-import { Component, OnInit, EventEmitter, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Input,
+  Output,
+  OnChanges,
+  SimpleChanges,
+  QueryList,
+  ViewChildren
+} from '@angular/core';
 
 @Component({
   selector: 'app-timer-question-page',
@@ -11,6 +22,7 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
   @Input() iconName: string;
   @Output() OnAnswered = new EventEmitter<boolean>();
   @Output() OnNext = new EventEmitter<void>();
+  @ViewChildren('btn') buttons: QueryList<GameButtonComponent>;
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;
@@ -23,32 +35,35 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.answered = false;
-    this.resetTimer();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.question != null) {
       this.answered = false;
       this.needHelp = false;
-      this.startTimer();
+      this.restartTimer();
     }
   }
 
   getAnswerClasses() {
     return {
-      right: this.answered && this.rightAnswer,
-      wrong: this.answered && !this.rightAnswer
+      answered: this.answered
     };
   }
 
   answer(isRightAnswer: boolean): void {
+    this.stopTimer();
     this.answered = true;
+    if (!this.buttons.some(x => x.selected)) {
+      this.buttons.find(x => x.button.needed === true).selected = true;
+    }
+
     this.rightAnswer = isRightAnswer;
-    this.resetTimer();
     this.OnAnswered.emit(this.rightAnswer);
   }
 
-  startTimer() {
+  restartTimer() {
+    this.resetTimer();
     this.interval = setInterval(() => {
       if (this.timeLeft > 0) {
         this.timeLeft--;
@@ -62,6 +77,11 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
     clearInterval(this.interval);
     this.timeLeft = this.timertime;
   }
+
+  stopTimer() {
+    clearInterval(this.interval);
+  }
+
   next() {
     this.OnNext.emit();
   }

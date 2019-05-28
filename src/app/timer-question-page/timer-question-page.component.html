@@ -9,12 +9,14 @@
     </div>
   </div>
 
-  <p *ngIf="!answered && timeLeft >= 0" class="timer">{{ timeLeft }} секунд осталось...</p>
+  <p *ngIf="!answered" class="timer">{{ timeLeft }} секунд осталось...</p>
+  <p *ngIf="answered && timeLeft === 0 && rightAnswer != true" class="timer wrong">{{ 'Время вышло' }}</p>
 
   <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
   <div class="Question__body" *ngIf="question.buttons.length > 0">
     <div *ngFor="let button of question.buttons">
       <app-game-button
+        #btn
         [button]="button"
         [answered]="answered"
         (OnAnswered)="answer($event)"
