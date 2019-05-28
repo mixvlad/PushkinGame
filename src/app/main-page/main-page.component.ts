@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
   commaPreviewQuestion = {
-    questionText: `Иван Яковлевич<span class="highlightText">&nbsp;?&nbsp;</span>
-    как всякий порядочный русский мастеровой<span class="highlightText">&nbsp;?&nbsp;</span>был пьяница страшный.`,
+    // tslint:disable-next-line:max-line-length
+    questionText: `Иван Яковлевич<span class="highlightText">&nbsp;?&nbsp;</span>как всякий порядочный русский мастеровой<span class="highlightText">&nbsp;?&nbsp;</span>был пьяница страшный.`,
     buttons: [],
     author: `Н.В. Гоголь «Нос»`
   };
 
   timerPreviewQuestion = {
-    questionText: `Марья Гавриловна была воспитана на французских романах и<span class="highlightText">&nbsp;?&nbsp;</span>
-    следственно<span class="highlightText">&nbsp;?&nbsp;</span>была влюблена.`,
+    // tslint:disable-next-line:max-line-length
+    questionText: `Марья Гавриловна была воспитана на французских романах и<span class="highlightText">&nbsp;?&nbsp;</span>следственно<span class="highlightText">&nbsp;?&nbsp;</span>была влюблена.`,
     buttons: [],
     author: `А.С. Пушкин «Метель»`
   };
