@@ -12,7 +12,9 @@ export class ResultPageComponent implements OnInit {
 
   GetResultText(): string {
     switch (this.score) {
-      case 0 || 1 || 2:
+      case 0:
+      case 1:
+      case 2:
         return '«Мы все учились понемногу,<br />Чему-нибудь и как-нибудь».<br />Попробуйте еще.';
       case 3:
         return '«Ах, обмануть меня нетрудно,<br />Я сам обманываться рад!»<br />Будьте внимательнее.';
@@ -20,8 +22,6 @@ export class ResultPageComponent implements OnInit {
         return '«Какое это счастье — быть грамотным!»<br />Максим Горький';
       case 5:
         return 'В человеке всё должно быть прекрасно — как в вас!';
-      default:
-        return '«Какое это счастье — быть грамотным!»<br />Максим Горький';
     }
   }
 
