@@ -9,8 +9,7 @@
     </div>
   </div>
 
-  <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
-  <div class="Question__body">
+  <div class="Question__body" *ngIf="question.buttons.length > 0">
     <div *ngFor="let button of question.buttons">
       <app-game-button [button]="button" [answered]="answered" (OnAnswered)="answer($event)"></app-game-button>
     </div>

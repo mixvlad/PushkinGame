@@ -26,12 +26,13 @@ import { DashComponent } from '../dash/dash.component';
 })
 export class DashQuestionPageComponent implements OnInit, OnChanges {
   @Input() question: Question;
+  @Input() iconName: string;
+  @Input() isPreview = false;
   @Output() OnAnswered = new EventEmitter<boolean>();
   @ViewChildren('dash') components: QueryList<DashComponent>;
 
   textParts: TextPart[];
   answered: boolean;
-  needHelp: boolean;
   rightAnswer: boolean;
 
   constructor(private route: ActivatedRoute, private messageService: MessageService, private location: Location) {}
@@ -52,7 +53,6 @@ export class DashQuestionPageComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (this.question != null) {
       this.answered = false;
-      this.needHelp = false;
       this.textParts = this.question.questionText.split('|').map(item => {
         return new TextPart(item);
       });

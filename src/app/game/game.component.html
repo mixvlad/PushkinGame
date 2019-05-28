@@ -28,17 +28,20 @@
         <app-comma-question-page
           *ngSwitchCase="'comma'"
           [question]="currentQuestion"
+          [iconName]="iconName"
           (OnAnswered)="onAnswered($event)"
         ></app-comma-question-page>
         <app-timer-question-page
           *ngSwitchCase="'timer'"
           [question]="currentQuestion"
+          [iconName]="iconName"
           (OnAnswered)="onAnswered($event)"
         ></app-timer-question-page>
         <app-dash-question-page
           #dashPage
           *ngSwitchCase="'dash'"
           [question]="currentQuestion"
+          [iconName]="iconName"
           (OnAnswered)="onAnswered($event)"
         ></app-dash-question-page>
       </div>

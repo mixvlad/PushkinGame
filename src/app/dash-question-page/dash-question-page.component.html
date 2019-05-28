@@ -1,21 +1,27 @@
-<div [ngClass]="answered ? 'answered' : ''" class="main-content">
+<div *ngIf="question" [ngClass]="answered ? 'answered' : ''" class="main-content">
   <div class="questionText">
-    <p *ngIf="textParts">
-      <!-- <ng-template ngFor let-item [ngForOf]="textParts" let-i="index" [ngForTrackBy]="trackByFn"> -->
-      <ng-template ngFor let-item [ngForOf]="textParts" let-i="index">
-        <span *ngIf="item.value != '+' && item.value != '-'">{{ item.value }}</span>
-        <app-dash
-          #dash
-          *ngIf="item.value === '+' || item.value === '-'"
-          [needed]="item.value === '+'"
-          [answered]="answered"
-          [selected]="false"
-        ></app-dash>
-      </ng-template>
-    </p>
+    <div style="margin: auto;">
+      <p *ngIf="textParts">
+        <!-- <ng-template ngFor let-item [ngForOf]="textParts" let-i="index" [ngForTrackBy]="trackByFn"> -->
+        <ng-template ngFor let-item [ngForOf]="textParts" let-i="index">
+          <span *ngIf="item.value != '+' && item.value != '-'">{{ item.value }}</span>
+          <app-dash
+            #dash
+            *ngIf="item.value === '+' || item.value === '-'"
+            [needed]="item.value === '+'"
+            [answered]="answered"
+            [selected]="false"
+          ></app-dash>
+        </ng-template>
+      </p>
+      <div class="svgBlock">
+        <app-svg-icon [name]="iconName"></app-svg-icon>
+      </div>
+      <p class="small" [innerHTML]="question.author"></p>
+    </div>
   </div>
 
-  <div class="actionsBox">
+  <div class="actionsBox" *ngIf="!isPreview">
     <div *ngIf="!answered">
       <span>Подсказка: </span>Поставьте тире, там где они нужны. Бывает что тире не нужно ставить нигде.
     </div>

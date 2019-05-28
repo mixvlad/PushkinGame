@@ -8,6 +8,7 @@ import { Component, OnInit, EventEmitter, Input, Output, OnChanges, SimpleChange
 })
 export class TimerQuestionPageComponent implements OnInit, OnChanges {
   @Input() question: Question;
+  @Input() iconName: string;
   @Output() OnAnswered = new EventEmitter<boolean>();
   answered: boolean;
   needHelp: boolean;

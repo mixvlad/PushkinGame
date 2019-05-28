@@ -12,6 +12,7 @@ import { Question } from '../question';
 export class GameComponent implements OnInit {
   @ViewChild('dashPage') dashPage;
   currentGame: string;
+  iconName: string;
   gameTitle: string;
   questions: Question[];
   currentQuestion: Question;
@@ -25,6 +26,7 @@ export class GameComponent implements OnInit {
   constructor(private questionService: GameService, private messageService: MessageService, private router: Router) {
     this.currentGame = this.router.url.substring(1);
     this.gameTitle = questionService.getGameTitle(this.currentGame);
+    this.SetRandomIconName();
   }
 
   ngOnInit(): void {
@@ -62,6 +64,7 @@ export class GameComponent implements OnInit {
     this.currentIndex++;
     this.needHelp = false;
     this.answered = false;
+    this.SetRandomIconName();
 
     // if no more questions, show result
     if (this.currentIndex >= this.totalQuestions) {
@@ -70,6 +73,18 @@ export class GameComponent implements OnInit {
       this.currentQuestion = this.questions[this.currentIndex];
       this.messageService.add(`questionService: ${this.currentQuestion.correctText}`);
     }
+  }
+
+  SetRandomIconName() {
+    const iconNames = ['main', '1', '2', '3', '4', '5', '6'];
+
+    // If we know previous icon, then exclude it from array
+    if (this.iconName != null) {
+      const index = iconNames.indexOf(this.iconName);
+      iconNames.splice(index, 1);
+    }
+    const iconName = iconNames[Math.floor(Math.random() * iconNames.length)];
+    this.iconName = iconName;
   }
 
   check() {

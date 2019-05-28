@@ -17,6 +17,7 @@ $main-margin = 1.5rem;
 
 .textBlock {
   padding: $main-margin;
+  border-top: $border;
 }
 
 .howImage {
@@ -40,8 +41,8 @@ $main-margin = 1.5rem;
   width: 100%;
   height: 200px;
   padding: 0;
-  margin: 0;
-  border-radius: 6px 6px 0 0;
+  margin-top: 8px;
+  // border-radius: 6px 6px 0 0;
 }
 
 .game-nav:hover {
@@ -63,6 +64,10 @@ button {
 
 .svgBlock {
   margin: 2rem;
+}
+
+.svgBlock ::ng-deep svg {
+  height: 32px;
 }
 
 .flexbox {
@@ -90,4 +95,22 @@ button {
 
 .flex-column {
   flex-direction: column;
+}
+
+.game-preview ::ng-deep .questionText {
+  margin: 0;
+  border: none;
+  overflow-y: hidden;
+}
+
+.game-preview ::ng-deep .questionText {
+  font-size: $font-size--h3;
+}
+
+.game-preview ::ng-deep .main-content .svgBlock svg {
+  height: 10px;
+}
+
+.game-preview ::ng-deep .main-content {
+  height: 100%;
 }
