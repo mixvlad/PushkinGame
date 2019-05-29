@@ -1,24 +1,18 @@
 <form>
   <input
     #email
-    [attr.disabled]="subscribed ? '' : null"
+    [attr.disabled]="currentState === 3 ? '' : null"
     (keyup.enter)="subscribe(email.value)"
     placeholder="Адрес эл. почты"
     type="email"
   />
-  <button (click)="subscribed || subscribe(email)">
-    <div [ngSwitch]="subscribed">
-      <svg
-        *ngSwitchCase="false"
-        width="16"
-        height="14"
-        viewBox="0 0 16 14"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+  <button (click)="currentState === 3 || subscribe(email)">
+    <div [ngSwitch]="currentState">
+      <svg *ngSwitchCase="1" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 13.8571L16 6.99997L0 0.142822V5.47616L11.4286 6.99997L0 8.52378V13.8571Z" fill="#999999" />
       </svg>
-      <span *ngSwitchCase="true" class="success">✓</span>
+      <mat-progress-spinner *ngSwitchCase="2" diameter="18" mode="indeterminate"></mat-progress-spinner>
+      <span *ngSwitchCase="3" class="success">✓</span>
     </div>
   </button>
 </form>

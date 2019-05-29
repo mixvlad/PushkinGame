@@ -7,7 +7,7 @@ import { SubscribeService } from '../subscribe.service';
   styleUrls: ['./email-subscribe.component.styl']
 })
 export class EmailSubscribeComponent implements OnInit {
-  subscribed = false;
+  currentState = State.Initial;
   constructor(private subscribeService: SubscribeService) {}
 
   ngOnInit() {}
@@ -15,11 +15,13 @@ export class EmailSubscribeComponent implements OnInit {
   subscribe(emailBlock) {
     if (emailBlock.value) {
       // send request to server
+      this.currentState = State.inProgress;
       this.subscribeService.subscribe(emailBlock.value).subscribe(
         res => {
           console.log(res);
           // emailBlock.value = '';
-          this.subscribed = true;
+
+          this.currentState = State.Done;
         },
         err => {
           console.log(err);
@@ -27,4 +29,10 @@ export class EmailSubscribeComponent implements OnInit {
       );
     }
   }
+}
+
+enum State {
+  Initial = 1,
+  inProgress,
+  Done
 }
