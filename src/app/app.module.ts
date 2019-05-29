@@ -22,6 +22,7 @@ import { SvgDefinitionsComponent } from './svg-definitions/svg-definitions.compo
 import { MetrikaModule } from 'ng-yandex-metrika';
 import { GameService } from './game.service';
 import { EmailSubscribeComponent } from './email-subscribe/email-subscribe.component';
+// import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { EmailSubscribeComponent } from './email-subscribe/email-subscribe.compo
     EmailSubscribeComponent
   ],
   imports: [
+    // MatProgressSpinnerModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
