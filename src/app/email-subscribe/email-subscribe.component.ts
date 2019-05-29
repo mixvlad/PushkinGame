@@ -7,6 +7,7 @@ import { SubscribeService } from '../subscribe.service';
   styleUrls: ['./email-subscribe.component.styl']
 })
 export class EmailSubscribeComponent implements OnInit {
+  subscribed = false;
   constructor(private subscribeService: SubscribeService) {}
 
   ngOnInit() {}
@@ -14,8 +15,16 @@ export class EmailSubscribeComponent implements OnInit {
   subscribe(emailBlock) {
     if (emailBlock.value) {
       // send request to server
-      this.subscribeService.subscribe(emailBlock.value);
-      emailBlock.value = '';
+      this.subscribeService.subscribe(emailBlock.value).subscribe(
+        res => {
+          console.log(res);
+          // emailBlock.value = '';
+          this.subscribed = true;
+        },
+        err => {
+          console.log(err);
+        }
+      );
     }
   }
 }
