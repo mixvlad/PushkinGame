@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SubscribeService } from '../subscribe.service';
 
 @Component({
   selector: 'app-main-page',
@@ -26,15 +25,7 @@ export class MainPageComponent implements OnInit {
     buttons: [],
     author: `А.П. Чехов «Учитель»`
   };
-  constructor(private subscribeService: SubscribeService) {}
+  constructor() {}
 
   ngOnInit() {}
-
-  subscribe(emailBlock) {
-    if (emailBlock.value) {
-      // send request to server
-      this.subscribeService.subscribe(emailBlock.value);
-      emailBlock.value = '';
-    }
-  }
 }

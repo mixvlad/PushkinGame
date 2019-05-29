@@ -1,0 +1,8 @@
+<form>
+  <input #email (keyup.enter)="subscribe(email.value)" placeholder="Адрес эл. почты" type="email" />
+  <button (click)="subscribe(email)">
+    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 13.8571L16 6.99997L0 0.142822V5.47616L11.4286 6.99997L0 8.52378V13.8571Z" fill="#999999" />
+    </svg>
+  </button>
+</form>

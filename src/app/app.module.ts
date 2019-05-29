@@ -21,6 +21,7 @@ import { SvgComponent } from './svg/svg.component';
 import { SvgDefinitionsComponent } from './svg-definitions/svg-definitions.component';
 import { MetrikaModule } from 'ng-yandex-metrika';
 import { GameService } from './game.service';
+import { EmailSubscribeComponent } from './email-subscribe/email-subscribe.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GameService } from './game.service';
     GameComponent,
     GameButtonComponent,
     SvgComponent,
-    SvgDefinitionsComponent
+    SvgDefinitionsComponent,
+    EmailSubscribeComponent
   ],
   imports: [
     BrowserModule,

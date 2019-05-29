@@ -46,17 +46,7 @@
               <p>
                 Оставьте свою почту и узнайте, когда игра будет доступна:
               </p>
-              <form>
-                <input #email (keyup.enter)="subscribe(email.value)" placeholder="Адрес эл. почты" type="email" />
-                <button (click)="subscribe(email)">
-                  <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M0 13.8571L16 6.99997L0 0.142822V5.47616L11.4286 6.99997L0 8.52378V13.8571Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </button>
-              </form>
+              <app-email-subscribe></app-email-subscribe>
             </div>
           </div>
         </nav>
@@ -77,14 +67,7 @@
       Если заниматься пару минут в день, сможете писать без ошибок сами и подсказывать правильные знаки другим.
       Подпишитесь на тренажёр, чтобы узнавать о выходе новых видов тренировки:
     </p>
-    <form style="margin-top: 5px;">
-      <input #email (keyup.enter)="subscribe(email.value)" placeholder="Адрес эл. почты" type="email" />
-      <button (click)="subscribe(email)">
-        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 13.8571L16 6.99997L0 0.142822V5.47616L11.4286 6.99997L0 8.52378V13.8571Z" fill="#999999" />
-        </svg>
-      </button>
-    </form>
+    <app-email-subscribe style="margin-top: 5px;"></app-email-subscribe>
 
     <div class="share-block" style="margin-top: 15px;">
       <p class="lid">
