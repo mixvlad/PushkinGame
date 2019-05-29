@@ -10,7 +10,7 @@ import { Question } from '../question';
   styleUrls: ['./game.component.styl']
 })
 export class GameComponent implements OnInit {
-  @ViewChild('dashPage') dashPage;
+  @ViewChild('dashPage', null) dashPage;
   currentGame: string;
   iconName: string;
   gameTitle: string;
