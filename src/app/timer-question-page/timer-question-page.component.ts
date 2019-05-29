@@ -27,7 +27,7 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
   needHelp: boolean;
   rightAnswer: boolean;
   isTimer = true;
-  timertime = 5;
+  timertime = 7;
   timeLeft: number;
   interval;
 

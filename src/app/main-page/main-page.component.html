@@ -1,14 +1,13 @@
 <div class="root">
   <div class="container">
     <div class="main">
-      <h1 class="title">
-        Первый межрегиональный всесоюзный имени А. С. Пушкина пунктуационный тренажер
-        <span style="white-space:nowrap;">«ПТ—1»</span>
-      </h1>
-      <p class="lid">
-        Тренажёр пунктуации, где учатся расставлять знаки препинания в сложных случаях. Выберите тему, читайте цитаты из
-        классики и оттачивайте свою грамотность, чтобы не допускать ошибок в переписке.
-      </p>
+      <div class="logo">
+        <h1 class="title">
+          Пушкин
+        </h1>
+        <span class="subtitle">Пунктуационный тренажер<br />для развития грамотности</span>
+      </div>
+
       <div class="flexbox flex-column">
         <nav class="flexbox nowrap">
           <div class="game-nav" routerLink="/comma">
@@ -61,13 +60,45 @@
             </div>
           </div>
         </nav>
-        <div class="svgBlock" routerLink="/">
-          <app-svg-icon name="main"></app-svg-icon>
-        </div>
       </div>
     </div>
+    <!--
+    <div class="svgBlock">
+      <app-svg-icon name="main"></app-svg-icon>
+    </div> -->
+    <div class="svgBlock bigvenzel">
+      <app-svg-icon name="bigvenzel"></app-svg-icon>
+    </div>
+    <p class="lid">
+      «Пушкин» — тренажёр пунктуации, где учатся расставлять знаки препинания в сложных случаях. Читайте цитаты из
+      классики: Пушкина, Гоголя, Достоевского, Толстого — и оттачивайте свою грамотность.
+    </p>
+    <p class="lid">
+      Если заниматься пару минут в день, сможете писать без ошибок сами и подсказывать правильные знаки другим.
+      Подпишитесь на тренажёр, чтобы узнавать о выходе новых видов тренировки:
+    </p>
+    <form style="margin-top: 5px;">
+      <input #email (keyup.enter)="subscribe(email.value)" placeholder="Адрес эл. почты" type="email" />
+      <button (click)="subscribe(email)">
+        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 13.8571L16 6.99997L0 0.142822V5.47616L11.4286 6.99997L0 8.52378V13.8571Z" fill="#999999" />
+        </svg>
+      </button>
+    </form>
 
-    <div>
+    <div class="share-block" style="margin-top: 15px;">
+      <p class="lid">
+        И расскажите о нём друзьям и коллегам, которые много пишут по работе, ведут блоги или готовятся к экзаменам:
+      </p>
+      <!-- <p>Поделитесь своим результатом</p> -->
+      <share-buttons
+        [theme]="'default'"
+        [include]="['vk', 'facebook', 'twitter', 'telegram']"
+        [show]="7"
+        [showCount]="true"
+      ></share-buttons>
+    </div>
+    <div style="margin-top: 30px;">
       <p class="small secondary">Сделано в школе Бюро Горбунова в 2019 году</p>
     </div>
   </div>
