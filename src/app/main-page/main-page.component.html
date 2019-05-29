@@ -2,15 +2,11 @@
   <div class="container">
     <div class="main">
       <h1 class="title">
-        Пушкин
+        Тренажёр «Пушкин»
       </h1>
       <p class="lid">
-        Читайте цитаты из классики и оттачивайте свою грамотность.
-      </p>
-
-      <p class="lid">
-        Мы собрали правила с которыми сложно разобраться. Выберите тему и потренируйтесь, чтобы не допускать ошибок
-        в переписке.
+        Тренажёр пунктуации, где учатся расставлять знаки препинания в сложных случаях. Выберите тему, читайте цитаты из
+        классики и оттачивайте свою грамотность, чтобы не допускать ошибок в переписке.
       </p>
       <div class="flexbox flex-column">
         <nav class="flexbox nowrap">
@@ -38,7 +34,7 @@
             </div>
           </div>
           <div class="game-nav">
-            <div class="game-preview">
+            <div class="game-preview disabled">
               <app-dash-question-page
                 [question]="dashPreviewQuestion"
                 [isPreview]="true"
@@ -46,9 +42,9 @@
               ></app-dash-question-page>
             </div>
             <div class="textBlock">
-              <h3>Тире (в разработке)</h3>
+              <h3 class="disabled">Тире (в разработке)</h3>
               <p>
-                Тире ставится в неполных предложениях, иногда — между подлежащим и сказуемым. А когда не ставится?
+                Оставьте свою почту и узнайте, когда игра будет доступна:
               </p>
               <form>
                 <input #email (keyup.enter)="subscribe(email.value)" placeholder="Адрес эл. почты" type="email" />
