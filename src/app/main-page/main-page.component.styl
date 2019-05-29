@@ -62,8 +62,9 @@ $main-margin = 1.5rem;
   outline: none;
 }
 
-.container {
-  justify-content: space-between;
+.flex-end {
+  justify-self: flex-end;
+  margin-top: auto;
 }
 
 button {
@@ -91,6 +92,10 @@ button {
 @media only screen and (min-width: 1100px) {
   .svgBlock {
     margin: 3rem;
+  }
+
+  .game-nav:last-child {
+    margin: 1.5rem 0 0 0;
   }
 
   .flexbox {
