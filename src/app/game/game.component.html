@@ -56,7 +56,7 @@
         Проверить
       </button>
       <button
-        *ngIf="currentGame != 'dash' && !answered && !needHelp && !showResult"
+        *ngIf="currentGame === 'comma' && !answered && !needHelp && !showResult"
         class="button-secondary"
         (click)="help()"
       >
