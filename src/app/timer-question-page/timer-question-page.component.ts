@@ -9,8 +9,10 @@ import {
   OnChanges,
   SimpleChanges,
   QueryList,
-  ViewChildren
+  ViewChildren,
+  ViewChild
 } from '@angular/core';
+import { CountdownTimerComponent } from '../countdown-timer/countdown-timer.component';
 
 @Component({
   selector: 'app-timer-question-page',
@@ -23,13 +25,11 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
   @Output() OnAnswered = new EventEmitter<boolean>();
   @Output() OnNext = new EventEmitter<void>();
   @ViewChildren('btn') buttons: QueryList<GameButtonComponent>;
+  @ViewChild('countdownTimer', null) timer: CountdownTimerComponent;
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;
-  isTimer = true;
-  timertime = 7;
-  timeLeft: number;
-  interval;
+  timeLeft: boolean;
 
   constructor() {}
 
@@ -41,7 +41,10 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
     if (this.question != null) {
       this.answered = false;
       this.needHelp = false;
-      this.restartTimer();
+      this.timeLeft = false;
+      if (this.timer) {
+        this.timer.restartTimer();
+      }
     }
   }
 
@@ -52,7 +55,7 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
   }
 
   answer(isRightAnswer: boolean): void {
-    this.stopTimer();
+    this.timer.stopTimer();
     this.answered = true;
     if (!this.buttons.some(x => x.selected)) {
       this.buttons.find(x => x.button.needed === true).selected = true;
@@ -62,24 +65,9 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
     this.OnAnswered.emit(this.rightAnswer);
   }
 
-  restartTimer() {
-    this.resetTimer();
-    this.interval = setInterval(() => {
-      if (this.timeLeft > 0) {
-        this.timeLeft--;
-      } else {
-        this.answer(false);
-      }
-    }, 1000);
-  }
-
-  resetTimer() {
-    clearInterval(this.interval);
-    this.timeLeft = this.timertime;
-  }
-
-  stopTimer() {
-    clearInterval(this.interval);
+  noTimeLeft() {
+    this.timeLeft = true;
+    this.answer(false);
   }
 
   next() {

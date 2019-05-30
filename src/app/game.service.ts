@@ -14,7 +14,11 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class GameService {
   private questionsUrl = 'api/questions'; // URL to web api
-  games = { comma: 'Нужна ли запятая перед «как»?', timer: 'Вводные', dash: 'Куда нужно вставить тире?' }; // create an empty array
+  games = {
+    comma: 'Нужна ли запятая перед «как»?',
+    timer: 'Вводные слова и конструкции',
+    dash: 'Куда нужно вставить тире?'
+  }; // create an empty array
 
   constructor(private http: HttpClient, private messageService: MessageService) {}
 

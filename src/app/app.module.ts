@@ -22,7 +22,8 @@ import { SvgDefinitionsComponent } from './svg-definitions/svg-definitions.compo
 import { MetrikaModule } from 'ng-yandex-metrika';
 import { GameService } from './game.service';
 import { EmailSubscribeComponent } from './email-subscribe/email-subscribe.component';
-import { MatProgressSpinnerModule } from '@angular/material';
+import { MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 
 @NgModule({
   declarations: [
@@ -37,10 +38,12 @@ import { MatProgressSpinnerModule } from '@angular/material';
     GameButtonComponent,
     SvgComponent,
     SvgDefinitionsComponent,
-    EmailSubscribeComponent
+    EmailSubscribeComponent,
+    CountdownTimerComponent
   ],
   imports: [
     MatProgressSpinnerModule,
+    MatProgressBarModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

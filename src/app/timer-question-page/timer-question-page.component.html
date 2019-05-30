@@ -9,8 +9,13 @@
     </div>
   </div>
 
-  <p *ngIf="!answered" class="timer">{{ timeLeft }} секунд осталось...</p>
-  <p *ngIf="answered && timeLeft === 0 && rightAnswer != true" class="timer wrong">{{ 'Время вышло' }}</p>
+  <div class="timer">
+    <!-- <p *ngIf="!answered" class="timer">
+    {{ countdownTimer.timeLeftMiliseconds / 1000 | number: '1.0-0' }} секунд осталось...
+  </p> -->
+    <p *ngIf="timeLeft" class="wrong">{{ 'Время вышло' }}</p>
+    <app-countdown-timer #countdownTimer [frequency]="0.05" [time]="7" (finished)="noTimeLeft()"></app-countdown-timer>
+  </div>
 
   <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ question.helpMessage }}</div>
   <div class="Question__body" *ngIf="question.buttons.length > 0">
