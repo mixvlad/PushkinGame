@@ -49,6 +49,7 @@
       </div>
     </div>
     <app-result-page *ngIf="showResult" class="questionPart" [score]="score" [total]="totalQuestions"></app-result-page>
+    <!-- <app-result-page class="questionPart" [score]="score" [total]="totalQuestions"></app-result-page> -->
     <div *ngIf="!answered && needHelp"><span>Подсказка: </span>{{ currentQuestion.helpMessage }}</div>
     <div class="footer-wrap">
       <button *ngIf="currentGame == 'dash' && !answered && !showResult" (click)="check()">

@@ -1,5 +1,22 @@
 <div class="wrapper main-content">
   <h1>{{ score + ' из ' + total }}</h1>
+  <div class="progress-box">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" [ngStyle]="{ width: (100 * score) / total + '%' }"></div>
+    </div>
+
+    <div
+      class="progressIcon"
+      *ngIf="score != total"
+      [ngStyle]="{ left: 'calc(' + (100 * score) / total + '%' + ' - 20px)' }"
+    >
+      <span>Вы</span>
+    </div>
+    <div class="progressIcon pushkin">
+      <span *ngIf="score === total">Это вы?</span>
+    </div>
+  </div>
+
   <h2 [innerHTML]="GetResultText()"></h2>
   <div class="share-block">
     <p>Расскажите всем про тренажер грамотности «Пушкин»</p>
@@ -7,7 +24,7 @@
     <share-buttons
       [theme]="'default'"
       [include]="['vk', 'facebook', 'twitter', 'telegram']"
-      [show]="7"
+      [show]="4"
       [showCount]="true"
     ></share-buttons>
   </div>
