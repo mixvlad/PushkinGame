@@ -308,3 +308,45 @@ button:focus {
 share-buttons {
   margin-left: -10px;
 }
+
+.sb-default {
+  // share button wrapper
+  .sb-wrapper {
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    border-radius: 40px;
+
+    // Inner wrapper
+    .sb-inner {
+      // Content wrapper
+      .sb-content {
+        font-size: 1.2rem;
+
+        // Icon wrapper
+        .sb-icon {
+          min-width: 20px;
+        }
+
+        // Text wrapper
+        .sb-text {
+        }
+      }
+
+      // Count wrapper
+      .sb-count {
+      }
+    }
+
+    // For conditional styles
+    // E.g. Apply when icon, text and count are shown
+    &.sb-show-icon.sb-show-text.sb-show-count {
+      .sb-icon {
+      }
+
+      // Text wrapper
+      .sb-text {
+      }
+    }
+  }
+}

@@ -31,6 +31,40 @@ $main-margin = 1.5rem;
   background: url('../../assets/images/game-preview-third.min.png');
 }
 
+.instagram {
+  background: url('../../assets/images/instagram.png');
+}
+
+.subscribe-item {
+  align-items: center;
+  display: flex;
+  margin: 10px 0 15px;
+}
+
+.telegram {
+  // background: url('../../assets/images/telegram.png');
+  background-color: #0088cc;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.social {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.share-block, .subscribe-block {
+  flex: 1;
+}
+
 .game-preview {
   display: none;
   background-size: contain;
@@ -100,6 +134,12 @@ button {
 
   .flexbox {
     flex-direction: row;
+    width: 100%;
+  }
+
+  .subscribe-block {
+    border-right: $border;
+    margin-right: 20px;
   }
 
   .game-preview {
