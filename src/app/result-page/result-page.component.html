@@ -1,5 +1,5 @@
 <div class="wrapper main-content">
-  <h1>{{ score + ' из ' + total }}</h1>
+  <h1>{{ score + '/' + total }}</h1>
   <div class="progress-box">
     <div class="progress">
       <div class="progress-bar" role="progressbar" [ngStyle]="{ width: (100 * score) / total + '%' }"></div>
@@ -8,7 +8,7 @@
     <div
       class="progressIcon"
       *ngIf="score != total"
-      [ngStyle]="{ left: 'calc(' + (100 * score) / total + '%' + ' - 20px)' }"
+      [ngStyle]="{ left: 'calc(' + (100 * score) / total + '%' + ' - 3px)' }"
     >
       <span>Вы</span>
     </div>
@@ -17,9 +17,9 @@
     </div>
   </div>
 
-  <h2 [innerHTML]="GetResultText()"></h2>
+  <p class="lid" [innerHTML]="GetResultText()" style="text-align: center"></p>
   <div class="share-block">
-    <p>Расскажите всем про тренажер грамотности «Пушкин»</p>
+    <p style="text-align: center">Рассказать о тренажёре:</p>
     <!-- <p>Поделитесь своим результатом</p> -->
     <share-buttons
       [theme]="'default'"
