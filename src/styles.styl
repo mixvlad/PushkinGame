@@ -27,12 +27,60 @@ h1 {
   display: inline-block;
 }
 
+.copyright {
+  a {
+    color: $color-secondary;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(49, 85, 145, 0.2)), to(rgba(49, 85, 145, 0.2)));
+    background-image: -webkit-linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+    background-image: -o-linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+    background-image: linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+    background-size: 1px 1px;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $color-secondary-hover;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(49, 85, 145, 0.4)), to(rgba(49, 85, 145, 0.4)));
+    background-image: -webkit-linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
+    background-image: -o-linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
+    background-image: linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
+  }
+}
+
+.subscribe-block {
+  a {
+    text-decoration: none;
+  }
+
+  a span {
+    color: $color-secondary;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(49, 85, 145, 0.2)), to(rgba(49, 85, 145, 0.2)));
+    background-image: -webkit-linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+    background-image: -o-linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+    background-image: linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+    background-size: 1px 1px;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    text-decoration: none;
+  }
+
+  a:hover span {
+    color: $color-secondary-hover;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(49, 85, 145, 0.4)), to(rgba(49, 85, 145, 0.4)));
+    background-image: -webkit-linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
+    background-image: -o-linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
+    background-image: linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
+  }
+}
+
 .title {
   text-align: center;
 }
 
 .subtitle {
-  font-size: 1.55rem;
+  font-size: 1.3rem;
   line-height: 1.2em;
   display: block;
   margin-bottom: 30px;
@@ -63,6 +111,10 @@ h1 {
 @media only screen and (min-width: 400px) {
   h1 {
     font-size: $font-size--h1;
+  }
+
+  .subtitle {
+    font-size: 1.55rem;
   }
 
   .title::before {
