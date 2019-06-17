@@ -13,27 +13,24 @@ export class DashComponent implements OnInit {
 
   rightAnswer: boolean;
 
-  currentClasses: {};
-  setCurrentClasses() {
+  currentClasses() {
     this.rightAnswer = this.selected === this.needed;
     // CSS classes: added/removed per current state of component properties
-    this.currentClasses = {
+    return {
       selected: this.selected,
       right: this.rightAnswer,
-      wrong: !this.rightAnswer
+      wrong: !this.rightAnswer,
+      notneeded: !this.needed
     };
   }
 
   constructor() {}
 
-  ngOnInit() {
-    this.setCurrentClasses();
-  }
+  ngOnInit() {}
 
   clickDash() {
     this.selected = !this.selected;
     this.rightAnswer = this.selected === this.needed;
     this.OnAnswered.emit(this.selected === this.needed);
-    this.setCurrentClasses();
   }
 }

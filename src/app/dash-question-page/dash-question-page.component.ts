@@ -44,6 +44,7 @@ export class DashQuestionPageComponent implements OnInit, OnChanges {
   check() {
     this.answered = true;
     this.rightAnswer = !this.components.some(x => x.rightAnswer === false);
+    this.components.forEach(x => (x.selected = x.needed));
 
     this.OnAnswered.emit(this.rightAnswer);
   }

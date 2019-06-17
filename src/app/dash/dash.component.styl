@@ -1,32 +1,44 @@
+@import '../../style-params.styl';
+
 .dash {
-    display: inline-block;
-    background-color: #f9df86;
-    width: 1em;
-    height: 0.7em;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
+  display: inline-block;
+  background-color: #f9df86;
+  width: 1em;
+  height: 0.7em;
+  top: 0.1em;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  margin-left: 0.4rem;
+}
+
+:host-context(.answered) {
+  .dash {
+    background: none;
+    color: $color-secondary;
+    cursor: default;
   }
+
+  .selected::after {
+    background: $color-secondary;
+    // content: '—';
+  }
+
+  .notneeded {
+    display: none;
+  }
+}
 
 .selected {
-    background-color: #FFC500;
-  }
+  background-color: #FFC500;
+}
 
-.selected::after{
-    content: '';
-    position: absolute;
-    width: 70%;
-    height: 3px;
-    background: #000;
-    top: 50%;
-    left: 15%;
-  }
-
-:host-context(.answered) .right {
-    background-color: #4EB454;
-  }
-
-
-:host-context(.answered) .wrong {
-    background-color: #FF5261;
-  }
+.selected::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 3px;
+  background: #000;
+  top: 50%;
+  left: 15%;
+}
