@@ -24,6 +24,7 @@ import { GameService } from './game.service';
 import { EmailSubscribeComponent } from './email-subscribe/email-subscribe.component';
 import { MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     SvgComponent,
     SvgDefinitionsComponent,
     EmailSubscribeComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    RatingComponent
   ],
   imports: [
     MatProgressSpinnerModule,

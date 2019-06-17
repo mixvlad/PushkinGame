@@ -6,6 +6,7 @@ import { catchError, map, tap, take } from 'rxjs/operators';
 
 import { Question } from './question';
 import { MessageService } from './message.service';
+import { User } from './user';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -42,6 +43,13 @@ export class GameService {
       taken[x] = --len in taken ? taken[len] : len;
     }
     return result;
+  }
+
+  getRating(): Observable<User[]> {
+    return this.http.get<User[]>('api/rating').pipe(
+      tap(_ => this.log('fetched rating')),
+      catchError(this.handleError<User[]>('getRating', []))
+    );
   }
 
   /** GET questions from the server */

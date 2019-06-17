@@ -4,7 +4,7 @@
       <p *ngIf="textParts">
         <!-- <ng-template ngFor let-item [ngForOf]="textParts" let-i="index" [ngForTrackBy]="trackByFn"> -->
         <ng-template ngFor let-item [ngForOf]="textParts" let-i="index">
-          <span *ngIf="item.value != '+' && item.value != '-'">{{ item.value }}</span>
+          <span *ngIf="item.value != '+' && item.value != '-'" [innerHTML]="item.value"></span>
           <app-dash
             #dash
             *ngIf="item.value === '+' || item.value === '-'"
@@ -26,11 +26,11 @@
       <span>Подсказка: </span>Поставьте тире, там где они нужны. Бывает что тире не нужно ставить нигде.
     </div>
 
-    <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
-      <div *ngIf="answered" class="highlightText">
+    <div *ngIf="answered">
+      <div *ngIf="answered" [ngClass]="rightAnswer ? 'right' : 'wrong'">
         {{ rightAnswer ? 'Верно' : 'Неверно' }}
       </div>
-      <div *ngIf="answered">{{ rightAnswer ? question.trueRuleInfo : question.falseRuleInfo }}</div>
+      <div *ngIf="answered" [innerHTML]="rightAnswer ? question.trueRuleInfo : question.falseRuleInfo"></div>
     </div>
   </div>
 </div>

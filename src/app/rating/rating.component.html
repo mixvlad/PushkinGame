@@ -1,0 +1,12 @@
+<div class="root">
+  <div class="container">
+    <h1>Рейтинг</h1>
+    <ul>
+      <li *ngFor="let user of ratingUsers">
+        <span>{{ user.id }}.</span>
+        <span> {{ user.name }}</span>
+        <span> {{ user.value }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

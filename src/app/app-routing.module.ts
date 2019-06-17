@@ -1,3 +1,4 @@
+import { RatingComponent } from './rating/rating.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: '', component: MainPageComponent, pathMatch: 'full' },
   { path: 'comma', component: GameComponent },
   { path: 'timer', component: GameComponent },
-  { path: 'dash', component: GameComponent }
+  { path: 'dash', component: GameComponent },
+  { path: 'rating', component: RatingComponent }
 ];
 
 @NgModule({
