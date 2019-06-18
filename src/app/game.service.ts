@@ -1,3 +1,4 @@
+import { BaseService } from './base.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -13,15 +14,17 @@ const httpOptions = {
 };
 
 @Injectable({ providedIn: 'root' })
-export class GameService {
+export class GameService extends BaseService {
   private questionsUrl = 'api/questions'; // URL to web api
   games = {
     comma: 'Нужна ли запятая перед «как»?',
     timer: 'Вводные слова и конструкции',
-    dash: 'Куда нужно вставить тире?'
+    dash: 'Нужно ли тире?'
   }; // create an empty array
 
-  constructor(private http: HttpClient, private messageService: MessageService) {}
+  constructor(private http: HttpClient, messageService: MessageService) {
+    super(messageService);
+  }
 
   getGameTitle(name: string): string {
     if (name === null || name === '') {
@@ -43,13 +46,6 @@ export class GameService {
       taken[x] = --len in taken ? taken[len] : len;
     }
     return result;
-  }
-
-  getRating(): Observable<User[]> {
-    return this.http.get<User[]>('api/rating').pipe(
-      tap(_ => this.log('fetched rating')),
-      catchError(this.handleError<User[]>('getRating', []))
-    );
   }
 
   /** GET questions from the server */
@@ -80,29 +76,5 @@ export class GameService {
       tap(_ => this.log(`fetched question id=${id}`)),
       catchError(this.handleError<Question>(`getquestion id=${id}`))
     );
-  }
-
-  /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
-
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
-  }
-
-  /** Log a questionService message with the MessageService */
-  private log(message: string) {
-    this.messageService.add(`questionService: ${message}`);
   }
 }

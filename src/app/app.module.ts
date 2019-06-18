@@ -25,6 +25,8 @@ import { EmailSubscribeComponent } from './email-subscribe/email-subscribe.compo
 import { MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 import { RatingComponent } from './rating/rating.component';
+import { InputBlockComponent } from './input-block/input-block.component';
+import { UserInputComponent } from './user-input/user-input.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { RatingComponent } from './rating/rating.component';
     SvgDefinitionsComponent,
     EmailSubscribeComponent,
     CountdownTimerComponent,
-    RatingComponent
+    RatingComponent,
+    InputBlockComponent,
+    UserInputComponent
   ],
   imports: [
     MatProgressSpinnerModule,

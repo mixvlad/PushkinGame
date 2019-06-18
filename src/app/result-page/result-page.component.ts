@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { range } from 'rxjs';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-result-page',
@@ -25,7 +26,15 @@ export class ResultPageComponent implements OnInit {
     }
   }
 
-  constructor() {}
+  constructor(userService: UserService) {
+    const userId = localStorage.getItem('currentUserId');
+    if (userId != null) {
+      userService.getUser(+userId).subscribe(x => {
+        x.score += this.score - 3;
+        userService.updateUser(x).subscribe();
+      });
+    }
+  }
 
   ngOnInit() {}
 }

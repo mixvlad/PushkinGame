@@ -1,11 +1,14 @@
 <div class="root">
   <div class="container">
-    <h1>Рейтинг</h1>
+    <app-user-input></app-user-input>
+    <p>
+      Зарегистрируйтесь, чтобы участвовать в рейтинге.
+    </p>
+    <h2>Рейтинг</h2>
     <ul>
       <li *ngFor="let user of ratingUsers">
-        <span>{{ user.id }}.</span>
         <span> {{ user.name }}</span>
-        <span> {{ user.value }}</span>
+        <span> {{ user.score }}</span>
       </li>
     </ul>
   </div>

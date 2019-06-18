@@ -1,22 +1,25 @@
+import { InputBlockComponent, State } from './../input-block/input-block.component';
 import { Component, OnInit } from '@angular/core';
 import { SubscribeService } from '../subscribe.service';
 
 @Component({
   selector: 'app-email-subscribe',
-  templateUrl: './email-subscribe.component.html',
-  styleUrls: ['./email-subscribe.component.styl']
+  templateUrl: '../input-block/input-block.component.html',
+  styleUrls: ['../input-block/input-block.component.styl']
 })
-export class EmailSubscribeComponent implements OnInit {
-  currentState = State.Initial;
-  constructor(private subscribeService: SubscribeService) {}
+export class EmailSubscribeComponent extends InputBlockComponent implements OnInit {
+  constructor(private subscribeService: SubscribeService) {
+    super();
+    this.placeholderText = 'Адрес эл. почты';
+  }
 
   ngOnInit() {}
 
-  subscribe(emailBlock) {
-    if (emailBlock.value) {
+  submit(value) {
+    if (value) {
       // send request to server
       this.currentState = State.inProgress;
-      this.subscribeService.subscribe(emailBlock.value).subscribe(
+      this.subscribeService.subscribe(value).subscribe(
         res => {
           console.log(res);
           // emailBlock.value = '';
@@ -29,10 +32,4 @@ export class EmailSubscribeComponent implements OnInit {
       );
     }
   }
-}
-
-enum State {
-  Initial = 1,
-  inProgress,
-  Done
 }

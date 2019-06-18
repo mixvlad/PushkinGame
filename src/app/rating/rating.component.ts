@@ -1,7 +1,6 @@
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
-import { GameService } from '../game.service';
 import { User } from '../user';
-
 @Component({
   selector: 'app-rating',
   templateUrl: './rating.component.html',
@@ -9,11 +8,18 @@ import { User } from '../user';
 })
 export class RatingComponent implements OnInit {
   ratingUsers: User[];
-  constructor(private gameService: GameService) {}
+  interval: any;
+  constructor(private userService: UserService) {}
 
-  ngOnInit() {
-    this.gameService.getRating().subscribe(users => {
+  refreshData() {
+    this.userService.getUsers().subscribe(users => {
       this.ratingUsers = users;
     });
+  }
+  ngOnInit() {
+    this.refreshData();
+    this.interval = setInterval(() => {
+      this.refreshData();
+    }, 5000);
   }
 }
