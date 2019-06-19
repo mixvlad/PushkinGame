@@ -1,3 +1,4 @@
+import { BlogPageComponent } from './blog-page/blog-page.component';
 import { RatingComponent } from './rating/rating.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'comma', component: GameComponent },
   { path: 'timer', component: GameComponent },
   { path: 'dash', component: GameComponent },
-  { path: 'rating', component: RatingComponent }
+  { path: 'rating', component: RatingComponent },
+  { path: 'blog', component: BlogPageComponent }
 ];
 
 @NgModule({

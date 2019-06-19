@@ -27,6 +27,8 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
 import { RatingComponent } from './rating/rating.component';
 import { InputBlockComponent } from './input-block/input-block.component';
 import { UserInputComponent } from './user-input/user-input.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
+import { TopPanelComponent } from './top-panel/top-panel.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { UserInputComponent } from './user-input/user-input.component';
     CountdownTimerComponent,
     RatingComponent,
     InputBlockComponent,
-    UserInputComponent
+    UserInputComponent,
+    BlogPageComponent,
+    TopPanelComponent
   ],
   imports: [
     MatProgressSpinnerModule,

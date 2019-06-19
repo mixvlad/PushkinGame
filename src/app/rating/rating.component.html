@@ -1,10 +1,13 @@
 <div class="root">
   <div class="container">
+    <app-top-panel [title]="'Рейтинг участников '"></app-top-panel>
+    <div style="height: 30px"></div>
     <app-user-input></app-user-input>
     <p>
       Зарегистрируйтесь, чтобы участвовать в рейтинге.
     </p>
-    <h2>Рейтинг</h2>
+    <button routerLink="/">Выбрать игру</button>
+
     <ul>
       <li *ngFor="let user of ratingUsers">
         <span> {{ user.name }}</span>
