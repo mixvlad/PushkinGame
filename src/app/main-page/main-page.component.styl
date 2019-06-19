@@ -82,6 +82,10 @@ $main-margin = 1.5rem;
   border: $border-hover;
 }
 
+.game-nav h3 {
+  color: $color-secondary;
+}
+
 .disabled:hover {
   // border: $border;
   cursor: default;
@@ -130,6 +134,22 @@ button {
   width: 100%;
 }
 
+.blog {
+  width: calc(100% + 24px);
+  background-color: #f0f8fd;
+  padding: 12px 0 20px 12px;
+  margin: 0 -12px 20px;
+}
+
+@media only screen and (min-width: 700px) {
+  .blog {
+    width: calc(100% + 90px);
+    background-color: #F0F8FD;
+    padding: 20px 0 20px 45px;
+    margin: 0 -45px 20px;
+  }
+}
+
 @media only screen and (min-width: 1100px) {
   .footer {
     align-items: flex-end;
@@ -141,14 +161,13 @@ button {
   }
 
   .game-nav {
-    margin: $main-margin $main-margin 0 0;
+    margin: 1rem;
     flex: 1 1 450px;
   }
 
-  .game-nav:last-child {
-    margin: 1.5rem 0 0 0;
-  }
-
+  // .game-nav:last-child {
+  // margin: 1.5rem 0 0 0;
+  // }
   .flexbox {
     flex-direction: row;
     width: 100%;

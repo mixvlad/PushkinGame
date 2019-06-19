@@ -6,10 +6,6 @@ import { tap, catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BaseService } from './base.service';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-
 @Injectable({
   providedIn: 'root'
 })
@@ -50,7 +46,7 @@ export class UserService extends BaseService {
 
   /** POST: add a new User to the server */
   addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.baseUrl, user, httpOptions).pipe(
+    return this.http.post<User>(this.baseUrl, user, this.httpOptions).pipe(
       tap((newUser: User) => this.log(`added User w/ id=${newUser.id}`)),
       catchError(this.handleError<User>('addUser'))
     );
@@ -60,7 +56,7 @@ export class UserService extends BaseService {
   deleteUser(id: number): Observable<User> {
     const url = `${this.baseUrl}/${id}`;
 
-    return this.http.delete<User>(url, httpOptions).pipe(
+    return this.http.delete<User>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted User id=${id}`)),
       catchError(this.handleError<User>('deleteUser'))
     );
@@ -68,7 +64,7 @@ export class UserService extends BaseService {
 
   /** PUT: update the User on the server */
   updateUser(user: User): Observable<any> {
-    return this.http.put(this.baseUrl + '/' + user.id, user, httpOptions).pipe(
+    return this.http.put(this.baseUrl + '/' + user.id, user, this.httpOptions).pipe(
       tap(_ => this.log(`updated User id=${user.id}`)),
       catchError(this.handleError<any>('updateUser'))
     );

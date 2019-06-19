@@ -7,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TopPanelComponent implements OnInit {
   @Input() title: string;
-  @Input() currentIndex: number;
-  @Input() totalQuestions: number;
+  @Input() subTitle: string;
   constructor() {}
 
   ngOnInit() {}

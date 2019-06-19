@@ -21,9 +21,16 @@ export class MainPageComponent implements OnInit {
   };
 
   dashPreviewQuestion = {
-    questionText: `Я |-| честный человек и никогда не говорю комплиментов.`,
+    questionText: `Я|-| честный человек и никогда не говорю комплиментов.`,
     buttons: [],
     author: `А.П. Чехов «Учитель»`
+  };
+
+  commaWithUnionPreviewQuestion = {
+    // tslint:disable-next-line:max-line-length
+    questionText: `А я тебе говорю<span class="highlightText">&nbsp;?&nbsp;</span>что<span class="highlightText">&nbsp;?&nbsp;</span>если ты поедешь, я поеду с тобой.`,
+    buttons: [],
+    author: `Л.Н. Толстой «Анна Каренина»`
   };
   constructor() {}
 

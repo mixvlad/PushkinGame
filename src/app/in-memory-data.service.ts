@@ -11,8 +11,8 @@ export class InMemoryDataService implements InMemoryDbService {
     const commaQuestions = [
       {
         id: 1,
-        questionText: `Виконт был подан обществу в самом изящном и выгодном для него свете<span class="highlightText">&nbsp;?&nbsp;</span>как ростбиф на горячем блюде, посыпанный зеленью.`,
-        correctText: `Виконт был подан обществу в самом изящном и выгодном для него свете<span class="highlightText">,&nbsp;</span>как ростбиф на горячем блюде, посыпанный зеленью.`,
+        questionText: `Виконт был подан обществу в самом изящном и выгодном для него свете<span class=""highlightText"">&nbsp;?&nbsp;</span>как ростбиф на горячем блюде, посыпанный зеленью.`,
+        correctText: `Виконт был подан обществу в самом изящном и выгодном для него свете<span class=""highlightText"">,&nbsp;</span>как ростбиф на горячем блюде, посыпанный зеленью.`,
         buttons: [
           { name: 'Запятая нужна, это сравнение', ruleInfo: `Запятая нужна, потому что это сравнение.`, needed: true },
           { name: 'Без запятой, это сказуемое', ruleInfo: `Запятая нужна, потому что это сравнение.`, needed: false }
@@ -23,8 +23,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 2,
-        questionText: `Ничто так не нужно молодому человеку<span class="highlightText">&nbsp;?&nbsp;</span>как общество умных женщин.`,
-        correctText: `Ничто так не нужно молодому человеку<span class="highlightText">,&nbsp;</span>как общество умных женщин.`,
+        questionText: `Ничто так не нужно молодому человеку<span class=""highlightText"">&nbsp;?&nbsp;</span>как общество умных женщин.`,
+        correctText: `Ничто так не нужно молодому человеку<span class=""highlightText"">,&nbsp;</span>как общество умных женщин.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -44,8 +44,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 3,
-        questionText: `Пьер был неуклюж. Он<span class="highlightText">&nbsp;?&nbsp;</span>как говорится<span class="highlightText">&nbsp;?&nbsp;</span>не умел войти в салон и еще менее умел из него выйти.`,
-        correctText: `Пьер был неуклюж. Он<span class="highlightText">,&nbsp;</span>как говорится<span class="highlightText">,&nbsp;</span>не умел войти в салон и еще менее умел из него выйти.`,
+        questionText: `Пьер был неуклюж. Он<span class=""highlightText"">&nbsp;?&nbsp;</span>как говорится<span class=""highlightText"">&nbsp;? </span>не умел войти в салон и еще менее умел из него выйти.`,
+        correctText: `Пьер был неуклюж. Он<span class=""highlightText"">,&nbsp;</span>как говорится<span class=""highlightText"">,&nbsp;</span>не умел войти в салон и еще менее умел из него выйти.`,
         buttons: [
           {
             name: 'Запятая нужна, это вводное словосочетание',
@@ -64,8 +64,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 4,
-        questionText: `Москве больше делать нечего<span class="highlightText">&nbsp;?&nbsp;</span> как сплетничать.`,
-        correctText: `Москве больше делать нечего<span class="highlightText">,&nbsp;</span>как сплетничать.`,
+        questionText: `Москве больше делать нечего<span class=""highlightText"">&nbsp;? </span> как сплетничать.`,
+        correctText: `Москве больше делать нечего<span class=""highlightText"">,&nbsp;</span>как сплетничать.`,
         buttons: [
           {
             name: 'Запятая нужна, значение исключения',
@@ -84,8 +84,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 5,
-        questionText: `Француз стоял<span class="highlightText">&nbsp;?&nbsp;</span>как вкопанный.`,
-        correctText: `Француз стоял<span class="highlightText">&nbsp;</span>как вкопанный.`,
+        questionText: `Француз стоял<span class=""highlightText"">&nbsp;?&nbsp;</span>как вкопанный.`,
+        correctText: `Француз стоял<span class=""highlightText"">&nbsp;</span>как вкопанный.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -104,8 +104,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 6,
-        questionText: `Один Иван Петрович был<span class="highlightText">&nbsp;?&nbsp;</span>как дома: ел за двоих, пил в свою меру, смеялся своему смеху.`,
-        correctText: `Один Иван Петрович был<span class="highlightText">&nbsp;</span>как дома: ел за двоих, пил в свою меру, смеялся своему смеху.`,
+        questionText: `Один Иван Петрович был<span class=""highlightText"">&nbsp;?&nbsp;</span>как дома: ел за двоих, пил в свою меру, смеялся своему смеху.`,
+        correctText: `Один Иван Петрович был<span class=""highlightText"">&nbsp;</span>как дома: ел за двоих, пил в свою меру, смеялся своему смеху.`,
         buttons: [
           {
             name: 'Запятая нужна, есть значение причины',
@@ -125,10 +125,10 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 7,
         questionText: `И Ленский, жмуря левый глаз<br />
-Стал тоже целить, но<span class="highlightText">&nbsp;?&nbsp;</span>как раз<span class="highlightText">&nbsp;?&nbsp;</span><br />
+Стал тоже целить, но<span class=""highlightText"">&nbsp;?&nbsp;</span>как раз<span class=""highlightText"">&nbsp;? </span><br />
 Онегин выстрелил.`,
         correctText: `И Ленский, жмуря левый глаз<br />
-Стал тоже целить, но<span class="highlightText">&nbsp;</span>как раз<span class="highlightText">&nbsp;</span><br />
+Стал тоже целить, но<span class=""highlightText"">&nbsp;</span>как&nbsp;раз<span class=""highlightText"">&nbsp;</span><br />
 Онегин выстрелил.`,
         buttons: [
           {
@@ -149,11 +149,11 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 8,
         questionText: `Промчалось много, много дней,<br />
-С тех пор<span class="highlightText">&nbsp;?&nbsp;</span>как юная Татьяна<br />
+С тех пор<span class=""highlightText"">&nbsp;?&nbsp;</span>как юная Татьяна<br />
 И с ней Онегин в смутном сне<br />
 Явилися впервые мне.`,
         correctText: `Промчалось много, много дней,<br />
-С тех пор<span class="highlightText">&nbsp;</span>как юная Татьяна<br />
+С тех пор<span class=""highlightText"">&nbsp;</span>как юная Татьяна<br />
 И с ней Онегин в смутном сне<br />
 Явилися впервые мне.`,
         buttons: [
@@ -174,8 +174,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 9,
-        questionText: `Ты женишься, или я тебя прокляну, а имение<span class="highlightText">&nbsp;?&nbsp;</span>как бог свят<span class="highlightText">&nbsp;?&nbsp;</span>продам и промотаю!`,
-        correctText: `Ты женишься, или я тебя прокляну, а имение<span class="highlightText">,&nbsp;</span>как бог свят<span class="highlightText">,&nbsp;</span>продам и промотаю!`,
+        questionText: `Ты женишься, или я тебя прокляну, а имение<span class=""highlightText"">&nbsp;?&nbsp;</span>как бог свят<span class=""highlightText"">&nbsp;? </span>продам и промотаю!`,
+        correctText: `Ты женишься, или я тебя прокляну, а имение<span class=""highlightText"">,&nbsp;</span>как бог свят<span class=""highlightText"">,&nbsp;</span>продам и промотаю!`,
         buttons: [
           {
             name: 'Запятая нужна, это вводное словосочетание',
@@ -194,8 +194,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 10,
-        questionText: `Лучший стрелок, которого удалось мне встречать, стрелял каждый день, по крайней мере три раза перед обедом. Это у него было заведено<span class="highlightText">&nbsp;?&nbsp;</span>как рюмка водки.`,
-        correctText: `Лучший стрелок, которого удалось мне встречать, стрелял каждый день, по крайней мере три раза перед обедом. Это у него было заведено<span class="highlightText">,&nbsp;</span>как рюмка водки.`,
+        questionText: `Лучший стрелок, которого удалось мне встречать, стрелял каждый день, по крайней мере три раза перед обедом. Это у него было заведено<span class=""highlightText"">&nbsp;?&nbsp;</span>как рюмка водки.`,
+        correctText: `Лучший стрелок, которого удалось мне встречать, стрелял каждый день, по крайней мере три раза перед обедом. Это у него было заведено<span class=""highlightText"">,&nbsp;</span>как рюмка водки.`,
         buttons: [
           { name: 'Запятая нужна, это сравнение', ruleInfo: `Сравнительный оборот выделяется запятой.`, needed: true },
           {
@@ -204,14 +204,14 @@ export class InMemoryDataService implements InMemoryDbService {
             needed: false
           }
         ],
-        helpMessage: 'Если удалить сравнение, смысл предложения по-прежнему будет понятен.',
+        helpMessage: 'Если удалить сравнение, смысл предложения по&#8209;прежнему будет понятен.',
         author: `А.С. Пушкин
 «Выстрел»`
       },
       {
         id: 11,
-        questionText: `Приказчика моего нашли на другой день в лесу, привязанного к дубу и ободранного<span class="highlightText">&nbsp;?&nbsp;</span>как липку.`,
-        correctText: `Приказчика моего нашли на другой день в лесу, привязанного к дубу и ободранного<span class="highlightText">&nbsp;</span>как липку.`,
+        questionText: `Приказчика моего нашли на другой день в лесу, привязанного к дубу и ободранного<span class=""highlightText"">&nbsp;?&nbsp;</span>как липку.`,
+        correctText: `Приказчика моего нашли на другой день в лесу, привязанного к дубу и ободранного<span class=""highlightText"">&nbsp;</span>как липку.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -230,8 +230,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 12,
-        questionText: `Вот уж 5 часов<span class="highlightText">&nbsp;?&nbsp;</span>как дожидается лошадей да свищет. Надоел проклятый.`,
-        correctText: `Вот уж 5 часов<span class="highlightText">&nbsp;</span>как дожидается лошадей да свищет. Надоел проклятый.`,
+        questionText: `Вот уж 5 часов<span class=""highlightText"">&nbsp;?&nbsp;</span>как дожидается лошадей да свищет. Надоел проклятый.`,
+        correctText: `Вот уж 5 часов<span class=""highlightText"">&nbsp;</span>как дожидается лошадей да свищет. Надоел проклятый.`,
         buttons: [
           {
             name: 'Запятая нужна, сложное предложение',
@@ -250,10 +250,10 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 13,
-        questionText: `Руслан уныньем<span class="highlightText">&nbsp;?&nbsp;</span>как убит;<br />
+        questionText: `Руслан уныньем<span class=""highlightText"">&nbsp;?&nbsp;</span>как убит;<br />
 Мысль о потерянной невесте<br />
 Его терзает и мертвит.`,
-        correctText: `Руслан уныньем<span class="highlightText">&nbsp;</span>как убит;<br />
+        correctText: `Руслан уныньем<span class=""highlightText"">&nbsp;</span>как убит;<br />
 Мысль о потерянной невесте<br />
 Его терзает и мертвит.`,
         buttons: [
@@ -275,11 +275,11 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 14,
         questionText: `Уж витязь под горой стоит,<br />
-Призывный рог<span class="highlightText">&nbsp;?&nbsp;</span>как буря<span class="highlightText">&nbsp;?&nbsp;</span> воет,<br />
+Призывный рог<span class=""highlightText"">&nbsp;?&nbsp;</span>как буря<span class=""highlightText"">&nbsp;? </span> воет,<br />
 Нетерпеливый конь кипит<br />
 И снег копытом мочным роет.`,
         correctText: `Уж витязь под горой стоит,<br />
-Призывный рог<span class="highlightText">,&nbsp;</span>как буря<span class="highlightText">,&nbsp;</span>воет,<br />
+Призывный рог<span class=""highlightText"">,&nbsp;</span>как буря<span class=""highlightText"">,&nbsp;</span>воет,<br />
 Нетерпеливый конь кипит<br />
 И снег копытом мочным роет.`,
         buttons: [
@@ -293,10 +293,10 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 15,
         questionText: `А их глазищи желтые<br />
-Горят<span class="highlightText">&nbsp;?&nbsp;</span>как воску ярого<br />
+Горят<span class=""highlightText"">&nbsp;?&nbsp;</span>как воску ярого<br />
 Четырнадцать свечей!`,
         correctText: `А их глазищи желтые<br />
-Горят<span class="highlightText">,&nbsp;</span>как воску ярого<br />
+Горят<span class=""highlightText"">,&nbsp;</span>как воску ярого<br />
 Четырнадцать свечей!`,
         buttons: [
           { name: 'Запятая нужна, это сравнение', ruleInfo: `Это сравнение, выделяется запятыми.`, needed: true },
@@ -308,8 +308,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 16,
-        questionText: `Мой совет: обвенчаться<span class="highlightText">&nbsp;?&nbsp;</span>как можно скорее<span class="highlightText">&nbsp;?&nbsp;</span>в вашей деревянной церкви и приезжать к нам.`,
-        correctText: `Мой совет: обвенчаться<span class="highlightText">&nbsp;</span>как можно скорее<span class="highlightText">&nbsp;</span>в вашей деревянной церкви и приезжать к нам.`,
+        questionText: `Мой совет: обвенчаться<span class=""highlightText"">&nbsp;?&nbsp;</span>как можно скорее<span class=""highlightText"">&nbsp;? </span>в вашей деревянной церкви и приезжать к нам.`,
+        correctText: `Мой совет: обвенчаться<span class=""highlightText"">&nbsp;</span>как можно скорее<span class=""highlightText"">&nbsp;</span>в вашей деревянной церкви и приезжать к нам.`,
         buttons: [
           {
             name: 'Запятая нужна, это сложное предложение',
@@ -328,8 +328,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 17,
-        questionText: `Я не корчу английского лорда<span class="highlightText">&nbsp;?&nbsp;</span>как дипломат Северин, внук портного и повара.`,
-        correctText: `Я не корчу английского лорда<span class="highlightText">,&nbsp;</span>как дипломат Северин, внук портного и повара.`,
+        questionText: `Я не корчу английского лорда<span class=""highlightText"">&nbsp;?&nbsp;</span>как дипломат Северин, внук портного и повара.`,
+        correctText: `Я не корчу английского лорда<span class=""highlightText"">,&nbsp;</span>как дипломат Северин, внук портного и повара.`,
         buttons: [
           { name: 'Запятая нужна, это сравнение', ruleInfo: `Это сравнение, выделяется запятыми.`, needed: true },
           { name: 'Без запятой, значение причины', ruleInfo: `Это сравнение, выделяется запятыми.`, needed: false }
@@ -340,24 +340,24 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 18,
-        questionText: `Сотни верст пустынной, однообразной, выгоревшей степи не могут нагнать такого уныния<span class="highlightText">&nbsp;?&nbsp;</span>как один человек, когда он сидит, говорит и неизвестно, когда он уйдет.`,
-        correctText: `Сотни верст пустынной, однообразной, выгоревшей степи не могут нагнать такого уныния<span class="highlightText">,&nbsp;</span>как один человек, когда он сидит, говорит и неизвестно, когда он уйдет.`,
+        questionText: `Сотни верст пустынной, однообразной, выгоревшей степи не могут нагнать такого уныния<span class=""highlightText"">&nbsp;?&nbsp;</span>как один человек, когда он сидит, говорит и неизвестно, когда он уйдет.`,
+        correctText: `Сотни верст пустынной, однообразной, выгоревшей степи не могут нагнать такого уныния<span class=""highlightText"">,&nbsp;</span>как один человек, когда он сидит, говорит и неизвестно, когда он уйдет.`,
         buttons: [
-          { name: 'Запятая нужна, это сравнение', ruleInfo: `Это сравнение, выделяется запятыми.`, needed: true },
+          { name: 'Запятая нужна, составной союз', ruleInfo: `Это составной союз «такой..., как».`, needed: true },
           {
             name: 'Без запятой, «как один» не выделяется',
-            ruleInfo: `Запятая нужна: «как один» входит в состав сравнения. Сравните: «Все работали как один».`,
+            ruleInfo: `Это составной союз «такой..., как». В конструкциях «так..., как», «столь ..., как» всегда ставится запятая.`,
             needed: false
           }
         ],
-        helpMessage: 'Автор сравнивает скучного человека с пустыней.',
+        helpMessage: 'В первой части предложения есть слово «такой».',
         author: `А.П. Чехов
 «Дом с мезонином»`
       },
       {
         id: 19,
-        questionText: `Да, всё он делал не<span class="highlightText">&nbsp;?&nbsp;</span>как люди.`,
-        correctText: `Да, всё он делал не<span class="highlightText">&nbsp;</span>как люди.`,
+        questionText: `Да, всё он делал не<span class=""highlightText"">&nbsp;?&nbsp;</span>как люди.`,
+        correctText: `Да, всё он делал не<span class=""highlightText"">&nbsp;</span>как люди.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -376,8 +376,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 20,
-        questionText: `По мнению здешних ученых, этот провал не что иное<span class="highlightText">&nbsp;?&nbsp;</span>как угасший кратер.`,
-        correctText: `По мнению здешних ученых, этот провал не что иное<span class="highlightText">,&nbsp;</span>как угасший кратер.`,
+        questionText: `По мнению здешних ученых, этот провал не что иное<span class=""highlightText"">&nbsp;?&nbsp;</span>как угасший кратер.`,
+        correctText: `По мнению здешних ученых, этот провал не что иное<span class=""highlightText"">,&nbsp;</span>как угасший кратер.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -396,8 +396,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 21,
-        questionText: `Честолюбие есть не что иное<span class="highlightText">&nbsp;?&nbsp;</span>как жажда власти.`,
-        correctText: `Честолюбие есть не что иное<span class="highlightText">,&nbsp;</span>как жажда власти.`,
+        questionText: `Честолюбие есть не что иное<span class=""highlightText"">&nbsp;?&nbsp;</span>как жажда власти.`,
+        correctText: `Честолюбие есть не что иное<span class=""highlightText"">,&nbsp;</span>как жажда власти.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -416,8 +416,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 22,
-        questionText: `Гость был не кто другой<span class="highlightText">&nbsp;?&nbsp;</span>как наш почтенный Павел Иванович Чичиков.`,
-        correctText: `Гость был не кто другой<span class="highlightText">,&nbsp;</span>как наш почтенный Павел Иванович Чичиков.`,
+        questionText: `Гость был не кто другой<span class=""highlightText"">&nbsp;?&nbsp;</span>как наш почтенный Павел Иванович Чичиков.`,
+        correctText: `Гость был не кто другой<span class=""highlightText"">,&nbsp;</span>как наш почтенный Павел Иванович Чичиков.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -436,8 +436,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 23,
-        questionText: `Она была<span class="highlightText">&nbsp;?&nbsp;</span>как меньшая<span class="highlightText">&nbsp;?&nbsp;</span>любимица отца.`,
-        correctText: `Она была<span class="highlightText">,&nbsp;</span>как меньшая<span class="highlightText">,&nbsp;</span>любимица отца.`,
+        questionText: `Она была<span class=""highlightText"">&nbsp;?&nbsp;</span>как меньшая<span class=""highlightText"">&nbsp;? </span>любимица отца.`,
+        correctText: `Она была<span class=""highlightText"">,&nbsp;</span>как меньшая<span class=""highlightText"">,&nbsp;</span>любимица отца.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -456,8 +456,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 24,
-        questionText: `Наш сад<span class="highlightText">&nbsp;?&nbsp;</span>как проходной двор.`,
-        correctText: `Наш сад<span class="highlightText">&nbsp;</span>как проходной двор.`,
+        questionText: `Наш сад<span class=""highlightText"">&nbsp;?&nbsp;</span>как проходной двор.`,
+        correctText: `Наш сад<span class=""highlightText"">&nbsp;</span>как проходной двор.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -477,9 +477,9 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 25,
         questionText: `Богат, хорош собою, Ленский<br />
-Везде был принят<span class="highlightText">&nbsp;?&nbsp;</span>как жених.`,
+Везде был принят<span class=""highlightText"">&nbsp;?&nbsp;</span>как жених.`,
         correctText: `Богат, хорош собою, Ленский<br />
-Везде был принят<span class="highlightText">&nbsp;</span>как жених.`,
+Везде был принят<span class=""highlightText"">&nbsp;</span>как жених.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -498,8 +498,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 26,
-        questionText: `Вас это<span class="highlightText">&nbsp;?&nbsp;</span>как будто<span class="highlightText">&nbsp;?&nbsp;</span>удивляет.`,
-        correctText: `Вас это<span class="highlightText">&nbsp;</span>как будто<span class="highlightText">&nbsp;</span>удивляет.`,
+        questionText: `Вас это<span class=""highlightText"">&nbsp;?&nbsp;</span>как будто<span class=""highlightText"">&nbsp;? </span>удивляет.`,
+        correctText: `Вас это<span class=""highlightText"">&nbsp;</span>как будто<span class=""highlightText"">&nbsp;</span>удивляет.`,
         buttons: [
           {
             name: 'Запятая нужна, это вводное словосочетание.',
@@ -518,8 +518,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 27,
-        questionText: `И хотя этот зуб принадлежал к числу обыкновенных, однако Василий Иванович сохранил его<span class="highlightText">&nbsp;?&nbsp;</span>как редкость.`,
-        correctText: `И хотя этот зуб принадлежал к числу обыкновенных, однако Василий Иванович сохранил его<span class="highlightText">&nbsp;</span>как редкость.`,
+        questionText: `И хотя этот зуб принадлежал к числу обыкновенных, однако Василий Иванович сохранил его<span class=""highlightText"">&nbsp;?&nbsp;</span>как редкость.`,
+        correctText: `И хотя этот зуб принадлежал к числу обыкновенных, однако Василий Иванович сохранил его<span class=""highlightText"">&nbsp;</span>как редкость.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -538,8 +538,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 28,
-        questionText: `Я сейчас вспомнил, что я еще не попросил у вас<span class="highlightText">&nbsp;?&nbsp;</span>как следует<span class="highlightText">&nbsp;?&nbsp;</span>прощения.`,
-        correctText: `Я сейчас вспомнил, что я еще не попросил у вас<span class="highlightText">&nbsp;</span>как следует<span class="highlightText">&nbsp;</span>прощения.`,
+        questionText: `Я сейчас вспомнил, что я еще не попросил у вас<span class=""highlightText"">&nbsp;?&nbsp;</span>как следует<span class=""highlightText"">&nbsp;? </span>прощения.`,
+        correctText: `Я сейчас вспомнил, что я еще не попросил у вас<span class=""highlightText"">&nbsp;</span>как следует<span class=""highlightText"">&nbsp;</span>прощения.`,
         buttons: [
           {
             name: 'Запятая нужна, это вводное словосочетание',
@@ -558,8 +558,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 29,
-        questionText: `Я посмотрел на нее<span class="highlightText">&nbsp;?&nbsp;</span>как дурак — и вышел вон.`,
-        correctText: `Я посмотрел на нее<span class="highlightText">&nbsp;</span>как дурак — и вышел вон.`,
+        questionText: `Я посмотрел на нее<span class=""highlightText"">&nbsp;?&nbsp;</span>как дурак — и вышел вон.`,
+        correctText: `Я посмотрел на нее<span class=""highlightText"">&nbsp;</span>как дурак — и вышел вон.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -578,8 +578,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 30,
-        questionText: `Старайтесь смотреть на меня<span class="highlightText">&nbsp;?&nbsp;</span>как на пациента, одержимого болезнью, вам ещё неизвестной.`,
-        correctText: `Старайтесь смотреть на меня<span class="highlightText">&nbsp;</span>как на пациента, одержимого болезнью, вам ещё неизвестной.`,
+        questionText: `Старайтесь смотреть на меня<span class=""highlightText"">&nbsp;?&nbsp;</span>как на пациента, одержимого болезнью, вам ещё неизвестной.`,
+        correctText: `Старайтесь смотреть на меня<span class=""highlightText"">&nbsp;</span>как на пациента, одержимого болезнью, вам ещё неизвестной.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -599,8 +599,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 31,
-        questionText: `Вижу<span class="highlightText">&nbsp;?&nbsp;</span>как теперь<span class="highlightText">&nbsp;?&nbsp;</span>самого хозяина, человека лет пятидесяти, свежего и бодрого.`,
-        correctText: `Вижу<span class="highlightText">,&nbsp;</span>как теперь<span class="highlightText">,&nbsp;</span>самого хозяина, человека лет пятидесяти, свежего и бодрого.`,
+        questionText: `Вижу<span class=""highlightText"">&nbsp;?&nbsp;</span>как теперь<span class=""highlightText"">&nbsp;? </span>самого хозяина, человека лет пятидесяти, свежего и бодрого.`,
+        correctText: `Вижу<span class=""highlightText"">,&nbsp;</span>как теперь<span class=""highlightText"">,&nbsp;</span>самого хозяина, человека лет пятидесяти, свежего и бодрого.`,
         buttons: [
           {
             name: 'Запятая нужна, устойчивое сочетание',
@@ -619,8 +619,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 32,
-        questionText: `Экая досада! Как нарочно<span class="highlightText">&nbsp;?&nbsp;</span>ни души!`,
-        correctText: `Экая досада! Как нарочно<span class="highlightText">,&nbsp;</span>ни души!`,
+        questionText: `Экая досада! Как нарочно<span class=""highlightText"">&nbsp;? </span>ни души!`,
+        correctText: `Экая досада! Как нарочно<span class=""highlightText"">,&nbsp;</span>ни души!`,
         buttons: [
           {
             name: 'Запятая нужна, устойчивое сочетание',
@@ -639,8 +639,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 33,
-        questionText: `Нигде при взаимной встрече не раскланиваются так благородно и непринуждённо<span class="highlightText">&nbsp;?&nbsp;</span>как на Невском проспекте.`,
-        correctText: `Нигде при взаимной встрече не раскланиваются так благородно и непринуждённо<span class="highlightText">,&nbsp;</span>как на Невском проспекте.`,
+        questionText: `Нигде при взаимной встрече не раскланиваются так благородно и непринуждённо<span class=""highlightText"">&nbsp;?&nbsp;</span>как на Невском проспекте.`,
+        correctText: `Нигде при взаимной встрече не раскланиваются так благородно и непринуждённо<span class=""highlightText"">,&nbsp;</span>как на Невском проспекте.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -659,8 +659,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 34,
-        questionText: `Герасиму<span class="highlightText">&nbsp;?&nbsp;</span>как отличному работнику<span class="highlightText">&nbsp;?&nbsp;</span>тут же дали метлу в руки.`,
-        correctText: `Герасиму<span class="highlightText">,&nbsp;</span>как отличному работнику<span class="highlightText">,&nbsp;</span>тут же дали метлу в руки.`,
+        questionText: `Герасиму<span class=""highlightText"">&nbsp;?&nbsp;</span>как отличному работнику<span class=""highlightText"">&nbsp;? </span>тут же дали метлу в руки.`,
+        correctText: `Герасиму<span class=""highlightText"">,&nbsp;</span>как отличному работнику<span class=""highlightText"">,&nbsp;</span>тут же дали метлу в руки.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -682,19 +682,19 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 35,
         questionText: `Чуть утро осветило пушки,<br />
 И леса синие верхушки,<br />
-Французы тут<span class="highlightText">&nbsp;?&nbsp;</span>как тут.`,
+Французы тут<span class=""highlightText"">&nbsp;?&nbsp;</span>как тут.`,
         correctText: `Чуть утро осветило пушки,<br />
 И леса синие верхушки,<br />
-Французы тут<span class="highlightText">&nbsp;</span>как тут.`,
+Французы тут<span class=""highlightText"">&nbsp;</span>как тут.`,
         buttons: [
           {
-            name: 'Запятая нужна, фразеологизм.',
-            ruleInfo: `Запятая не нужна, потому что «тут как тут» — сказуемое. Между подлежащим и сказуемым запятой быть не может.`,
+            name: 'Запятая нужна, это исключение',
+            ruleInfo: `Запятая не нужна, потому что «тут как тут» — фразеологизм. `,
             needed: false
           },
           {
-            name: 'Запятая не нужна, это сказуемое.',
-            ruleInfo: `Запятая не нужна, потому что «тут как тут» — сказуемое. Между подлежащим и сказуемым запятой быть не может.`,
+            name: 'Запятая не нужна, это фразеологизм',
+            ruleInfo: `Запятая не нужна, потому что «тут как тут» — фразеологизм. `,
             needed: true
           }
         ],
@@ -704,18 +704,18 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 36,
-        questionText: `Как истинный француз<span class="highlightText">&nbsp;?&nbsp;</span>в кармане<br />
+        questionText: `Как истинный француз<span class=""highlightText"">&nbsp;? </span>в кармане<br />
 Трике привез куплет Татьяне.`,
-        correctText: `Как истинный француз<span class="highlightText">,&nbsp;</span>в кармане<br />
+        correctText: `Как истинный француз<span class=""highlightText"">,&nbsp;</span>в кармане<br />
 Трике привез куплет Татьяне.`,
         buttons: [
           {
-            name: 'Запятая нужна, значение причины.',
+            name: 'Запятая нужна, значение причины',
             ruleInfo: `Запятая нужна, потому что оборот с «как» имеет значение причины.`,
             needed: true
           },
           {
-            name: 'Без запятой, это часть сказуемого.',
+            name: 'Без запятой, это часть сказуемого',
             ruleInfo: `Запятая нужна, потому что оборот с «как» имеет значение причины. Проверка: «Он привёз куплет, потому что был французом».`,
             needed: false
           }
@@ -726,8 +726,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 37,
-        questionText: `Если, по-твоему, всё это артисты, то я не знаю<span class="highlightText">&nbsp;?&nbsp;</span>как и говорить с тобой. Разве это актеры? Самые настоящие посредственности!`,
-        correctText: `Если, по-твоему, всё это артисты, то я не знаю<span class="highlightText">,&nbsp;</span>как и говорить с тобой. Разве это актеры? Самые настоящие посредственности!`,
+        questionText: `Если, по&#8209;твоему, всё это артисты, то я не знаю<span class=""highlightText"">&nbsp;?&nbsp;</span>как и говорить с тобой. Разве это актеры? Самые настоящие посредственности!`,
+        correctText: `Если, по&#8209;твоему, всё это артисты, то я не знаю<span class=""highlightText"">,&nbsp;</span>как и говорить с тобой. Разве это актеры? Самые настоящие посредственности!`,
         buttons: [
           {
             name: 'Запятая нужна, сложное предложение',
@@ -746,8 +746,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 38,
-        questionText: `Старый князь<span class="highlightText">&nbsp;?&nbsp;</span>как и все отцы<span class="highlightText">&nbsp;?&nbsp;</span>был особенно щепетилен насчет чести своих дочерей.`,
-        correctText: `Старый князь<span class="highlightText">,&nbsp;</span>как и все отцы<span class="highlightText">,&nbsp;</span>был особенно щепетилен насчет чести своих дочерей.`,
+        questionText: `Старый князь<span class=""highlightText"">&nbsp;?&nbsp;</span>как и все отцы<span class=""highlightText"">&nbsp;? </span>был особенно щепетилен насчет чести своих дочерей.`,
+        correctText: `Старый князь<span class=""highlightText"">,&nbsp;</span>как и все отцы<span class=""highlightText"">,&nbsp;</span>был особенно щепетилен насчет чести своих дочерей.`,
         buttons: [
           {
             name: 'Запятая нужна, сложное предложение',
@@ -766,17 +766,17 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 39,
-        questionText: `А коли узнаю, что ты повел себя не<span class="highlightText">&nbsp;?&nbsp;</span>как сын Николая Болконского, мне будет… стыдно!`,
-        correctText: `А коли узнаю, что ты повел себя не<span class="highlightText">&nbsp;</span>как сын Николая Болконского, мне будет… стыдно!`,
+        questionText: `А коли узнаю, что ты повел себя не<span class=""highlightText"">&nbsp;?&nbsp;</span>как сын Николая Болконского, мне будет… стыдно!`,
+        correctText: `А коли узнаю, что ты повел себя не<span class=""highlightText"">&nbsp;</span>как сын Николая Болконского, мне будет… стыдно!`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
-            ruleInfo: `Запятая не нужна, если есть частица «не» или слова «почти», «совершенно», «точь-в-точь».`,
+            ruleInfo: `Запятая не нужна, если есть частица «не» или слова «почти», «совершенно», «точь&#8209;в&#8209;точь».`,
             needed: false
           },
           {
             name: 'Запятая не нужна, есть частица «не»',
-            ruleInfo: `Запятая не нужна, если есть частица «не» или слова «почти», «совершенно», «точь-в-точь».`,
+            ruleInfo: `Запятая не нужна, если есть частица «не» или слова «почти», «совершенно», «точь&#8209;в&#8209;точь».`,
             needed: true
           }
         ],
@@ -786,17 +786,17 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 40,
-        questionText: `Князь Андрей бывал каждый день у Ростовых, но не<span class="highlightText">&nbsp;?&nbsp;</span>как жених<span class="highlightText">&nbsp;?&nbsp;</span>обращался с Наташей.`,
-        correctText: `Князь Андрей бывал каждый день у Ростовых, но не<span class="highlightText">&nbsp;</span>как жених<span class="highlightText">&nbsp;</span>обращался с Наташей.`,
+        questionText: `Князь Андрей бывал каждый день у Ростовых, но не<span class=""highlightText"">&nbsp;?&nbsp;</span>как жених<span class=""highlightText"">&nbsp;? </span>обращался с Наташей.`,
+        correctText: `Князь Андрей бывал каждый день у Ростовых, но не<span class=""highlightText"">&nbsp;</span>как жених<span class=""highlightText"">&nbsp;</span>обращался с Наташей.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
-            ruleInfo: `Запятая не нужна, если есть частица «не» или слова «почти», «совершенно», «точь-в-точь».`,
+            ruleInfo: `Запятая не нужна, если есть частица «не» или слова «почти», «совершенно», «точь&#8209;в&#8209;точь».`,
             needed: false
           },
           {
             name: 'Запятая не нужна, есть частица «не»',
-            ruleInfo: `Запятая не нужна, если есть частица «не» или слова «почти», «совершенно», «точь-в-точь».`,
+            ruleInfo: `Запятая не нужна, если есть частица «не» или слова «почти», «совершенно», «точь&#8209;в&#8209;точь».`,
             needed: true
           }
         ],
@@ -806,8 +806,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 41,
-        questionText: `Он почти<span class="highlightText">&nbsp;?&nbsp;</span>как ребенок, впрочем образованный`,
-        correctText: `Он почти<span class="highlightText">&nbsp;</span>как ребенок, впрочем образованный`,
+        questionText: `Он почти<span class=""highlightText"">&nbsp;?&nbsp;</span>как ребенок, впрочем образованный`,
+        correctText: `Он почти<span class=""highlightText"">&nbsp;</span>как ребенок, впрочем образованный`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -826,8 +826,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 42,
-        questionText: `После того<span class="highlightText">&nbsp;?&nbsp;</span>как Егорушка убежал от костра, они сначала долго молчали.`,
-        correctText: `После того<span class="highlightText">&nbsp;</span>как Егорушка убежал от костра, они сначала долго молчали.`,
+        questionText: `После того<span class=""highlightText"">&nbsp;?&nbsp;</span>как Егорушка убежал от костра, они сначала долго молчали.`,
+        correctText: `После того<span class=""highlightText"">&nbsp;</span>как Егорушка убежал от костра, они сначала долго молчали.`,
         buttons: [
           {
             name: 'Запятая нужна, это сложное предложение',
@@ -847,8 +847,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 43,
-        questionText: `Он был среди граждан совершенно<span class="highlightText">&nbsp;?&nbsp;</span>как в родной семье, а в лавки и в гостиный двор наведывался, как в собственную кладовую.`,
-        correctText: `Он был среди граждан совершенно<span class="highlightText">&nbsp;</span>как в родной семье, а в лавки и в гостиный двор наведывался, как в собственную кладовую.`,
+        questionText: `Он был среди граждан совершенно<span class=""highlightText"">&nbsp;?&nbsp;</span>как в родной семье, а в лавки и в гостиный двор наведывался, как в собственную кладовую.`,
+        correctText: `Он был среди граждан совершенно<span class=""highlightText"">&nbsp;</span>как в родной семье, а в лавки и в гостиный двор наведывался, как в собственную кладовую.`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -867,8 +867,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 44,
-        questionText: `Ему помогали воспоминания его театральной карьеры — и он разыгрывал роль секунданта именно<span class="highlightText">&nbsp;?&nbsp;</span>как роль.`,
-        correctText: `Ему помогали воспоминания его театральной карьеры — и он разыгрывал роль секунданта именно<span class="highlightText">&nbsp;</span>как роль.`,
+        questionText: `Ему помогали воспоминания его театральной карьеры — и он разыгрывал роль секунданта именно<span class=""highlightText"">&nbsp;?&nbsp;</span>как роль.`,
+        correctText: `Ему помогали воспоминания его театральной карьеры — и он разыгрывал роль секунданта именно<span class=""highlightText"">&nbsp;</span>как роль.`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -887,8 +887,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 45,
-        questionText: `Жена – друг, ежели правильно вникнуть в дело. Она к тебе вроде<span class="highlightText">&nbsp;?&nbsp;</span>как цепью<span class="highlightText">&nbsp;?&nbsp;</span>на всю жизнь прикована.`,
-        correctText: `Жена – друг, ежели правильно вникнуть в дело. Она к тебе вроде<span class="highlightText">&nbsp;</span>как цепью<span class="highlightText">&nbsp;</span>на всю жизнь прикована.`,
+        questionText: `Жена – друг, ежели правильно вникнуть в дело. Она к тебе вроде<span class=""highlightText"">&nbsp;?&nbsp;</span>как цепью<span class=""highlightText"">&nbsp;? </span>на всю жизнь прикована.`,
+        correctText: `Жена – друг, ежели правильно вникнуть в дело. Она к тебе вроде<span class=""highlightText"">&nbsp;</span>как цепью<span class=""highlightText"">&nbsp;</span>на всю жизнь прикована.`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -907,8 +907,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 46,
-        questionText: `Можешь ли ты нарисовать такой портрет, чтобы был совершенно<span class="highlightText">&nbsp;?&nbsp;</span>как живой?`,
-        correctText: `Можешь ли ты нарисовать такой портрет, чтобы был совершенно<span class="highlightText">&nbsp;</span>как живой?`,
+        questionText: `Можешь ли ты нарисовать такой портрет, чтобы был совершенно<span class=""highlightText"">&nbsp;?&nbsp;</span>как живой?`,
+        correctText: `Можешь ли ты нарисовать такой портрет, чтобы был совершенно<span class=""highlightText"">&nbsp;</span>как живой?`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -927,17 +927,17 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 47,
-        questionText: `Обшивка его была, правда, немного повреждена, но все же это был прекрасный стул и к тому же точь-в-точь<span class="highlightText">&nbsp;?&nbsp;</span>как первый.`,
-        correctText: `Обшивка его была, правда, немного повреждена, но все же это был прекрасный стул и к тому же точь-в-точь<span class="highlightText">&nbsp;</span>как первый.`,
+        questionText: `Обшивка его была, правда, немного повреждена, но все же это был прекрасный стул и к тому же точь&#8209;в&#8209;точь<span class=""highlightText"">&nbsp;?&nbsp;</span>как первый.`,
+        correctText: `Обшивка его была, правда, немного повреждена, но все же это был прекрасный стул и к тому же точь&#8209;в&#8209;точь<span class=""highlightText"">&nbsp;</span>как первый.`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
-            ruleInfo: `Запятая не нужна, если перед «как» стоят слова «почти», «точь-в-точь», «совершенно».`,
+            ruleInfo: `Запятая не нужна, если перед «как» стоят слова «почти», «точь&#8209;в&#8209;точь», «совершенно».`,
             needed: false
           },
           {
-            name: 'Запятая не нужна, есть «точь-в-точь»',
-            ruleInfo: `Запятая не нужна, если перед «как» стоят слова «почти», «точь-в-точь», «совершенно».`,
+            name: 'Запятая не нужна, есть «точь&#8209;в&#8209;точь»',
+            ruleInfo: `Запятая не нужна, если перед «как» стоят слова «почти», «точь&#8209;в&#8209;точь», «совершенно».`,
             needed: true
           }
         ],
@@ -947,8 +947,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 48,
-        questionText: `Но эта история ничто в сравнении с рассказом о молодости<span class="highlightText">&nbsp;?&nbsp;</span>как таковой.`,
-        correctText: `Но эта история ничто в сравнении с рассказом о молодости<span class="highlightText">&nbsp;</span>как таковой.`,
+        questionText: `Но эта история ничто в сравнении с рассказом о молодости<span class=""highlightText"">&nbsp;?&nbsp;</span>как таковой.`,
+        correctText: `Но эта история ничто в сравнении с рассказом о молодости<span class=""highlightText"">&nbsp;</span>как таковой.`,
         buttons: [
           {
             name: 'Запятая нужна, уточняющий оборот',
@@ -967,8 +967,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 49,
-        questionText: `Цензорам представляли не рукопись<span class="highlightText">&nbsp;?&nbsp;</span>как таковую, а машинописный экземпляр, чтоб удобнее было читать и вносить правку.`,
-        correctText: `Цензорам представляли не рукопись<span class="highlightText">&nbsp;</span>как таковую, а машинописный экземпляр, чтоб удобнее было читать и вносить правку.`,
+        questionText: `Цензорам представляли не рукопись<span class=""highlightText"">&nbsp;?&nbsp;</span>как таковую, а машинописный экземпляр, чтоб удобнее было читать и вносить правку.`,
+        correctText: `Цензорам представляли не рукопись<span class=""highlightText"">&nbsp;</span>как таковую, а машинописный экземпляр, чтоб удобнее было читать и вносить правку.`,
         buttons: [
           {
             name: 'Запятая нужна, уточняющий оборот',
@@ -987,11 +987,11 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 50,
-        questionText: `С тех пор<span class="highlightText">&nbsp;?&nbsp;</span>как вечный судия<br />
+        questionText: `С тех пор<span class=""highlightText"">&nbsp;?&nbsp;</span>как вечный судия<br />
 Мне дал всеведенье пророка,<br />
 В очах людей читаю я<br />
 Страницы злобы и порока.`,
-        correctText: `С тех пор<span class="highlightText">&nbsp;</span>как вечный судия<br />
+        correctText: `С тех пор<span class=""highlightText"">&nbsp;</span>как вечный судия<br />
 Мне дал всеведенье пророка,<br />
 В очах людей читаю я<br />
 Страницы злобы и порока.`,
@@ -1909,7 +1909,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 2,
-        questionText: `Петр Петрович, по&nbsp;крайней мере по&nbsp;моим признакам|+|&nbsp;человек весьма почтенный.`,
+        questionText: `Петр Петрович, по&nbsp;крайней мере по&nbsp;моим признакам,|-| человек весьма почтенный.`,
         trueRuleInfo: `Тире не&nbsp;ставится, так&nbsp;как между&nbsp;подлежащим и&nbsp;сказуемым есть&nbsp;вводная конструкция.`,
         falseRuleInfo: `Тире не&nbsp;ставится, так&nbsp;как между подлежащим и&nbsp;сказуемым есть вводная конструкция «по&nbsp;крайней мере по&nbsp;моим признакам».`,
         author: `Ф.М. Достоевский
@@ -1917,7 +1917,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 3,
-        questionText: `Я|-|&nbsp;честный человек и&nbsp;никогда не&nbsp;говорю комплиментов.`,
+        questionText: `Я|-|&nbsp;честный чело*век и&nbsp;никогда не&nbsp;говорю комплиментов.`,
         trueRuleInfo: `Тире не&nbsp;ставится, так&nbsp;как подлежащее выражено местоимением.`,
         falseRuleInfo: `Тире не&nbsp;ставится, когда подлежащее выражено местоимением.`,
         author: `А.П. Чехов
@@ -1925,7 +1925,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 4,
-        questionText: `Погода несносная, дорога скверная, ямщик упрямый|+|&nbsp;а виноват смотритель.`,
+        questionText: `Погода несносная, дорога скверная, ямщик упрямый|+| а&nbsp;виноват смотритель.`,
         trueRuleInfo: `Тире не&nbsp;ставится, так как сказуемое&nbsp;—&nbsp;прилагательное.`,
         falseRuleInfo: `Тире не&nbsp;ставится во всех частях предложения, так как сказуемые в&nbsp;них выражены прилагательными, а тире ставится между двумя существительными, глаголами или числительными.`,
         author: `А.С. Пушкин
@@ -1942,7 +1942,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 6,
         questionText: `А&nbsp;гений и&nbsp;злодейство|+|<br />
-Две вещи несовместные. не&nbsp;правда ль?`,
+Две вещи несовместные. Не&nbsp;правда&nbsp;ль?`,
         trueRuleInfo: `Тире ставится между подлежащим и&nbsp;сказуемым.`,
         falseRuleInfo: `Тире ставится между подлежащим и&nbsp;сказуемым, так&nbsp;как они выражены существительными.`,
         author: `А.С. Пушкин
@@ -1951,8 +1951,8 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 7,
         questionText: `Петербург|+| прихожая, Москва|+| девичья, деревня&nbsp;же|+| наш кабинет.`,
-        trueRuleInfo: `Тире ставится между подлежащим и&nbsp;сказуемым.`,
-        falseRuleInfo: `Тире ставится между подлежащим и&nbsp;сказуемым, так&nbsp;как во&nbsp;всех случаях они выражены существительными. Частица&nbsp;«же» никак не&nbsp;влияет на&nbsp;постановку тире.`,
+        trueRuleInfo: `Тире ставится между&nbsp;подлежащим и&nbsp;сказуемым, выраженными существительными.`,
+        falseRuleInfo: `Тире ставится между&nbsp;подлежащим и&nbsp;сказуемым, так&nbsp;как во&nbsp;всех случаях они выражены существительными. Частица&nbsp;«же» никак не&nbsp;влияет на&nbsp;постановку тире.`,
         author: `А.С. Пушкин
 «Роман в&nbsp;письмах»`
       },
@@ -1966,7 +1966,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 9,
-        questionText: `Зелёные горы|-|&nbsp;как пышные складки на&nbsp;богатой одежде земли.`,
+        questionText: `Зелёные горы|-| как&nbsp;пышные складки на&nbsp;богатой одежде земли.`,
         trueRuleInfo: `Тире не&nbsp;ставится, потому&nbsp;что есть связка&nbsp;«как».`,
         falseRuleInfo: `Тире не&nbsp;ставится, потому&nbsp;что есть связка&nbsp;«как».`,
         author: `Максим Горький «Детство»`
@@ -1998,22 +1998,22 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 13,
         questionText: `Его&nbsp;цель|+| сделаться героем романа. Он так часто старался уверить других в&nbsp;том, что&nbsp;он&nbsp;|-| существо, не&nbsp;созданное для&nbsp;мира, обреченное каким-то тайным страданиям, что&nbsp;он сам почти в&nbsp;этом уверился.`,
-        trueRuleInfo: `Тире ставится, когда подлежащее и&nbsp;сказуемое выражены существительным и&nbsp;глаголом, и&nbsp;не&nbsp;ставится, когда подлежащее&nbsp;— местоимение.`,
-        falseRuleInfo: `Тире ставится, когда подлежащее и&nbsp;сказуемое выражены существительным и&nbsp;глаголом, и&nbsp;не&nbsp;ставится, когда подлежащее&nbsp;— местоимение.`,
+        trueRuleInfo: `Тире ставится, когда подлежащее и&nbsp;сказуемое выражены существительным и&nbsp;глаголом, и&nbsp;не&nbsp;ставится, когда&nbsp;подлежащее&nbsp;— местоимение.`,
+        falseRuleInfo: `Тире ставится, когда подлежащее и&nbsp;сказуемое выражены существительным и&nbsp;глаголом, и&nbsp;не&nbsp;ставится, когда&nbsp;подлежащее&nbsp;— местоимение.`,
         author: `М.Ю. Лермонтов
 «Герой нашего времени»`
       },
       {
         id: 14,
         questionText: `Обязанность|-| для&nbsp;меня дело священное, закон&nbsp;— я&nbsp;немею пред&nbsp;законом.`,
-        trueRuleInfo: `Тире не&nbsp;ставится, так&nbsp;как между подлежащим и&nbsp;сказуемым стоит дополнение «для&nbsp;меня».`,
-        falseRuleInfo: `Тире не&nbsp;ставится, так&nbsp;как между подлежащим и&nbsp;сказуемым стоит дополнение «для&nbsp;меня».`,
+        trueRuleInfo: `Тире не&nbsp;ставится, так&nbsp;как между&nbsp;подлежащим и&nbsp;сказуемым стоит дополнение «для&nbsp;меня».`,
+        falseRuleInfo: `Тире не&nbsp;ставится, так&nbsp;как между&nbsp;подлежащим и&nbsp;сказуемым стоит дополнение «для&nbsp;меня».`,
         author: `Н.В. Гоголь
 «Мёртвые души»`
       },
       {
         id: 15,
-        questionText: `Отчизна|-|&nbsp;есть то, что&nbsp;ищет душа наша, что&nbsp;милее для&nbsp;нее всего. Отчизна моя&nbsp;|+|&nbsp;ты.`,
+        questionText: `Отчизна|-|&nbsp;есть то, что&nbsp;ищет душа наша, что&nbsp;милее для&nbsp;нее всего. Отчизна моя|+|&nbsp;ты.`,
         trueRuleInfo: `Тире не&nbsp;ставится, если в&nbsp;предложении есть слово&nbsp;«есть». Обычно тире не&nbsp;ставится в&nbsp;предложениях с&nbsp;местоимением, но&nbsp;его&nbsp;можно использовать для&nbsp;экспрессии.`,
         falseRuleInfo: `Тире не&nbsp;ставится, если в&nbsp;предложении есть слово&nbsp;«есть». Обычно тире не&nbsp;ставится в&nbsp;предложениях с&nbsp;местоимением, но&nbsp;его&nbsp;можно использовать для&nbsp;экспрессии.`,
         author: `Н.В. Гоголь
@@ -2037,7 +2037,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 18,
-        questionText: `Мысль изречённая|-|&nbsp;есть ложь.`,
+        questionText: `Мысль изречённая|-| есть&nbsp;ложь.`,
         trueRuleInfo: `Тире не&nbsp;ставится, если&nbsp;между подлежащим и&nbsp;сказуемым стоит слово «есть».`,
         falseRuleInfo: `Тире не&nbsp;ставится, если&nbsp;между подлежащим и&nbsp;сказуемым стоит слово «есть».`,
         author: `Ф.И. Тютчев
@@ -2048,8 +2048,8 @@ export class InMemoryDataService implements InMemoryDbService {
         questionText: `Поэзия&nbsp;—<br />
 Не&nbsp;профессия,<br />
 Поэзия|-| как&nbsp;любовь.`,
-        trueRuleInfo: `Тире не&nbsp;ставится, если&nbsp;есть отрицание&nbsp;«не» или&nbsp; союз «как», но в&nbsp;поэтических текстах можно делать исключения для&nbsp;большей выразительности.`,
-        falseRuleInfo: `Тире не&nbsp;ставится, если&nbsp;есть отрицание&nbsp;«не» или&nbsp;союз&nbsp;«как», но в&nbsp;поэтических текстах можно делать исключения для&nbsp;большей выразительности.`,
+        trueRuleInfo: `Тире не&nbsp;ставится, если&nbsp;есть отрицание&nbsp;«не» или&nbsp;союз «как», но&nbsp;в&nbsp;поэтических текстах можно делать исключения для&nbsp;большей выразительности.`,
+        falseRuleInfo: `Тире не&nbsp;ставится, если&nbsp;есть отрицание&nbsp;«не» или&nbsp;союз&nbsp;«как», но&nbsp;в&nbsp;поэтических текстах можно делать исключения для&nbsp;большей выразительности.`,
         author: `В.Д. Фёдоров
 «Поэзия&nbsp;— не профессия...»`
       },
@@ -2061,7 +2061,7 @@ export class InMemoryDataService implements InMemoryDbService {
 Хулигана свела с&nbsp;ума.`,
         trueRuleInfo: `Тире ставится, когда&nbsp;подлежащее и&nbsp;сказуемое выражены существительными.`,
         falseRuleInfo: `Тире ставится, когда&nbsp;подлежащее и&nbsp;сказуемое выражены существительными.`,
-        author: `С.Есенин
+        author: `С.А. Есенин
 «Пой&nbsp;же, пой на&nbsp;проклятой гитаре...»`
       },
       {
@@ -2081,7 +2081,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 23,
-        questionText: `Между&nbsp;тем наступило 1-е&nbsp;октября|+|&nbsp;день храмового праздника в&nbsp;селе Троекурова.`,
+        questionText: `Между&nbsp;тем наступило 1&#8209;е&nbsp;октября|+|&nbsp;день храмового праздника в&nbsp;селе Троекурова.`,
         trueRuleInfo: `Тире ставится перед&nbsp;приложением, которое&nbsp;стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения.`,
         falseRuleInfo: `Тире ставится перед&nbsp;приложением, которое&nbsp;стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения. Проверка: можно вставить «а&nbsp;именно».`,
         author: `А.С. Пушкин «Дубровский»`
@@ -2095,7 +2095,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 25,
-        questionText: `«Сосед&nbsp;наш|-|неуч; сумасбродит;<br />Он|-|&nbsp;фармазон; он пьет одно<br />Стаканом красное вино.`,
+        questionText: `«Сосед&nbsp;наш|-| неуч; сумасбродит;<br />Он|-|&nbsp;фармазон; он пьет одно<br />Стаканом красное вино.`,
         trueRuleInfo: `Тире не&nbsp;ставится в&nbsp;разговорных конструкциях вроде «сосед&nbsp;наш неуч», а&nbsp;также когда&nbsp;подлежащее выражено местоимением.`,
         falseRuleInfo: `Тире не&nbsp;ставится в&nbsp;разговорных конструкциях вроде «сосед&nbsp;наш неуч», а&nbsp;также когда&nbsp;подлежащее выражено местоимением.`,
         author: `А.С. Пушкин «Евгений Онегин»`
@@ -2174,7 +2174,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 36,
         questionText: `Хотел объехать целый свет|+| и&nbspне&nbsp;объехал сотой доли.`,
-        trueRuleInfo: `Тире ставится после&nbsp;слюза&nbsp«и» между&nbspдвумя однородными сказуемыми для&nbspусиления эффекта неожиданности.`,
+        trueRuleInfo: `Тире ставится после&nbsp;союза&nbsp«и» между&nbspдвумя однородными сказуемыми для&nbspусиления эффекта неожиданности.`,
         falseRuleInfo: `Тире ставится после&nbsp;слюза&nbsp«и» между&nbspдвумя однородными сказуемыми для&nbspусиления эффекта неожиданности.`,
         author: `А.С. Грибоедов «Горе от&nbsp;ума»`
       },
@@ -2197,20 +2197,20 @@ export class InMemoryDataService implements InMemoryDbService {
         questionText: `Я|-|&nbsp;последний поэт деревни.`,
         trueRuleInfo: `Тире не&nbsp;ставится, когда подлежащее&nbsp;— местоимение.`,
         falseRuleInfo: `Тире не&nbsp;ставится, когда подлежащее&nbsp;— местоимение.`,
-        author: `Есенин «Я&nbsp;— последний поэт деревни...»`
+        author: `С.А. Есенин «Я&nbsp;— последний поэт деревни...»`
       },
       {
         id: 40,
         questionText: `В&nbspуглу гостиной стояло пузатое ореховое бюро на&nbsp;пренелепых четырёх ногах|+| совершенный медведь.`,
-        trueRuleInfo: `Тире ставится перед&nbspприложением, которое стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения.`,
-        falseRuleInfo: `Тире ставится перед&nbspприложением, которое стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения. Проверка: можно вставить «а&nbspименно».`,
+        trueRuleInfo: `Тире ставится перед&nbspприложением, которое&nbsp;стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения.`,
+        falseRuleInfo: `Тире ставится перед&nbspприложением, которое&nbsp;стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения. Проверка: можно вставить «а&nbspименно».`,
         author: `Н.В. Гоголь «Мёртвые души»`
       },
       {
         id: 41,
         questionText: `На&nbspмаяке жил только сторож|+| старый глухой швед, бывший шкипер.`,
-        trueRuleInfo: `Тире ставится перед&nbspприложением, которое стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения.`,
-        falseRuleInfo: `Тире ставится перед&nbsp;приложением, которое стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения. Проверка: можно вставить «а&nbspименно».`,
+        trueRuleInfo: `Тире ставится перед&nbspприложением, которое&nbsp;стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения.`,
+        falseRuleInfo: `Тире ставится перед&nbsp;приложением, которое&nbsp;стоит в&nbsp;конце предложения и&nbsp;носит характер разъяснения. Проверка: можно вставить «а&nbspименно».`,
         author: `К.Г. Паустовский «Северная повесть»`
       },
       {
@@ -2244,15 +2244,15 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 46,
         questionText: `Веселиться|+| мой&nbsp;закон.`,
-        trueRuleInfo: `Тире ставится, когда подлежащее и&nbsp;сказуемое выражены существительным и&nbsp;глаголом.`,
-        falseRuleInfo: `Тире ставится, когда подлежащее и&nbsp;сказуемое выражены существительным и&nbsp;глаголом.`,
+        trueRuleInfo: `Тире ставится, когда&nbsp;подлежащее и&nbsp;сказуемое выражены существительным и&nbsp;глаголом.`,
+        falseRuleInfo: `Тире ставится, когда&nbsp;подлежащее и&nbsp;сказуемое выражены существительным и&nbsp;глаголом.`,
         author: `А.С. Пушкин «Опытность»`
       },
       {
         id: 47,
         questionText: `А&nbsp;теперь мне&nbsp;жизнь|+| могила,<br />Белый свет душе постыл.`,
-        trueRuleInfo: ``,
-        falseRuleInfo: ``,
+        trueRuleInfo: `Тире ставится, когда подлежащее и&nbsp;сказуемое выражены существительными.`,
+        falseRuleInfo: `Тире ставится, когда подлежащее и&nbsp;сказуемое выражены существительными.`,
         author: `А.С. Пушкин «Блаженство»`
       },
       {
@@ -2271,27 +2271,117 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 50,
-        questionText: `Ни&nbsp;ты, ни&nbsp;она|+| вы&nbsp;не&nbsp;забудете того, что случилось.`,
+        questionText: `Ни&nbsp;ты, ни&nbsp;она|+| вы&nbsp;не&nbsp;забудете того, что&nbsp;случилось.`,
         trueRuleInfo: `Тире ставится после&nbsp;однородных членов предложения перед&nbsp;обобщающим словом&nbsp;«вы».`,
         falseRuleInfo: `Тире ставится после&nbsp;однородных членов предложения перед&nbsp;обобщающим словом&nbsp;«вы».`,
         author: `А.С. Пушкин «Станционный смотритель»`
       }
     ];
 
-    const rating = [
+    const blogPost = [
       {
         id: 1,
-        name: 'Иван',
-        value: 10
+        title: '5 случаев, когда ставится запятая перед «как»',
+        body: `<h2>5 случаев, когда ставится запятая перед «как»</h2>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/1/1.png" alt="" width="100%" />
+        <p>
+          Запятая перед «как» или «как будто» ставится в сравнительных оборотах. После оборота тоже нужна запятая.
+        </p></div>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/1/2.png" alt="" width="100%" />
+        <p>
+        Указательные слова «так», «такой», «тот», «столь» требуют запятой перед «как». Союз «как и» используется только в сравнительных оборотах, поэтому фразы с ним тоже выделяются.
+        </p></div>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/1/3.png" alt="" width="100%" />
+        <p>
+        Это устойчивые сочетания, которые всегда выделяются запятыми.</p><p>
+        Исключение — если они входят в состав сказуемого: Он вёл себя как обычно. Сказуемое «вёл себя» не самостоятельное по смыслу, поэтому сочетание «как обычно» входит в его состав.
+        </p></div>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/1/4.png" alt="" width="100%" />
+        <p>
+        Запятая перед «как» всегда ставится в конструкциях вроде «не что иное, как…», «не кто другой, как...».
+        </p></div>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/1/5.png" alt="" width="100%" />
+        <p>
+        Запятая перед «как» ставится, если сравнительный оборот имеет значение причины. В таких случаях можно сделать из предложения сложное: оборот с «как» легко превращается в придаточную с «потому что».
+        </p></div>
+        `
       },
       {
         id: 2,
-        name: 'Петр',
-        value: 5
+        title: '5 случаев, когда не ставится запятая перед «как»',
+        body: `<h2>5 случаев, когда ставится запятая перед «как»</h2>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/2/1.png" alt="" width="100%" />
+        <p>
+        Запятая перед «как» не ставится, если вместо этого слова можно поставить «в качестве». В таких случаях оборот с «как» подчёркивает, что говорится об одной конкретной стороне объекта. Например, о Ленском как о женихе, не как о соседе или друге.
+        </p></div>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/2/2.png" alt="" width="100%" />
+        <p>
+        Фразеологизмы с «как» никогда не выделяются запятой.
+        </p></div>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/2/3.png" alt="" width="100%" />
+        <p>
+        Запятая перед «как» не ставится, если перед оборотом стоит отрицательная частица «не» или усилительные частицы.
+        </p></div>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/2/4.png" alt="" width="100%" />
+        <p>
+        Оборот не выделяется, если входит в состав сказуемого или сказуемое без него не имеет смысла.</p><p>
+        Для проверки попробуйте прочитать предложение без оборота. Если оно становится бессмысленным, значит запятая перед «как» не нужна.
+        </p></div>
+        <div class="ruleBlock">
+        <img src="../../assets/images/blog/2/5.png" alt="" width="100%" />
+        <p>
+        Частицы не выделяются запятыми.</p><p>
+        Обратите внимание на сочетание «как будто». Оно может быть и частицей, и союзом. Перед союзом «как будто» запятая нужна. Сравните:<br />
+        Он как будто сомневался (частица).<br />
+        Он остановился, как будто его кто-то схватил (союз).
+        </p></div>
+        `
+      },
+      {
+        id: 3,
+        title: 'Нужна ли запятая перед «как» в значении «будучи»',
+        body: `<h2>5 случаев, когда ставится запятая перед «как»</h2>
+        <div class="ruleBlock">
+
+        <p>
+        Оборот с «как» может называть причину того, о чём говорится в предложении.<br />
+        <p class="serif"><span class="green">Герасиму, как отличному работнику, тут же дали метлу в руки.</span><br />
+        И.С. Тургенев «Му-му»</p>
+        <p class="serif"><span class="green">Она была, как меньшая, любимица отца.</span><br />
+        Л.Н. Толстой «Анна Каренина»</p>
+        </p>
+        <br />
+        <p>
+        <span>Такие случаи легко узнать, потому что предложение можно перестроить:</span>
+        <ul>
+          <li>в сложное с «потому что»:<br />
+            <span class="serif green">Герасиму дали метлу, потому что он был отличным работником.</span>
+          </li>
+          <li>в простое с «будучи»:<br />
+            <span class="serif green">Она, будучи меньшой, была любимицей отца.</span>
+          </li>
+        </ul>
+
+        </p>
+        <p>
+        Если оборот имеет значение причины, его следует выделять запятыми. Поэтому запятая перед «как» в значении «будучи» ставится всегда.
+
+        </p></div>
+
+        `
       }
     ];
 
-    return { commaQuestions, timerQuestions, dashQuestions, rating };
+    return { commaQuestions, timerQuestions, dashQuestions, blogPost };
   }
 
   // Overrides the genId method to ensure that a item always has an id.

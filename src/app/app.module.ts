@@ -29,6 +29,7 @@ import { InputBlockComponent } from './input-block/input-block.component';
 import { UserInputComponent } from './user-input/user-input.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { TopPanelComponent } from './top-panel/top-panel.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TopPanelComponent } from './top-panel/top-panel.component';
     InputBlockComponent,
     UserInputComponent,
     BlogPageComponent,
-    TopPanelComponent
+    TopPanelComponent,
+    BlogComponent
   ],
   imports: [
     MatProgressSpinnerModule,

@@ -12,13 +12,13 @@
       </div>
 
       <div class="flexbox flex-column">
-        <nav class="flexbox nowrap">
+        <nav class="flexbox flex-content-space-betwen">
           <div class="game-nav" routerLink="/comma">
             <div class="game-preview">
               <app-comma-question-page [question]="commaPreviewQuestion" [iconName]="3"></app-comma-question-page>
             </div>
             <div class="textBlock">
-              <h3>Запятая перед как</h3>
+              <h3>Запятая перед «как»</h3>
               <p>
                 Запятая ставится в сравнениях и вводных конструкциях.
               </p>
@@ -36,8 +36,8 @@
               </p>
             </div>
           </div>
-          <div class="game-nav game-nav-disabled">
-            <div class="game-preview disabled">
+          <div class="game-nav" routerLink="/dash">
+            <div class="game-preview">
               <app-dash-question-page
                 [question]="dashPreviewQuestion"
                 [isPreview]="true"
@@ -45,21 +45,19 @@
               ></app-dash-question-page>
             </div>
             <div class="textBlock">
-              <h3 class="disabled">Тире (в разработке)</h3>
+              <h3>Тире</h3>
               <p>
-                Оставьте свою почту и узнайте, когда игра будет доступна:
+                Тире ставится в неполных предложениях, иногда — между подлежащим и сказуемым. А когда не ставится?
               </p>
-              <app-email-subscribe></app-email-subscribe>
             </div>
           </div>
 
-          <!-- <div class="game-nav game-nav-disabled">
+          <div class="game-nav game-nav-disabled">
             <div class="game-preview disabled">
-              <app-dash-question-page
-                [question]="dashPreviewQuestion"
-                [isPreview]="true"
-                [iconName]="5"
-              ></app-dash-question-page>
+              <app-comma-question-page
+                [question]="commaWithUnionPreviewQuestion"
+                [iconName]="2"
+              ></app-comma-question-page>
             </div>
             <div class="textBlock">
               <h3 class="disabled">Запятая при встрече союзов (в разработке)</h3>
@@ -68,13 +66,22 @@
               </p>
               <app-email-subscribe></app-email-subscribe>
             </div>
-          </div> -->
+          </div>
         </nav>
       </div>
     </div>
     <div class="svgBlock bigvenzel">
       <app-svg-icon name="bigvenzel"></app-svg-icon>
     </div>
+    <div class="blog">
+      <span>Cтатьи о пунктуации</span>
+      <h2>Блог «Пушкина»</h2>
+
+      <p class="lid">
+        <app-blog></app-blog>
+      </p>
+    </div>
+
     <p class="lid">
       &laquo;Пушкин&raquo;&nbsp;&mdash; тренажёр пунктуации. Здесь учатся расставлять знаки препинания в трудных
       случаях, чтобы писать без ошибок. &laquo;Пушкин&raquo; помогает грамотно писать посты, сообщения и&nbsp;письма.

@@ -1,7 +1,7 @@
 <div class="topPanel">
   <div class="info">
-    <span *ngIf="totalQuestions" class="secondary"
-      >Тест. <span *ngIf="!showResult">Вопрос {{ currentIndex + 1 }}/{{ totalQuestions }}</span></span
+    <span *ngIf="subTitle || title" class="secondary"
+      ><span *ngIf="!showResult">{{ subTitle }}</span></span
     ><br />
     <span>{{ title }}</span>
   </div>

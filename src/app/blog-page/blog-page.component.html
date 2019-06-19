@@ -1,7 +1,8 @@
 <div class="root">
   <div class="container">
-    <app-top-panel [title]="'Блог'"></app-top-panel>
-    <div style="height: 30px"></div>
-    <p class="lid" [innerHTML]="body"></p>
+    <app-top-panel [title]="'20 июня 2019'" [subTitle]="'Блог тренажера «Пушкин»'"></app-top-panel>
+    <div style="height: 3rem"></div>
+    <p [innerHTML]="post.body"></p>
+    <div style="height: 3rem"></div>
   </div>
 </div>

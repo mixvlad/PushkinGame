@@ -72,31 +72,30 @@ h1 {
   margin-top: 10px;
 }
 
-.copyright {
-  a {
-    color: $color-secondary;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(49, 85, 145, 0.2)), to(rgba(49, 85, 145, 0.2)));
-    background-image: -webkit-linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
-    background-image: -o-linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
-    background-image: linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
-    background-size: 1px 1px;
-    background-position: left bottom;
-    background-repeat: repeat-x;
-    text-decoration: none;
-  }
+a {
+  color: $color-secondary;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(49, 85, 145, 0.2)), to(rgba(49, 85, 145, 0.2)));
+  background-image: -webkit-linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+  background-image: -o-linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+  background-image: linear-gradient(rgba(49, 85, 145, 0.2), rgba(49, 85, 145, 0.2));
+  background-size: 1px 1px;
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  text-decoration: none;
+}
 
-  a:hover {
-    color: $color-secondary-hover;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(49, 85, 145, 0.4)), to(rgba(49, 85, 145, 0.4)));
-    background-image: -webkit-linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
-    background-image: -o-linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
-    background-image: linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
-  }
+a:hover {
+  color: $color-secondary-hover;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(49, 85, 145, 0.4)), to(rgba(49, 85, 145, 0.4)));
+  background-image: -webkit-linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
+  background-image: -o-linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
+  background-image: linear-gradient(rgba(49, 85, 145, 0.4), rgba(49, 85, 145, 0.4));
 }
 
 .subscribe-block {
   a {
     text-decoration: none;
+    background-image: none;
   }
 
   a span {
@@ -122,14 +121,14 @@ h1 {
 
 h2 {
   color: #444;
-  font-weight: lighter;
+  font-weight: 500;
   font-size: $font-size--h2;
-  line-height: $line-height;
+  line-height: 1.2em;
   margin-block-end: 0.6rem;
 }
 
 h3 {
-  color: $color-secondary;
+  color: $color-main;
 }
 
 .lid, h3 {
@@ -148,6 +147,10 @@ input {
   padding: 10px 20px 12px 15px;
   border: $border;
   border-radius: 5px 0 0 5px;
+}
+
+li {
+  list-style-type: none;
 }
 
 .small {
