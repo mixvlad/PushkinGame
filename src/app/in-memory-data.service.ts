@@ -11,8 +11,8 @@ export class InMemoryDataService implements InMemoryDbService {
     const commaQuestions = [
       {
         id: 1,
-        questionText: `Виконт был подан обществу в самом изящном и выгодном для него свете<span class=""highlightText"">&nbsp;?&nbsp;</span>как ростбиф на горячем блюде, посыпанный зеленью.`,
-        correctText: `Виконт был подан обществу в самом изящном и выгодном для него свете<span class=""highlightText"">,&nbsp;</span>как ростбиф на горячем блюде, посыпанный зеленью.`,
+        questionText: `Виконт был подан обществу в самом изящном и выгодном для него свете<span class="highlightText">&nbsp;?&nbsp;</span>как ростбиф на горячем блюде, посыпанный зеленью.`,
+        correctText: `Виконт был подан обществу в самом изящном и выгодном для него свете<span class="highlightText">,&nbsp;</span>как ростбиф на горячем блюде, посыпанный зеленью.`,
         buttons: [
           { name: 'Запятая нужна, это сравнение', ruleInfo: `Запятая нужна, потому что это сравнение.`, needed: true },
           { name: 'Без запятой, это сказуемое', ruleInfo: `Запятая нужна, потому что это сравнение.`, needed: false }
@@ -23,8 +23,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 2,
-        questionText: `Ничто так не нужно молодому человеку<span class=""highlightText"">&nbsp;?&nbsp;</span>как общество умных женщин.`,
-        correctText: `Ничто так не нужно молодому человеку<span class=""highlightText"">,&nbsp;</span>как общество умных женщин.`,
+        questionText: `Ничто так не нужно молодому человеку<span class="highlightText">&nbsp;?&nbsp;</span>как общество умных женщин.`,
+        correctText: `Ничто так не нужно молодому человеку<span class="highlightText">,&nbsp;</span>как общество умных женщин.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -44,8 +44,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 3,
-        questionText: `Пьер был неуклюж. Он<span class=""highlightText"">&nbsp;?&nbsp;</span>как говорится<span class=""highlightText"">&nbsp;? </span>не умел войти в салон и еще менее умел из него выйти.`,
-        correctText: `Пьер был неуклюж. Он<span class=""highlightText"">,&nbsp;</span>как говорится<span class=""highlightText"">,&nbsp;</span>не умел войти в салон и еще менее умел из него выйти.`,
+        questionText: `Пьер был неуклюж. Он<span class="highlightText">&nbsp;?&nbsp;</span>как говорится<span class="highlightText">&nbsp;? </span>не умел войти в салон и еще менее умел из него выйти.`,
+        correctText: `Пьер был неуклюж. Он<span class="highlightText">,&nbsp;</span>как говорится<span class="highlightText">,&nbsp;</span>не умел войти в салон и еще менее умел из него выйти.`,
         buttons: [
           {
             name: 'Запятая нужна, это вводное словосочетание',
@@ -64,8 +64,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 4,
-        questionText: `Москве больше делать нечего<span class=""highlightText"">&nbsp;? </span> как сплетничать.`,
-        correctText: `Москве больше делать нечего<span class=""highlightText"">,&nbsp;</span>как сплетничать.`,
+        questionText: `Москве больше делать нечего<span class="highlightText">&nbsp;? </span> как сплетничать.`,
+        correctText: `Москве больше делать нечего<span class="highlightText">,&nbsp;</span>как сплетничать.`,
         buttons: [
           {
             name: 'Запятая нужна, значение исключения',
@@ -84,8 +84,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 5,
-        questionText: `Француз стоял<span class=""highlightText"">&nbsp;?&nbsp;</span>как вкопанный.`,
-        correctText: `Француз стоял<span class=""highlightText"">&nbsp;</span>как вкопанный.`,
+        questionText: `Француз стоял<span class="highlightText">&nbsp;?&nbsp;</span>как вкопанный.`,
+        correctText: `Француз стоял<span class="highlightText">&nbsp;</span>как вкопанный.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -104,8 +104,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 6,
-        questionText: `Один Иван Петрович был<span class=""highlightText"">&nbsp;?&nbsp;</span>как дома: ел за двоих, пил в свою меру, смеялся своему смеху.`,
-        correctText: `Один Иван Петрович был<span class=""highlightText"">&nbsp;</span>как дома: ел за двоих, пил в свою меру, смеялся своему смеху.`,
+        questionText: `Один Иван Петрович был<span class="highlightText">&nbsp;?&nbsp;</span>как дома: ел за двоих, пил в свою меру, смеялся своему смеху.`,
+        correctText: `Один Иван Петрович был<span class="highlightText">&nbsp;</span>как дома: ел за двоих, пил в свою меру, смеялся своему смеху.`,
         buttons: [
           {
             name: 'Запятая нужна, есть значение причины',
@@ -125,10 +125,10 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 7,
         questionText: `И Ленский, жмуря левый глаз<br />
-Стал тоже целить, но<span class=""highlightText"">&nbsp;?&nbsp;</span>как раз<span class=""highlightText"">&nbsp;? </span><br />
+Стал тоже целить, но<span class="highlightText">&nbsp;?&nbsp;</span>как раз<span class="highlightText">&nbsp;? </span><br />
 Онегин выстрелил.`,
         correctText: `И Ленский, жмуря левый глаз<br />
-Стал тоже целить, но<span class=""highlightText"">&nbsp;</span>как&nbsp;раз<span class=""highlightText"">&nbsp;</span><br />
+Стал тоже целить, но<span class="highlightText">&nbsp;</span>как&nbsp;раз<span class="highlightText">&nbsp;</span><br />
 Онегин выстрелил.`,
         buttons: [
           {
@@ -149,11 +149,11 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 8,
         questionText: `Промчалось много, много дней,<br />
-С тех пор<span class=""highlightText"">&nbsp;?&nbsp;</span>как юная Татьяна<br />
+С тех пор<span class="highlightText">&nbsp;?&nbsp;</span>как юная Татьяна<br />
 И с ней Онегин в смутном сне<br />
 Явилися впервые мне.`,
         correctText: `Промчалось много, много дней,<br />
-С тех пор<span class=""highlightText"">&nbsp;</span>как юная Татьяна<br />
+С тех пор<span class="highlightText">&nbsp;</span>как юная Татьяна<br />
 И с ней Онегин в смутном сне<br />
 Явилися впервые мне.`,
         buttons: [
@@ -174,8 +174,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 9,
-        questionText: `Ты женишься, или я тебя прокляну, а имение<span class=""highlightText"">&nbsp;?&nbsp;</span>как бог свят<span class=""highlightText"">&nbsp;? </span>продам и промотаю!`,
-        correctText: `Ты женишься, или я тебя прокляну, а имение<span class=""highlightText"">,&nbsp;</span>как бог свят<span class=""highlightText"">,&nbsp;</span>продам и промотаю!`,
+        questionText: `Ты женишься, или я тебя прокляну, а имение<span class="highlightText">&nbsp;?&nbsp;</span>как бог свят<span class="highlightText">&nbsp;? </span>продам и промотаю!`,
+        correctText: `Ты женишься, или я тебя прокляну, а имение<span class="highlightText">,&nbsp;</span>как бог свят<span class="highlightText">,&nbsp;</span>продам и промотаю!`,
         buttons: [
           {
             name: 'Запятая нужна, это вводное словосочетание',
@@ -194,8 +194,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 10,
-        questionText: `Лучший стрелок, которого удалось мне встречать, стрелял каждый день, по крайней мере три раза перед обедом. Это у него было заведено<span class=""highlightText"">&nbsp;?&nbsp;</span>как рюмка водки.`,
-        correctText: `Лучший стрелок, которого удалось мне встречать, стрелял каждый день, по крайней мере три раза перед обедом. Это у него было заведено<span class=""highlightText"">,&nbsp;</span>как рюмка водки.`,
+        questionText: `Лучший стрелок, которого удалось мне встречать, стрелял каждый день, по крайней мере три раза перед обедом. Это у него было заведено<span class="highlightText">&nbsp;?&nbsp;</span>как рюмка водки.`,
+        correctText: `Лучший стрелок, которого удалось мне встречать, стрелял каждый день, по крайней мере три раза перед обедом. Это у него было заведено<span class="highlightText">,&nbsp;</span>как рюмка водки.`,
         buttons: [
           { name: 'Запятая нужна, это сравнение', ruleInfo: `Сравнительный оборот выделяется запятой.`, needed: true },
           {
@@ -210,8 +210,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 11,
-        questionText: `Приказчика моего нашли на другой день в лесу, привязанного к дубу и ободранного<span class=""highlightText"">&nbsp;?&nbsp;</span>как липку.`,
-        correctText: `Приказчика моего нашли на другой день в лесу, привязанного к дубу и ободранного<span class=""highlightText"">&nbsp;</span>как липку.`,
+        questionText: `Приказчика моего нашли на другой день в лесу, привязанного к дубу и ободранного<span class="highlightText">&nbsp;?&nbsp;</span>как липку.`,
+        correctText: `Приказчика моего нашли на другой день в лесу, привязанного к дубу и ободранного<span class="highlightText">&nbsp;</span>как липку.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -230,8 +230,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 12,
-        questionText: `Вот уж 5 часов<span class=""highlightText"">&nbsp;?&nbsp;</span>как дожидается лошадей да свищет. Надоел проклятый.`,
-        correctText: `Вот уж 5 часов<span class=""highlightText"">&nbsp;</span>как дожидается лошадей да свищет. Надоел проклятый.`,
+        questionText: `Вот уж 5 часов<span class="highlightText">&nbsp;?&nbsp;</span>как дожидается лошадей да свищет. Надоел проклятый.`,
+        correctText: `Вот уж 5 часов<span class="highlightText">&nbsp;</span>как дожидается лошадей да свищет. Надоел проклятый.`,
         buttons: [
           {
             name: 'Запятая нужна, сложное предложение',
@@ -250,10 +250,10 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 13,
-        questionText: `Руслан уныньем<span class=""highlightText"">&nbsp;?&nbsp;</span>как убит;<br />
+        questionText: `Руслан уныньем<span class="highlightText">&nbsp;?&nbsp;</span>как убит;<br />
 Мысль о потерянной невесте<br />
 Его терзает и мертвит.`,
-        correctText: `Руслан уныньем<span class=""highlightText"">&nbsp;</span>как убит;<br />
+        correctText: `Руслан уныньем<span class="highlightText">&nbsp;</span>как убит;<br />
 Мысль о потерянной невесте<br />
 Его терзает и мертвит.`,
         buttons: [
@@ -275,11 +275,11 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 14,
         questionText: `Уж витязь под горой стоит,<br />
-Призывный рог<span class=""highlightText"">&nbsp;?&nbsp;</span>как буря<span class=""highlightText"">&nbsp;? </span> воет,<br />
+Призывный рог<span class="highlightText">&nbsp;?&nbsp;</span>как буря<span class="highlightText">&nbsp;? </span> воет,<br />
 Нетерпеливый конь кипит<br />
 И снег копытом мочным роет.`,
         correctText: `Уж витязь под горой стоит,<br />
-Призывный рог<span class=""highlightText"">,&nbsp;</span>как буря<span class=""highlightText"">,&nbsp;</span>воет,<br />
+Призывный рог<span class="highlightText">,&nbsp;</span>как буря<span class="highlightText">,&nbsp;</span>воет,<br />
 Нетерпеливый конь кипит<br />
 И снег копытом мочным роет.`,
         buttons: [
@@ -293,10 +293,10 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 15,
         questionText: `А их глазищи желтые<br />
-Горят<span class=""highlightText"">&nbsp;?&nbsp;</span>как воску ярого<br />
+Горят<span class="highlightText">&nbsp;?&nbsp;</span>как воску ярого<br />
 Четырнадцать свечей!`,
         correctText: `А их глазищи желтые<br />
-Горят<span class=""highlightText"">,&nbsp;</span>как воску ярого<br />
+Горят<span class="highlightText">,&nbsp;</span>как воску ярого<br />
 Четырнадцать свечей!`,
         buttons: [
           { name: 'Запятая нужна, это сравнение', ruleInfo: `Это сравнение, выделяется запятыми.`, needed: true },
@@ -308,8 +308,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 16,
-        questionText: `Мой совет: обвенчаться<span class=""highlightText"">&nbsp;?&nbsp;</span>как можно скорее<span class=""highlightText"">&nbsp;? </span>в вашей деревянной церкви и приезжать к нам.`,
-        correctText: `Мой совет: обвенчаться<span class=""highlightText"">&nbsp;</span>как можно скорее<span class=""highlightText"">&nbsp;</span>в вашей деревянной церкви и приезжать к нам.`,
+        questionText: `Мой совет: обвенчаться<span class="highlightText">&nbsp;?&nbsp;</span>как можно скорее<span class="highlightText">&nbsp;? </span>в вашей деревянной церкви и приезжать к нам.`,
+        correctText: `Мой совет: обвенчаться<span class="highlightText">&nbsp;</span>как можно скорее<span class="highlightText">&nbsp;</span>в вашей деревянной церкви и приезжать к нам.`,
         buttons: [
           {
             name: 'Запятая нужна, это сложное предложение',
@@ -328,8 +328,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 17,
-        questionText: `Я не корчу английского лорда<span class=""highlightText"">&nbsp;?&nbsp;</span>как дипломат Северин, внук портного и повара.`,
-        correctText: `Я не корчу английского лорда<span class=""highlightText"">,&nbsp;</span>как дипломат Северин, внук портного и повара.`,
+        questionText: `Я не корчу английского лорда<span class="highlightText">&nbsp;?&nbsp;</span>как дипломат Северин, внук портного и повара.`,
+        correctText: `Я не корчу английского лорда<span class="highlightText">,&nbsp;</span>как дипломат Северин, внук портного и повара.`,
         buttons: [
           { name: 'Запятая нужна, это сравнение', ruleInfo: `Это сравнение, выделяется запятыми.`, needed: true },
           { name: 'Без запятой, значение причины', ruleInfo: `Это сравнение, выделяется запятыми.`, needed: false }
@@ -340,8 +340,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 18,
-        questionText: `Сотни верст пустынной, однообразной, выгоревшей степи не могут нагнать такого уныния<span class=""highlightText"">&nbsp;?&nbsp;</span>как один человек, когда он сидит, говорит и неизвестно, когда он уйдет.`,
-        correctText: `Сотни верст пустынной, однообразной, выгоревшей степи не могут нагнать такого уныния<span class=""highlightText"">,&nbsp;</span>как один человек, когда он сидит, говорит и неизвестно, когда он уйдет.`,
+        questionText: `Сотни верст пустынной, однообразной, выгоревшей степи не могут нагнать такого уныния<span class="highlightText">&nbsp;?&nbsp;</span>как один человек, когда он сидит, говорит и неизвестно, когда он уйдет.`,
+        correctText: `Сотни верст пустынной, однообразной, выгоревшей степи не могут нагнать такого уныния<span class="highlightText">,&nbsp;</span>как один человек, когда он сидит, говорит и неизвестно, когда он уйдет.`,
         buttons: [
           { name: 'Запятая нужна, составной союз', ruleInfo: `Это составной союз «такой..., как».`, needed: true },
           {
@@ -356,8 +356,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 19,
-        questionText: `Да, всё он делал не<span class=""highlightText"">&nbsp;?&nbsp;</span>как люди.`,
-        correctText: `Да, всё он делал не<span class=""highlightText"">&nbsp;</span>как люди.`,
+        questionText: `Да, всё он делал не<span class="highlightText">&nbsp;?&nbsp;</span>как люди.`,
+        correctText: `Да, всё он делал не<span class="highlightText">&nbsp;</span>как люди.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -376,8 +376,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 20,
-        questionText: `По мнению здешних ученых, этот провал не что иное<span class=""highlightText"">&nbsp;?&nbsp;</span>как угасший кратер.`,
-        correctText: `По мнению здешних ученых, этот провал не что иное<span class=""highlightText"">,&nbsp;</span>как угасший кратер.`,
+        questionText: `По мнению здешних ученых, этот провал не что иное<span class="highlightText">&nbsp;?&nbsp;</span>как угасший кратер.`,
+        correctText: `По мнению здешних ученых, этот провал не что иное<span class="highlightText">,&nbsp;</span>как угасший кратер.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -396,8 +396,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 21,
-        questionText: `Честолюбие есть не что иное<span class=""highlightText"">&nbsp;?&nbsp;</span>как жажда власти.`,
-        correctText: `Честолюбие есть не что иное<span class=""highlightText"">,&nbsp;</span>как жажда власти.`,
+        questionText: `Честолюбие есть не что иное<span class="highlightText">&nbsp;?&nbsp;</span>как жажда власти.`,
+        correctText: `Честолюбие есть не что иное<span class="highlightText">,&nbsp;</span>как жажда власти.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -416,8 +416,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 22,
-        questionText: `Гость был не кто другой<span class=""highlightText"">&nbsp;?&nbsp;</span>как наш почтенный Павел Иванович Чичиков.`,
-        correctText: `Гость был не кто другой<span class=""highlightText"">,&nbsp;</span>как наш почтенный Павел Иванович Чичиков.`,
+        questionText: `Гость был не кто другой<span class="highlightText">&nbsp;?&nbsp;</span>как наш почтенный Павел Иванович Чичиков.`,
+        correctText: `Гость был не кто другой<span class="highlightText">,&nbsp;</span>как наш почтенный Павел Иванович Чичиков.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -436,8 +436,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 23,
-        questionText: `Она была<span class=""highlightText"">&nbsp;?&nbsp;</span>как меньшая<span class=""highlightText"">&nbsp;? </span>любимица отца.`,
-        correctText: `Она была<span class=""highlightText"">,&nbsp;</span>как меньшая<span class=""highlightText"">,&nbsp;</span>любимица отца.`,
+        questionText: `Она была<span class="highlightText">&nbsp;?&nbsp;</span>как меньшая<span class="highlightText">&nbsp;? </span>любимица отца.`,
+        correctText: `Она была<span class="highlightText">,&nbsp;</span>как меньшая<span class="highlightText">,&nbsp;</span>любимица отца.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -456,8 +456,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 24,
-        questionText: `Наш сад<span class=""highlightText"">&nbsp;?&nbsp;</span>как проходной двор.`,
-        correctText: `Наш сад<span class=""highlightText"">&nbsp;</span>как проходной двор.`,
+        questionText: `Наш сад<span class="highlightText">&nbsp;?&nbsp;</span>как проходной двор.`,
+        correctText: `Наш сад<span class="highlightText">&nbsp;</span>как проходной двор.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -477,9 +477,9 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 25,
         questionText: `Богат, хорош собою, Ленский<br />
-Везде был принят<span class=""highlightText"">&nbsp;?&nbsp;</span>как жених.`,
+Везде был принят<span class="highlightText">&nbsp;?&nbsp;</span>как жених.`,
         correctText: `Богат, хорош собою, Ленский<br />
-Везде был принят<span class=""highlightText"">&nbsp;</span>как жених.`,
+Везде был принят<span class="highlightText">&nbsp;</span>как жених.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -498,8 +498,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 26,
-        questionText: `Вас это<span class=""highlightText"">&nbsp;?&nbsp;</span>как будто<span class=""highlightText"">&nbsp;? </span>удивляет.`,
-        correctText: `Вас это<span class=""highlightText"">&nbsp;</span>как будто<span class=""highlightText"">&nbsp;</span>удивляет.`,
+        questionText: `Вас это<span class="highlightText">&nbsp;?&nbsp;</span>как будто<span class="highlightText">&nbsp;? </span>удивляет.`,
+        correctText: `Вас это<span class="highlightText">&nbsp;</span>как будто<span class="highlightText">&nbsp;</span>удивляет.`,
         buttons: [
           {
             name: 'Запятая нужна, это вводное словосочетание.',
@@ -518,8 +518,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 27,
-        questionText: `И хотя этот зуб принадлежал к числу обыкновенных, однако Василий Иванович сохранил его<span class=""highlightText"">&nbsp;?&nbsp;</span>как редкость.`,
-        correctText: `И хотя этот зуб принадлежал к числу обыкновенных, однако Василий Иванович сохранил его<span class=""highlightText"">&nbsp;</span>как редкость.`,
+        questionText: `И хотя этот зуб принадлежал к числу обыкновенных, однако Василий Иванович сохранил его<span class="highlightText">&nbsp;?&nbsp;</span>как редкость.`,
+        correctText: `И хотя этот зуб принадлежал к числу обыкновенных, однако Василий Иванович сохранил его<span class="highlightText">&nbsp;</span>как редкость.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -538,8 +538,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 28,
-        questionText: `Я сейчас вспомнил, что я еще не попросил у вас<span class=""highlightText"">&nbsp;?&nbsp;</span>как следует<span class=""highlightText"">&nbsp;? </span>прощения.`,
-        correctText: `Я сейчас вспомнил, что я еще не попросил у вас<span class=""highlightText"">&nbsp;</span>как следует<span class=""highlightText"">&nbsp;</span>прощения.`,
+        questionText: `Я сейчас вспомнил, что я еще не попросил у вас<span class="highlightText">&nbsp;?&nbsp;</span>как следует<span class="highlightText">&nbsp;? </span>прощения.`,
+        correctText: `Я сейчас вспомнил, что я еще не попросил у вас<span class="highlightText">&nbsp;</span>как следует<span class="highlightText">&nbsp;</span>прощения.`,
         buttons: [
           {
             name: 'Запятая нужна, это вводное словосочетание',
@@ -558,8 +558,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 29,
-        questionText: `Я посмотрел на нее<span class=""highlightText"">&nbsp;?&nbsp;</span>как дурак — и вышел вон.`,
-        correctText: `Я посмотрел на нее<span class=""highlightText"">&nbsp;</span>как дурак — и вышел вон.`,
+        questionText: `Я посмотрел на нее<span class="highlightText">&nbsp;?&nbsp;</span>как дурак — и вышел вон.`,
+        correctText: `Я посмотрел на нее<span class="highlightText">&nbsp;</span>как дурак — и вышел вон.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -578,8 +578,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 30,
-        questionText: `Старайтесь смотреть на меня<span class=""highlightText"">&nbsp;?&nbsp;</span>как на пациента, одержимого болезнью, вам ещё неизвестной.`,
-        correctText: `Старайтесь смотреть на меня<span class=""highlightText"">&nbsp;</span>как на пациента, одержимого болезнью, вам ещё неизвестной.`,
+        questionText: `Старайтесь смотреть на меня<span class="highlightText">&nbsp;?&nbsp;</span>как на пациента, одержимого болезнью, вам ещё неизвестной.`,
+        correctText: `Старайтесь смотреть на меня<span class="highlightText">&nbsp;</span>как на пациента, одержимого болезнью, вам ещё неизвестной.`,
         buttons: [
           {
             name: 'Запятая нужна, это сравнение',
@@ -599,8 +599,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 31,
-        questionText: `Вижу<span class=""highlightText"">&nbsp;?&nbsp;</span>как теперь<span class=""highlightText"">&nbsp;? </span>самого хозяина, человека лет пятидесяти, свежего и бодрого.`,
-        correctText: `Вижу<span class=""highlightText"">,&nbsp;</span>как теперь<span class=""highlightText"">,&nbsp;</span>самого хозяина, человека лет пятидесяти, свежего и бодрого.`,
+        questionText: `Вижу<span class="highlightText">&nbsp;?&nbsp;</span>как теперь<span class="highlightText">&nbsp;? </span>самого хозяина, человека лет пятидесяти, свежего и бодрого.`,
+        correctText: `Вижу<span class="highlightText">,&nbsp;</span>как теперь<span class="highlightText">,&nbsp;</span>самого хозяина, человека лет пятидесяти, свежего и бодрого.`,
         buttons: [
           {
             name: 'Запятая нужна, устойчивое сочетание',
@@ -619,8 +619,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 32,
-        questionText: `Экая досада! Как нарочно<span class=""highlightText"">&nbsp;? </span>ни души!`,
-        correctText: `Экая досада! Как нарочно<span class=""highlightText"">,&nbsp;</span>ни души!`,
+        questionText: `Экая досада! Как нарочно<span class="highlightText">&nbsp;? </span>ни души!`,
+        correctText: `Экая досада! Как нарочно<span class="highlightText">,&nbsp;</span>ни души!`,
         buttons: [
           {
             name: 'Запятая нужна, устойчивое сочетание',
@@ -639,8 +639,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 33,
-        questionText: `Нигде при взаимной встрече не раскланиваются так благородно и непринуждённо<span class=""highlightText"">&nbsp;?&nbsp;</span>как на Невском проспекте.`,
-        correctText: `Нигде при взаимной встрече не раскланиваются так благородно и непринуждённо<span class=""highlightText"">,&nbsp;</span>как на Невском проспекте.`,
+        questionText: `Нигде при взаимной встрече не раскланиваются так благородно и непринуждённо<span class="highlightText">&nbsp;?&nbsp;</span>как на Невском проспекте.`,
+        correctText: `Нигде при взаимной встрече не раскланиваются так благородно и непринуждённо<span class="highlightText">,&nbsp;</span>как на Невском проспекте.`,
         buttons: [
           {
             name: 'Запятая всегда нужна в такой конструкции',
@@ -659,8 +659,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 34,
-        questionText: `Герасиму<span class=""highlightText"">&nbsp;?&nbsp;</span>как отличному работнику<span class=""highlightText"">&nbsp;? </span>тут же дали метлу в руки.`,
-        correctText: `Герасиму<span class=""highlightText"">,&nbsp;</span>как отличному работнику<span class=""highlightText"">,&nbsp;</span>тут же дали метлу в руки.`,
+        questionText: `Герасиму<span class="highlightText">&nbsp;?&nbsp;</span>как отличному работнику<span class="highlightText">&nbsp;? </span>тут же дали метлу в руки.`,
+        correctText: `Герасиму<span class="highlightText">,&nbsp;</span>как отличному работнику<span class="highlightText">,&nbsp;</span>тут же дали метлу в руки.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -682,10 +682,10 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 35,
         questionText: `Чуть утро осветило пушки,<br />
 И леса синие верхушки,<br />
-Французы тут<span class=""highlightText"">&nbsp;?&nbsp;</span>как тут.`,
+Французы тут<span class="highlightText">&nbsp;?&nbsp;</span>как тут.`,
         correctText: `Чуть утро осветило пушки,<br />
 И леса синие верхушки,<br />
-Французы тут<span class=""highlightText"">&nbsp;</span>как тут.`,
+Французы тут<span class="highlightText">&nbsp;</span>как тут.`,
         buttons: [
           {
             name: 'Запятая нужна, это исключение',
@@ -704,9 +704,9 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 36,
-        questionText: `Как истинный француз<span class=""highlightText"">&nbsp;? </span>в кармане<br />
+        questionText: `Как истинный француз<span class="highlightText">&nbsp;? </span>в кармане<br />
 Трике привез куплет Татьяне.`,
-        correctText: `Как истинный француз<span class=""highlightText"">,&nbsp;</span>в кармане<br />
+        correctText: `Как истинный француз<span class="highlightText">,&nbsp;</span>в кармане<br />
 Трике привез куплет Татьяне.`,
         buttons: [
           {
@@ -726,8 +726,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 37,
-        questionText: `Если, по&#8209;твоему, всё это артисты, то я не знаю<span class=""highlightText"">&nbsp;?&nbsp;</span>как и говорить с тобой. Разве это актеры? Самые настоящие посредственности!`,
-        correctText: `Если, по&#8209;твоему, всё это артисты, то я не знаю<span class=""highlightText"">,&nbsp;</span>как и говорить с тобой. Разве это актеры? Самые настоящие посредственности!`,
+        questionText: `Если, по&#8209;твоему, всё это артисты, то я не знаю<span class="highlightText">&nbsp;?&nbsp;</span>как и говорить с тобой. Разве это актеры? Самые настоящие посредственности!`,
+        correctText: `Если, по&#8209;твоему, всё это артисты, то я не знаю<span class="highlightText">,&nbsp;</span>как и говорить с тобой. Разве это актеры? Самые настоящие посредственности!`,
         buttons: [
           {
             name: 'Запятая нужна, сложное предложение',
@@ -746,8 +746,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 38,
-        questionText: `Старый князь<span class=""highlightText"">&nbsp;?&nbsp;</span>как и все отцы<span class=""highlightText"">&nbsp;? </span>был особенно щепетилен насчет чести своих дочерей.`,
-        correctText: `Старый князь<span class=""highlightText"">,&nbsp;</span>как и все отцы<span class=""highlightText"">,&nbsp;</span>был особенно щепетилен насчет чести своих дочерей.`,
+        questionText: `Старый князь<span class="highlightText">&nbsp;?&nbsp;</span>как и все отцы<span class="highlightText">&nbsp;? </span>был особенно щепетилен насчет чести своих дочерей.`,
+        correctText: `Старый князь<span class="highlightText">,&nbsp;</span>как и все отцы<span class="highlightText">,&nbsp;</span>был особенно щепетилен насчет чести своих дочерей.`,
         buttons: [
           {
             name: 'Запятая нужна, сложное предложение',
@@ -766,8 +766,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 39,
-        questionText: `А коли узнаю, что ты повел себя не<span class=""highlightText"">&nbsp;?&nbsp;</span>как сын Николая Болконского, мне будет… стыдно!`,
-        correctText: `А коли узнаю, что ты повел себя не<span class=""highlightText"">&nbsp;</span>как сын Николая Болконского, мне будет… стыдно!`,
+        questionText: `А коли узнаю, что ты повел себя не<span class="highlightText">&nbsp;?&nbsp;</span>как сын Николая Болконского, мне будет… стыдно!`,
+        correctText: `А коли узнаю, что ты повел себя не<span class="highlightText">&nbsp;</span>как сын Николая Болконского, мне будет… стыдно!`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -786,8 +786,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 40,
-        questionText: `Князь Андрей бывал каждый день у Ростовых, но не<span class=""highlightText"">&nbsp;?&nbsp;</span>как жених<span class=""highlightText"">&nbsp;? </span>обращался с Наташей.`,
-        correctText: `Князь Андрей бывал каждый день у Ростовых, но не<span class=""highlightText"">&nbsp;</span>как жених<span class=""highlightText"">&nbsp;</span>обращался с Наташей.`,
+        questionText: `Князь Андрей бывал каждый день у Ростовых, но не<span class="highlightText">&nbsp;?&nbsp;</span>как жених<span class="highlightText">&nbsp;? </span>обращался с Наташей.`,
+        correctText: `Князь Андрей бывал каждый день у Ростовых, но не<span class="highlightText">&nbsp;</span>как жених<span class="highlightText">&nbsp;</span>обращался с Наташей.`,
         buttons: [
           {
             name: 'Запятая нужна, значение причины',
@@ -806,8 +806,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 41,
-        questionText: `Он почти<span class=""highlightText"">&nbsp;?&nbsp;</span>как ребенок, впрочем образованный`,
-        correctText: `Он почти<span class=""highlightText"">&nbsp;</span>как ребенок, впрочем образованный`,
+        questionText: `Он почти<span class="highlightText">&nbsp;?&nbsp;</span>как ребенок, впрочем образованный`,
+        correctText: `Он почти<span class="highlightText">&nbsp;</span>как ребенок, впрочем образованный`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -826,8 +826,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 42,
-        questionText: `После того<span class=""highlightText"">&nbsp;?&nbsp;</span>как Егорушка убежал от костра, они сначала долго молчали.`,
-        correctText: `После того<span class=""highlightText"">&nbsp;</span>как Егорушка убежал от костра, они сначала долго молчали.`,
+        questionText: `После того<span class="highlightText">&nbsp;?&nbsp;</span>как Егорушка убежал от костра, они сначала долго молчали.`,
+        correctText: `После того<span class="highlightText">&nbsp;</span>как Егорушка убежал от костра, они сначала долго молчали.`,
         buttons: [
           {
             name: 'Запятая нужна, это сложное предложение',
@@ -847,8 +847,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 43,
-        questionText: `Он был среди граждан совершенно<span class=""highlightText"">&nbsp;?&nbsp;</span>как в родной семье, а в лавки и в гостиный двор наведывался, как в собственную кладовую.`,
-        correctText: `Он был среди граждан совершенно<span class=""highlightText"">&nbsp;</span>как в родной семье, а в лавки и в гостиный двор наведывался, как в собственную кладовую.`,
+        questionText: `Он был среди граждан совершенно<span class="highlightText">&nbsp;?&nbsp;</span>как в родной семье, а в лавки и в гостиный двор наведывался, как в собственную кладовую.`,
+        correctText: `Он был среди граждан совершенно<span class="highlightText">&nbsp;</span>как в родной семье, а в лавки и в гостиный двор наведывался, как в собственную кладовую.`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -867,8 +867,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 44,
-        questionText: `Ему помогали воспоминания его театральной карьеры — и он разыгрывал роль секунданта именно<span class=""highlightText"">&nbsp;?&nbsp;</span>как роль.`,
-        correctText: `Ему помогали воспоминания его театральной карьеры — и он разыгрывал роль секунданта именно<span class=""highlightText"">&nbsp;</span>как роль.`,
+        questionText: `Ему помогали воспоминания его театральной карьеры — и он разыгрывал роль секунданта именно<span class="highlightText">&nbsp;?&nbsp;</span>как роль.`,
+        correctText: `Ему помогали воспоминания его театральной карьеры — и он разыгрывал роль секунданта именно<span class="highlightText">&nbsp;</span>как роль.`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -887,8 +887,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 45,
-        questionText: `Жена – друг, ежели правильно вникнуть в дело. Она к тебе вроде<span class=""highlightText"">&nbsp;?&nbsp;</span>как цепью<span class=""highlightText"">&nbsp;? </span>на всю жизнь прикована.`,
-        correctText: `Жена – друг, ежели правильно вникнуть в дело. Она к тебе вроде<span class=""highlightText"">&nbsp;</span>как цепью<span class=""highlightText"">&nbsp;</span>на всю жизнь прикована.`,
+        questionText: `Жена – друг, ежели правильно вникнуть в дело. Она к тебе вроде<span class="highlightText">&nbsp;?&nbsp;</span>как цепью<span class="highlightText">&nbsp;? </span>на всю жизнь прикована.`,
+        correctText: `Жена – друг, ежели правильно вникнуть в дело. Она к тебе вроде<span class="highlightText">&nbsp;</span>как цепью<span class="highlightText">&nbsp;</span>на всю жизнь прикована.`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -907,8 +907,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 46,
-        questionText: `Можешь ли ты нарисовать такой портрет, чтобы был совершенно<span class=""highlightText"">&nbsp;?&nbsp;</span>как живой?`,
-        correctText: `Можешь ли ты нарисовать такой портрет, чтобы был совершенно<span class=""highlightText"">&nbsp;</span>как живой?`,
+        questionText: `Можешь ли ты нарисовать такой портрет, чтобы был совершенно<span class="highlightText">&nbsp;?&nbsp;</span>как живой?`,
+        correctText: `Можешь ли ты нарисовать такой портрет, чтобы был совершенно<span class="highlightText">&nbsp;</span>как живой?`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -927,8 +927,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 47,
-        questionText: `Обшивка его была, правда, немного повреждена, но все же это был прекрасный стул и к тому же точь&#8209;в&#8209;точь<span class=""highlightText"">&nbsp;?&nbsp;</span>как первый.`,
-        correctText: `Обшивка его была, правда, немного повреждена, но все же это был прекрасный стул и к тому же точь&#8209;в&#8209;точь<span class=""highlightText"">&nbsp;</span>как первый.`,
+        questionText: `Обшивка его была, правда, немного повреждена, но все же это был прекрасный стул и к тому же точь&#8209;в&#8209;точь<span class="highlightText">&nbsp;?&nbsp;</span>как первый.`,
+        correctText: `Обшивка его была, правда, немного повреждена, но все же это был прекрасный стул и к тому же точь&#8209;в&#8209;точь<span class="highlightText">&nbsp;</span>как первый.`,
         buttons: [
           {
             name: 'Запятая нужна, сравнение',
@@ -947,8 +947,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 48,
-        questionText: `Но эта история ничто в сравнении с рассказом о молодости<span class=""highlightText"">&nbsp;?&nbsp;</span>как таковой.`,
-        correctText: `Но эта история ничто в сравнении с рассказом о молодости<span class=""highlightText"">&nbsp;</span>как таковой.`,
+        questionText: `Но эта история ничто в сравнении с рассказом о молодости<span class="highlightText">&nbsp;?&nbsp;</span>как таковой.`,
+        correctText: `Но эта история ничто в сравнении с рассказом о молодости<span class="highlightText">&nbsp;</span>как таковой.`,
         buttons: [
           {
             name: 'Запятая нужна, уточняющий оборот',
@@ -967,8 +967,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 49,
-        questionText: `Цензорам представляли не рукопись<span class=""highlightText"">&nbsp;?&nbsp;</span>как таковую, а машинописный экземпляр, чтоб удобнее было читать и вносить правку.`,
-        correctText: `Цензорам представляли не рукопись<span class=""highlightText"">&nbsp;</span>как таковую, а машинописный экземпляр, чтоб удобнее было читать и вносить правку.`,
+        questionText: `Цензорам представляли не рукопись<span class="highlightText">&nbsp;?&nbsp;</span>как таковую, а машинописный экземпляр, чтоб удобнее было читать и вносить правку.`,
+        correctText: `Цензорам представляли не рукопись<span class="highlightText">&nbsp;</span>как таковую, а машинописный экземпляр, чтоб удобнее было читать и вносить правку.`,
         buttons: [
           {
             name: 'Запятая нужна, уточняющий оборот',
@@ -987,11 +987,11 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 50,
-        questionText: `С тех пор<span class=""highlightText"">&nbsp;?&nbsp;</span>как вечный судия<br />
+        questionText: `С тех пор<span class="highlightText">&nbsp;?&nbsp;</span>как вечный судия<br />
 Мне дал всеведенье пророка,<br />
 В очах людей читаю я<br />
 Страницы злобы и порока.`,
-        correctText: `С тех пор<span class=""highlightText"">&nbsp;</span>как вечный судия<br />
+        correctText: `С тех пор<span class="highlightText">&nbsp;</span>как вечный судия<br />
 Мне дал всеведенье пророка,<br />
 В очах людей читаю я<br />
 Страницы злобы и порока.`,
@@ -2284,28 +2284,28 @@ export class InMemoryDataService implements InMemoryDbService {
         title: '5 случаев, когда ставится запятая перед «как»',
         body: `<h2>5 случаев, когда ставится запятая перед «как»</h2>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/1/1.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/1/1.png" alt=" width="100%" />
         <p>
           Запятая перед «как» или «как будто» ставится в сравнительных оборотах. После оборота тоже нужна запятая.
         </p></div>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/1/2.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/1/2.png" alt=" width="100%" />
         <p>
         Указательные слова «так», «такой», «тот», «столь» требуют запятой перед «как». Союз «как и» используется только в сравнительных оборотах, поэтому фразы с ним тоже выделяются.
         </p></div>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/1/3.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/1/3.png" alt=" width="100%" />
         <p>
         Это устойчивые сочетания, которые всегда выделяются запятыми.</p><p>
         Исключение — если они входят в состав сказуемого: Он вёл себя как обычно. Сказуемое «вёл себя» не самостоятельное по смыслу, поэтому сочетание «как обычно» входит в его состав.
         </p></div>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/1/4.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/1/4.png" alt=" width="100%" />
         <p>
         Запятая перед «как» всегда ставится в конструкциях вроде «не что иное, как…», «не кто другой, как...».
         </p></div>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/1/5.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/1/5.png" alt=" width="100%" />
         <p>
         Запятая перед «как» ставится, если сравнительный оборот имеет значение причины. В таких случаях можно сделать из предложения сложное: оборот с «как» легко превращается в придаточную с «потому что».
         </p></div>
@@ -2316,28 +2316,28 @@ export class InMemoryDataService implements InMemoryDbService {
         title: '5 случаев, когда не ставится запятая перед «как»',
         body: `<h2>5 случаев, когда ставится запятая перед «как»</h2>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/2/1.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/2/1.png" alt=" width="100%" />
         <p>
         Запятая перед «как» не ставится, если вместо этого слова можно поставить «в качестве». В таких случаях оборот с «как» подчёркивает, что говорится об одной конкретной стороне объекта. Например, о Ленском как о женихе, не как о соседе или друге.
         </p></div>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/2/2.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/2/2.png" alt=" width="100%" />
         <p>
         Фразеологизмы с «как» никогда не выделяются запятой.
         </p></div>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/2/3.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/2/3.png" alt=" width="100%" />
         <p>
         Запятая перед «как» не ставится, если перед оборотом стоит отрицательная частица «не» или усилительные частицы.
         </p></div>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/2/4.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/2/4.png" alt=" width="100%" />
         <p>
         Оборот не выделяется, если входит в состав сказуемого или сказуемое без него не имеет смысла.</p><p>
         Для проверки попробуйте прочитать предложение без оборота. Если оно становится бессмысленным, значит запятая перед «как» не нужна.
         </p></div>
         <div class="ruleBlock">
-        <img src="../../assets/images/blog/2/5.png" alt="" width="100%" />
+        <img src="../../assets/images/blog/2/5.png" alt=" width="100%" />
         <p>
         Частицы не выделяются запятыми.</p><p>
         Обратите внимание на сочетание «как будто». Оно может быть и частицей, и союзом. Перед союзом «как будто» запятая нужна. Сравните:<br />
