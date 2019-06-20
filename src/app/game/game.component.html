@@ -1,9 +1,6 @@
 <div class="root">
   <div class="container">
-    <app-top-panel
-      [title]="gameTitle"
-      [subTitle]="'Вопрос ' + (currentIndex + 1) + '/' + totalQuestions"
-    ></app-top-panel>
+    <app-top-panel [title]="gameTitle" [subTitle]="subTitle"></app-top-panel>
     <div *ngIf="!showResult" class="questionPart">
       <div [ngSwitch]="currentGame">
         <app-comma-question-page

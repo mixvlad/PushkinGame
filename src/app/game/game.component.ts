@@ -22,6 +22,7 @@ export class GameComponent implements OnInit {
   showResult: boolean;
   answered = false;
   needHelp: boolean;
+  subTitle: string;
 
   constructor(private questionService: GameService, private messageService: MessageService, private router: Router) {
     this.currentGame = this.router.url.substring(1);
@@ -39,6 +40,15 @@ export class GameComponent implements OnInit {
     this.currentQuestion = null;
     this.showResult = false;
     this.getQuestions();
+    this.updateSubTitle();
+  }
+
+  updateSubTitle() {
+    if (this.showResult) {
+      this.subTitle = 'Результаты';
+    } else {
+      this.subTitle = 'Вопрос ' + (this.currentIndex + 1) + '/' + this.totalQuestions;
+    }
   }
 
   getQuestions(): void {
@@ -73,6 +83,7 @@ export class GameComponent implements OnInit {
       this.currentQuestion = this.questions[this.currentIndex];
       this.messageService.add(`questionService: ${this.currentQuestion.correctText}`);
     }
+    this.updateSubTitle();
   }
 
   SetRandomIconName() {
