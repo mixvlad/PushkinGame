@@ -1,7 +1,7 @@
 <div class="Answer__root" [ngClass]="getAnswerClasses()" role="button" tabindex="-1" (click)="clickButton()">
   <div class="Answer__headline">
     <div class="Answer__text">
-      <div class="Answer__title">{{ button.name }}</div>
+      <div class="Answer__title" [innerHTML]="button.name"></div>
     </div>
   </div>
   <div class="Answer__text" *ngIf="selected">
