@@ -1899,6 +1899,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const dashQuestions = [
+      ,
       {
         id: 1,
         questionText: `Театр уж&nbsp;полон; ложи блещут;<br />
@@ -1917,7 +1918,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 3,
-        questionText: `Я|-|&nbsp;честный чело*век и&nbsp;никогда не&nbsp;говорю комплиментов.`,
+        questionText: `Я|-|&nbsp;честный человек и&nbsp;никогда не&nbsp;говорю комплиментов.`,
         trueRuleInfo: `Тире не&nbsp;ставится, так&nbsp;как подлежащее выражено местоимением.`,
         falseRuleInfo: `Тире не&nbsp;ставится, когда подлежащее выражено местоимением.`,
         author: `А.П. Чехов
@@ -1925,7 +1926,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 4,
-        questionText: `Погода несносная, дорога скверная, ямщик упрямый|+| а&nbsp;виноват смотритель.`,
+        questionText: `Погода&nbsp;|-| несносная, дорога&nbsp;|-| скверная, ямщик&nbsp;|-| упрямый — а&nbsp;виноват смотритель.`,
         trueRuleInfo: `Тире не&nbsp;ставится, так как сказуемое&nbsp;—&nbsp;прилагательное.`,
         falseRuleInfo: `Тире не&nbsp;ставится во всех частях предложения, так как сказуемые в&nbsp;них выражены прилагательными, а тире ставится между двумя существительными, глаголами или числительными.`,
         author: `А.С. Пушкин
@@ -1942,7 +1943,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 6,
         questionText: `А&nbsp;гений и&nbsp;злодейство|+|<br />
-Две вещи несовместные. Не&nbsp;правда&nbsp;ль?`,
+Две вещи несовместные. Не&nbsp;правда ль?`,
         trueRuleInfo: `Тире ставится между подлежащим и&nbsp;сказуемым.`,
         falseRuleInfo: `Тире ставится между подлежащим и&nbsp;сказуемым, так&nbsp;как они выражены существительными.`,
         author: `А.С. Пушкин
@@ -2209,8 +2210,8 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 42,
         questionText: `С&nbspглавы снимает шлем блестящий|+|<br />И&nbspКольну видит пред&nbspсобой.`,
-        trueRuleInfo: `Тире ставится после&nbspслюза&nbsp«и» между&nbspдвумя однородными сказуемыми, где&nbspвторое обозначает результат первого.`,
-        falseRuleInfo: `Тире ставится после&nbspслюза&nbsp«и» между&nbspдвумя однородными сказуемыми, где&nbspвторое обозначает результат первого.`,
+        trueRuleInfo: `Тире ставится после&nbspсоюза&nbsp«и» между&nbspдвумя однородными сказуемыми, где&nbspвторое обозначает результат первого.`,
+        falseRuleInfo: `Тире ставится после&nbspсоюза&nbsp«и» между&nbspдвумя однородными сказуемыми, где&nbspвторое обозначает результат первого.`,
         author: `А.С.Пушкин «Кольна»`
       },
       {
