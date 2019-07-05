@@ -2308,7 +2308,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 2,
         title: '5 случаев, когда не ставится запятая перед «как»',
-        body: `<h2>5 случаев, когда ставится запятая перед «как»</h2>
+        body: `<h2>5 случаев, когда не ставится запятая перед «как»</h2>
         <div class="ruleBlock">
         <img src="../../assets/images/blog/2/1.png"  width="100%" />
         <p>
