@@ -1899,7 +1899,6 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const dashQuestions = [
-      ,
       {
         id: 1,
         questionText: `Театр уж&nbsp;полон; ложи блещут;<br />
@@ -2176,7 +2175,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 36,
         questionText: `Хотел объехать целый свет|+| и&nbspне&nbsp;объехал сотой доли.`,
         trueRuleInfo: `Тире ставится после&nbsp;союза&nbsp«и» между&nbspдвумя однородными сказуемыми для&nbspусиления эффекта неожиданности.`,
-        falseRuleInfo: `Тире ставится после&nbsp;слюза&nbsp«и» между&nbspдвумя однородными сказуемыми для&nbspусиления эффекта неожиданности.`,
+        falseRuleInfo: `Тире ставится после&nbsp;союза&nbsp«и» между&nbspдвумя однородными сказуемыми для&nbspусиления эффекта неожиданности.`,
         author: `А.С. Грибоедов «Горе от&nbsp;ума»`
       },
       {
@@ -2252,8 +2251,8 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 48,
         questionText: `Любви нет боле счастья в&nbsp;мире:<br />Люби|+| и&nbsp;пой ее на&nbsp;лире.`,
-        trueRuleInfo: `Тире ставится после&nbsp;слюза&nbsp;«и» между&nbsp;двумя однородными сказуемыми для&nbsp;их&nbsp;усиления.`,
-        falseRuleInfo: `Тире ставится после&nbsp;слюза&nbsp;«и» между&nbsp;двумя однородными сказуемыми для&nbsp;их&nbsp;усиления.`,
+        trueRuleInfo: `Тире ставится после&nbsp;союза&nbsp;«и» между&nbsp;двумя однородными сказуемыми для&nbsp;их&nbsp;усиления.`,
+        falseRuleInfo: `Тире ставится после&nbsp;союза&nbsp;«и» между&nbsp;двумя однородными сказуемыми для&nbsp;их&nbsp;усиления.`,
         author: `А.С. Пушкин «К&nbsp;Батюшкову»`
       },
       {
