@@ -11,6 +11,6 @@ export class SvgComponent {
   constructor() {}
 
   get absUrl() {
-    return window.location.href;
+    return window.location.origin + window.location.pathname;
   }
 }
