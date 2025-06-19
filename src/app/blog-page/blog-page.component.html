@@ -1,8 +1,21 @@
 <div class="root">
   <div class="container">
-    <app-top-panel [title]="'20 июня 2019'" [subTitle]="'Блог тренажера «Пушкин»'"></app-top-panel>
+    <app-top-panel [title]="post?.title || 'Блог'" [subTitle]="'Блог тренажера «Пушкин»'"></app-top-panel>
     <div style="height: 3rem"></div>
-    <p [innerHTML]="post.body"></p>
+    
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+    
+    <div *ngIf="post" class="blog-content">
+      <h1>{{ post.title }}</h1>
+      <div [innerHTML]="post.body"></div>
+    </div>
+    
+    <div *ngIf="!post && !error" class="loading">
+      Загрузка статьи...
+    </div>
+    
     <div style="height: 3rem"></div>
   </div>
 </div>

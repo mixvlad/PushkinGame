@@ -1,3 +1,17 @@
-<li *ngFor="let post of posts">
-  <a href="blog/{{ post.id }}">{{ post.title }}</a>
-</li>
+<div class="blog-container">
+  <h1>Блог</h1>
+  
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+  
+  <ul *ngIf="posts && posts.length > 0" class="blog-list">
+    <li *ngFor="let post of posts" class="blog-item">
+      <a [routerLink]="['/blog', post.id]" class="blog-link">{{ post.title }}</a>
+    </li>
+  </ul>
+  
+  <div *ngIf="!posts || posts.length === 0" class="no-posts">
+    Записи блога не найдены.
+  </div>
+</div>
