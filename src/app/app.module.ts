@@ -22,7 +22,8 @@ import { SvgDefinitionsComponent } from './svg-definitions/svg-definitions.compo
 import { MetrikaModule } from 'ng-yandex-metrika';
 import { GameService } from './game.service';
 import { EmailSubscribeComponent } from './email-subscribe/email-subscribe.component';
-import { MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 import { RatingComponent } from './rating/rating.component';
 import { InputBlockComponent } from './input-block/input-block.component';
