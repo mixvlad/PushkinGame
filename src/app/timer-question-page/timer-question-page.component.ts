@@ -25,7 +25,7 @@ export class TimerQuestionPageComponent implements OnInit, OnChanges {
   @Output() OnAnswered = new EventEmitter<boolean>();
   @Output() OnNext = new EventEmitter<void>();
   @ViewChildren('btn') buttons: QueryList<GameButtonComponent>;
-  @ViewChild('countdownTimer', null) timer: CountdownTimerComponent;
+  @ViewChild('countdownTimer', { static: false }) timer: CountdownTimerComponent;
   answered: boolean;
   needHelp: boolean;
   rightAnswer: boolean;

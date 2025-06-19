@@ -11,8 +11,8 @@ export class CommaQuestionPageComponent implements OnInit, OnChanges {
   @Input() iconName: string;
   @Output() OnAnswered = new EventEmitter<boolean>();
   @Output() OnNext = new EventEmitter<void>();
-  @ViewChild('btnTrue', null) btnTrue;
-  @ViewChild('btnFalse', null) btnFalse;
+  @ViewChild('btnTrue', { static: false }) btnTrue;
+  @ViewChild('btnFalse', { static: false }) btnFalse;
   answered: boolean;
   rightAnswer: boolean;
 
